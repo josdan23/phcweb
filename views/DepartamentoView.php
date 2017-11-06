@@ -1,3 +1,15 @@
+<?php 
+
+	require_once("../controllers/DepartamentoController.php");
+
+	if(isset($_POST['nombre'])) {
+		
+		DepartamentoController::agregarDepartamento($_POST['nombre']);
+	}else
+		echo "error al cargar Departamento";
+
+?>
+
 <!DOCTYPE html>
 <html lang="">
 	<head>
@@ -15,7 +27,7 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<form action="/controllers/DepartamentoController.php" method="POST" role="form" class="col-md-4 col-md-offset-1">
+				<form action="" method="POST" role="form" class="col-md-4 col-md-offset-1">
 
 					<legend>Form title</legend>
 				
@@ -30,6 +42,11 @@
 		</div>
 
 
+		<?php 
+
+			var_dump(DepartamentoController::obtenerDepartamentos());
+
+		 ?>
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->

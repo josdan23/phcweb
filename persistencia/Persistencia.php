@@ -1,28 +1,31 @@
 <?php 
 
-require_once("./domain/Departamento.php");
+require_once("../domain/Departamento.php");
 
 class Persistencia {
 
-	public static $persistencia;
+	//variable de persistencia
+	static $instancia;
 
-	public static $arrayDepartamento = array();
+	//array para mantener los datos en la memoria
+	public $arrayDepartamento = array();
 
 	private function __construct(){
-		$persistencia = new $Persistencia;
 	}
 
 	public static function obtenerInstancia(){
-		if(!isset(self::$persistencia)) {
-			self::$persistencia = new $Persistencia;
+		if(!isset(self::$instancia)) {
+			self::$instancia = new Persistencia();
 		}
+		return self::$instancia;
 	}
 
-	public function agregarDepartamento($departamento) {
+	public function guardarDepartamento($departamento) {
 		$this->arrayDepartamento[] = $departamento;
+		echo "departamento guardado";
 	}
 
-	public function obtenerDepartamento() {
+	public function recuperarDepartamentos() {
 		return $this->arrayDepartamento;
 	}
 
