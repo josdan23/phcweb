@@ -14,9 +14,7 @@ class DepartamentoController {
 
 
 	public static function obtenerDepartamentos() {
-		return Persistencia::recuperarDepartamentos();
+		 return Persistencia::obtenerInstancia()->recuperarDepartamentos();
 	}
 
-
-	
 }
