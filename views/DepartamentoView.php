@@ -47,6 +47,13 @@
 			var_dump(DepartamentoController::obtenerDepartamentos());
 
 		 ?>
+
+		<div class="container-fluid">
+			<div class="row">
+				hola
+			</div>
+		</div>
+
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->

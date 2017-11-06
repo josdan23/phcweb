@@ -18,26 +18,29 @@
 	</head>
 	<body>
 		
+		<!--HEADER-->
+		<div class="container">
 
-		<h2>Agregar Departamentos</h2>
+			<?php 
+				include_once("views/navbar.php");
+			?>	
+	
 
-		<div class="container-fluid">
 			<div class="row">
-				<form action="/controllers/DepartamentoController.php" method="POST" role="form" class="col-md-4 col-md-offset-1">
+				<div class="col-md-2">
+					<?php include("views/panelIzquierda.php"); ?>
+				</div>
 
-					<legend>Form title</legend>
-				
-					<div class="form-group">
-						<label for="nombre">label</label>
-						<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Input field">
+				<div class="col-md-10">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							PHC
+						</div>
 					</div>
-				
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
+				</div>
 			</div>
-		</div>
 
-		
+		</div>
 
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
