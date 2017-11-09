@@ -3,5 +3,5 @@
 define("NOMBRE_HOST", "localhost");
 define("BASE_DE_DATOS", "PHC");
 define("USUARIO", "root");
-define("CONTRASEÑA", "root");
+define("CONTRASENIA", "root");
 

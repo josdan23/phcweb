@@ -13,7 +13,7 @@ class Departamento {
 	}
 
 	public function getNombre() {
-		return $nombre;
+		return $this->nombre;
 	}
 
 }

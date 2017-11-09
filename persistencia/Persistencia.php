@@ -1,6 +1,6 @@
 <?php 
 
-require_once("../domain/Departamento.php");
+require_once("domain/Departamento.php");
 
 class Persistencia {
 
@@ -8,9 +8,14 @@ class Persistencia {
 	static $instancia;
 
 	//array para mantener los datos en la memoria
-	public $arrayDepartamento = array();
+	public $arrayDepartamentos = array();
 
 	private function __construct(){
+		$depto = new Departamento("Recursos Humanos");
+		$this->arrayDepartamentos[] = $depto;
+
+		$depto = new Departamento("otro");
+		$this->arrayDepartamentos[] = $depto;
 	}
 
 	public static function obtenerInstancia(){
@@ -21,12 +26,12 @@ class Persistencia {
 	}
 
 	public function guardarDepartamento($departamento) {
-		$this->arrayDepartamento[] = $departamento;
+		$this->arrayDepartamentos[] = $departamento;
 		echo "departamento guardado";
 	}
 
 	public function recuperarDepartamentos() {
-		return $this->arrayDepartamento;
+		return $this->arrayDepartamentos;
 	}
 
 }
