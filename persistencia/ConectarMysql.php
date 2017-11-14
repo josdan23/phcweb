@@ -13,10 +13,10 @@ class ConectarMysql {
 
 	function __construct(){
 
-		$this->nombreHost = "localhost";
-		$this->usuario = "root";
-		$this->contrasenia = "root";
-		$this->baseDatos = "phc";
+		$this->nombreHost = NOMBRE_HOST;
+		$this->usuario = USUARIO;
+		$this->contrasenia = CONTRASENIA;
+		$this->baseDatos = BASE_DE_DATOS;
 		
 	}
 
