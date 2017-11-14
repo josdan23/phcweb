@@ -31,10 +31,26 @@ class EmpleadoController {
 	}
 
 	public static function obtenerUnEmpleado($id) {
-		$entidad = new EntidadBase("Empleado");
-
+		$empleado = new Empleado();
+		$entidad = new EntidadBase("v_empleado");
+		
 		$resultado = $entidad->obtenerPorId($id);
+		
+		$empleado->setIdEmpleado( $resultado['idEmpleado']);
+		$empleado->setApellido( $resultado['apellido']);
+		$empleado->setNombre( $resultado['nombre']);
+		$empleado->setLegajo( $resultado['legajo']);
+		$empleado->setFechaIngreso( $resultado['fechaIngreso']);
+		$empleado->setDni( $resultado['dni']);
+		$empleado->setCuil( $resultado['cuil']);
+		$empleado->setFechaNacimiento( $resultado['fechaNacimiento']);
+		$empleado->setEsActivo( $resultado['esActivo']);
+		$empleado->setTelefono( $resultado['telefono']);
+		$empleado->setEmail( $resultado['email']);
+		$empleado->setDomicilio( $resultado['domicilio']);
+		$empleado->setSexo( $resultado['sexo']);
 
-		return $resultado;
+
+		return $empleado;
 	}
 }
