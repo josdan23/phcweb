@@ -4,7 +4,5 @@ require_once("../persistencia/EntidadBase.php");
 
 $entidad = new EntidadBase("Empleado");
 
-$arrayDepartamentos = $entidad->obtenerTodos();
-var_dump($arrayDepartamentos);
-
-
+$arrayEmpleados = $entidad->obtenerPorId(2);
+var_dump($arrayEmpleados);
