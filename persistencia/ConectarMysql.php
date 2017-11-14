@@ -16,7 +16,7 @@ class ConectarMysql {
 		$this->nombreHost = "localhost";
 		$this->usuario = "root";
 		$this->contrasenia = "root";
-		$this->baseDatos = "PHC";
+		$this->baseDatos = "phc";
 		
 	}
 
