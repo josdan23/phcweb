@@ -67,16 +67,14 @@ class EntidadBase {
 	public function guardarDepartamento($departamento){
 		$nombreDepartamento = $departamento->getNombre();
 		$idNivelDepartamento = $departamento->getIdNivelDepartamento();
-		//$query="insert into $this->tabla (nombre,idNivelDepartamento) values('$nombreDepartamento',$idNivelDepartamento)";
-		$query="insert into Departamento (nombre,idNivelDepartamento) values('Servicio tecnico',2)";
-		//$sentencia = $this->db->prepare($query);
-		//$sentencia->bind_param(');
-		echo "$query <br>";
+		$query="insert into $this->tabla (nombre,idNivelDepartamento) values('$nombreDepartamento',$idNivelDepartamento)";
+
+		//echo "$query <br>";
 		try {
-			echo "Entro al try <br>";
+			//echo "Entro al try <br>";
 			$this->db->query($query);
 			echo "Se registro con exito <br>";
-		
+
 		} catch (Exception $e) {
 			echo "$e";
 		}

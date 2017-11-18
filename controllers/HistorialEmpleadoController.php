@@ -30,8 +30,17 @@ class HistorialEmpleadoController {
 	}
 
 	public static function obtenerUnHistorialEmpleado($id) {
-		$entidad = new EntidadBase("HistorialEmpleado");
-		$historialempleado = $entidad->obtenerPorId($id);
+		$historialempleado = new HistorialEmpleado();
+		$historialempleado = new EntidadBase("v_historial_empleado");
+		
+		$resultado = $entidad->obtenerPorId($id);
+		
+		$historialempleado->setIdHistorialEmpleado( $resultado['idHistorialEmpleado']);
+		$historialempleado->setFechaIngreso( $resultado['fechaIngreso']);
+		$historialempleado->setFechaEgreso( $resultado['fechaEgreso']);
+		$historialempleado->setIdEmpleado( $resultado['idEmpleado']);
+		$historialempleado->setIdPuesto( $resultado['idPuesto']);
+		
 
 		return $historialempleado;
 	}
