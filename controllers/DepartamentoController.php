@@ -14,7 +14,7 @@ class DepartamentoController {
 
 	public static function agregarDepartamento($nombre,$idNivelDepartamento) {
 			$departamento = new Departamento($nombre,$idNivelDepartamento);
-			$entidad = new EntidadBase("Departamento");
+			$entidad = new EntidadBase("t_departamento");
 
 			$entidad->guardarDepartamento($departamento);
 			echo "salio de guardarDepartamento";
@@ -45,7 +45,7 @@ class DepartamentoController {
 	public static function obtenerUnDepartamento($id) {
 
 		$departamento = new Departamento();
-		$entidad = new EntidadBase("v_departamento");
+		$entidad = new EntidadBase("t_departamento");
 
 		$resultado = $entidad->obtenerPorId($id);
 
