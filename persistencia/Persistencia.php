@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-require_once("domain/Departamento.php");
+require_once("../domain/Departamento.php");
 
 class Persistencia {
 

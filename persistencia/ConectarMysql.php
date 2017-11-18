@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once("ConfiguracionMysql.php");
 
@@ -15,9 +15,9 @@ class ConectarMysql {
 
 		$this->nombreHost = "localhost";
 		$this->usuario = "root";
-		$this->contrasenia = "root";
+		$this->contrasenia = "localhost";
 		$this->baseDatos = "PHC";
-		
+
 	}
 
 	public static function getInstance(){

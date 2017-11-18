@@ -1,9 +1,14 @@
-<?php  
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
+
+<?php
 
 	if(isset($_GET['page'])) {
-		$pagina = $_GET['page'];	
+		$pagina = $_GET['page'];
 	}
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -19,15 +24,15 @@
 
 	</head>
 	<body>
-		
+
 		<!--HEADER-->
 		<div class="container">
 
-			<?php 
+			<?php
 				include_once("views/navbar.php");
-			?>	
-	
-			
+			?>
+
+
 			<div class="row">
 
 				<!--para el panel -->
@@ -53,6 +58,6 @@
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		
+
 	</body>
 </html>

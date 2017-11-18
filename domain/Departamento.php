@@ -11,7 +11,7 @@ class Departamento {
 		$this->idNivelDepartamento = $idNivelDepartamento;
 	}
 
-	
+
 
     /**
      * @return mixed
