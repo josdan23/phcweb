@@ -112,8 +112,70 @@ class EntidadBase {
 			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 				echo "$e";
 			}
+		}
+
+		public function guardarNivelPuesto($descripcion){
+			$query = "insert into $this->tabla (descripcion) values ('$descripcion')";
+
+			//echo "$query";
+
+			try {
+				if($this->db->query($query)==true)
+				echo "Se registro el NivelPuesto con exito <br>";
+				else {
+					echo "No se registro el NivelPuesto";
+				}
+			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+				echo "$e";
+			}
 
 		}
+
+		public function guardarPuesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto){
+			$query = "insert into $this->tabla (nombre, descripcion, idDepartamento, idNivelPuesto)
+			values ('$nombre', '$descripcion', $idDepartamento, $idNivelPuesto)";
+
+			try {
+				if($this->db->query($query)==true)
+				echo "Se registro el Puesto con exito <br>";
+				else {
+					echo "No se registro el Puesto";
+				}
+			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+				echo "$e";
+			}
+		}
+
+		public function guardarRequerimiento($descripcion){
+			$query = "insert into $this->tabla (descripcion) values('$descripcion')";
+
+			try {
+				if($this->db->query($query)==true)
+				echo "Se registro el Requerimiento con exito <br>";
+				else {
+					echo "No se registro el Requerimiento";
+				}
+			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+				echo "$e";
+			}
+
+		}
+
+		public function guardarTarea($descripcion){
+			$query = "insert into this->tabla (descripcion) values('$descripcion')";
+
+			try {
+				if($this->db->query($query)==true)
+				echo "Se registro la tarea con exito <br>";
+				else {
+					echo "No se registro la tarea";
+				}
+			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+				echo "$e";
+			}
+
+		}
+
 
 
 

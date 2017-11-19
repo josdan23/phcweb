@@ -1,15 +1,12 @@
-<?php 
-
-require_once("persistencia/Persistencia.php");
-require_once("domain/Tarea.php");
-require_once("persistencia/EntidadBase.php");
+<?php
 
 class TareaController {
 
-	public static function agregarTarea($descripcion) {
-	//	$departamento = new Tarea($nombre,$idNivelDepartamento);
-	//	$baseDatos = Persistencia::obtenerInstancia()->guardarTarea($departamento);
 
+	public static function agregarTarea($descripcion) {
+
+		$entidad = new EntidadBase("t_tarea");
+		$entidad->guardarTarea($descripcion);
 	}
 
 
@@ -20,7 +17,7 @@ class TareaController {
 		return $resultado;
 
 
-		 
+
 	}
 
 	public static function eliminarTarea($id) {
@@ -32,12 +29,12 @@ class TareaController {
 	public static function obtenerUnaTarea($id) {
 		$tarea = new Tarea();
 		$entidad = new EntidadBase("v_tarea");
-		
+
 		$resultado = $entidad->obtenerPorId($id);
-		
+
 		$tarea->setIdTarea( $resultado['idTarea']);
 		$tarea->setDescripcion($resultado['descripcion']);
-		
+
 		return $tarea;
 	}
 

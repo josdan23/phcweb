@@ -7,12 +7,19 @@ require __DIR__.'/../controllers/DepartamentoController.php';
 require __DIR__.'/../controllers/EmpleadoController.php';
 //require __DIR__.'/../controllers/HistorialEmpleadoController.php';
 require __DIR__.'/../controllers/NivelDepartamentoController.php';
+require __DIR__.'/../controllers/NivelPuestoController.php';
+require __DIR__.'/../controllers/PuestoController.php';
+require __DIR__.'/../controllers/RequerimientoController.php';
+
+//require __DIR__.'/../controllers/TareaController.php'; //Da error si la agrego
+
+
 
 
 //Nuevo Departamento
 $departamento = "Servicio Tecnico 3";
 $idNivelDepartamento = 2;
-DepartamentoController::agregarDepartamento($departamento,$idNivelDepartamento);
+//DepartamentoController::agregarDepartamento($departamento,$idNivelDepartamento);
 //echo "se creo el departamento";
 
 //Nuevo Empleado
@@ -23,5 +30,17 @@ EmpleadoController::agregarEmpleado("Avellaneda","Evelin",1199217,"2015-12-17",5
 
 //Nuevo NivelDepartamento
 NivelDepartamentoController::agregarNivelDepartamento("Operativo");
+
+//Nuevo NivelPuestoController
+NivelPuestoController::agregarNivelPuesto("Responsable del puesto");
+
+//Nuevo puesto
+PuestoController::agregarPuesto("Limpieza", "Encargado de realizar la limpieza de todos los espacios fisicos", 5,3);
+
+//Nuevo Requerimiento (No esta funcionando)
+//RequerimientoController::agregarRequerimiento("Ingeniero En Sistemas");
+
+//Nueva TareaController (no funciona)
+//TareaController::agregarTarea("Se encarga de realizar todos los tramites administrativos");
 
 ?>
