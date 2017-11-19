@@ -100,6 +100,21 @@ class EntidadBase {
 
 		}
 
+		public function guardarNivelDepartamento($nombre){
+			$query = "insert into $this->tabla (nombre) values ('$nombre')";
+
+			try {
+				if($this->db->query($query)==true)
+				echo "Se registro el NivelDepartamento con exito <br>";
+				else {
+					echo "No se registro el NivelDepartamento";
+				}
+			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+				echo "$e";
+			}
+
+		}
+
 
 
 }

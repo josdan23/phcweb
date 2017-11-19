@@ -1,14 +1,14 @@
-<?php 
+<?php
 
-require_once("persistencia/Persistencia.php");
-require_once("domain/NivelDepartamento.php");
-require_once("persistencia/EntidadBase.php");
+//require __DIR__.'/../domain/NivelDepartamento.php';
+
 
 class NivelDepartamentoController {
 
 	public static function agregarNivelDepartamento($nombre) {
-	//	$niveldepartamento = new NivelDepartamento($nombre);
-	//	$baseDatos = Persistencia::obtenerInstancia()->guardarNivelDepartamento($niveldepartamento);
+		$entidad = new EntidadBase("t_nivel_departamento");
+
+		$entidad->guardarNivelDepartamento($nombre);
 
 	}
 
@@ -19,7 +19,7 @@ class NivelDepartamentoController {
 
 		return $resultado;
 
-		 
+
 	}
 
 	public static function eliminarNivelDepartamento($id) {
@@ -31,12 +31,12 @@ class NivelDepartamentoController {
 	public static function obtenerUnNivelDepartamento($id) {
 	    $niveldepartamento = new NivelDepartamento();
 		$entidad = new EntidadBase("v_nivel_departamento");
-		
+
 		$resultado = $entidad->obtenerPorId($id);
-		
+
 		$niveldepartamento->setIdNivelDepartamento( $resultado['idNivelDepartamento']);
 		$niveldepartamento->setNombre( $resultado['nombre']);
-		
+
 		return $niveldepartamento;
 	}
 
