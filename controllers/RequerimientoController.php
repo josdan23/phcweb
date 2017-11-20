@@ -1,15 +1,12 @@
-<?php 
+<?php
 
-require_once("persistencia/Persistencia.php");
-require_once("domain/Requerimiento.php");
-require_once("persistencia/EntidadBase.php");
+require __DIR__.'/../domain/Requerimiento.php';
 
 class TareaController {
 
 	public static function agregarRequerimiento($descripcion) {
-	//	$departamento = new Tarea($nombre,$idNivelDepartamento);
-	//	$baseDatos = Persistencia::obtenerInstancia()->guardarTarea($departamento);
-
+		$entidad = new EntidadBase("t_requerimiento");
+		$entidad->guardarRequerimiento($descripcion);
 	}
 
 
@@ -20,7 +17,7 @@ class TareaController {
 		return $resultado;
 
 
-		 
+
 	}
 
 	public static function eliminarRequerimiento($id) {
@@ -32,12 +29,12 @@ class TareaController {
 	public static function obtenerUnRequerimiento($id) {
 		$requerimiento = new Requerimiento();
 		$entidad = new EntidadBase("v_requerimiento");
-		
+
 		$resultado = $entidad->obtenerPorId($id);
-		
+
 		$requerimiento->setIdRequerimiento( $resultado['idRequerimiento']);
 		$requerimiento->setDescripcion($resultado['descripcion']);
-		
+
 		return $requerimiento;
 	}
 

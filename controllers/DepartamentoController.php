@@ -17,7 +17,7 @@ class DepartamentoController {
 			$entidad = new EntidadBase("t_departamento");
 
 			$entidad->guardarDepartamento($departamento);
-			echo "salio de guardarDepartamento";
+			//echo "salio de guardarDepartamento";
 
 		//$baseDatos = Persistencia::obtenerInstancia()->guardarDepartamento($departamento);
 

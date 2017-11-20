@@ -1,14 +1,19 @@
-<?php 
+<?php
 
-require_once("persistencia/Persistencia.php");
-require_once("domain/Empleado.php");
-require_once("persistencia/EntidadBase.php");
+//require_once("persistencia/Persistencia.php");
+
+//require_once("domain/Empleado.php");
+require __DIR__.'/../domain/Empleado.php';
+//require_once("persistencia/EntidadBase.php");
 
 class EmpleadoController {
 
-	public static function agregarEmpleado($nombre) {
-		$departamento = new Empleado($nombre);
-		$baseDatos = Persistencia::obtenerInstancia()->guardarEmpleado($Empleado);
+	public static function agregarEmpleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo) {
+
+		$entidad = new EntidadBase("t_empleado");
+
+		$entidad->guardarEmpleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo);
+		//echo "salio de guardarDepartamento";
 
 	}
 
@@ -21,7 +26,7 @@ class EmpleadoController {
 
 		return $resultado;
 	}
-	
+
 
 	public static function eliminarEmpleado($id) {
 		$entidad = new EntidadBase("Empleado");
@@ -33,9 +38,9 @@ class EmpleadoController {
 	public static function obtenerUnEmpleado($id) {
 		$empleado = new Empleado();
 		$entidad = new EntidadBase("v_empleado");
-		
+
 		$resultado = $entidad->obtenerPorId($id);
-		
+
 		$empleado->setIdEmpleado( $resultado['idEmpleado']);
 		$empleado->setApellido( $resultado['apellido']);
 		$empleado->setNombre( $resultado['nombre']);
