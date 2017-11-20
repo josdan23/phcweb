@@ -4,32 +4,33 @@
 
 //require_once("domain/Empleado.php");
 require __DIR__.'/../domain/Empleado.php';
+require __DIR__.'/../persistencia/EntidadBase.php';
+
 //require_once("persistencia/EntidadBase.php");
 
 class EmpleadoController {
 
 	public static function agregarEmpleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo) {
 
+		$empleado = new Empleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo);
+
 		$entidad = new EntidadBase("t_empleado");
 
-		$entidad->guardarEmpleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo);
+		$entidad->guardarEmpleado($empleado);
 		//echo "salio de guardarDepartamento";
 
 	}
 
 
-	public static function obtenerEmpleado() {
-		$entidad = new EntidadBase("Empleado");
-
+	public static function obtenerEmpleados() {
+		$entidad = new EntidadBase("t_empleado");
 		$resultado = $entidad->obtenerTodos();
-
-
 		return $resultado;
 	}
 
 
 	public static function eliminarEmpleado($id) {
-		$entidad = new EntidadBase("Empleado");
+		$entidad = new EntidadBase("t_empleado");
 
 		$entidad->borrarPorId();
 
@@ -37,7 +38,7 @@ class EmpleadoController {
 
 	public static function obtenerUnEmpleado($id) {
 		$empleado = new Empleado();
-		$entidad = new EntidadBase("v_empleado");
+		$entidad = new EntidadBase("t_empleado");
 
 		$resultado = $entidad->obtenerPorId($id);
 

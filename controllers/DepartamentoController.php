@@ -29,10 +29,7 @@ class DepartamentoController {
 	public static function obtenerDepartamentos() {
 		$entidad = new EntidadBase("t_departamento");
 		$resultado = $entidad->obtenerTodos();
-
 		return $resultado;
-
-
 
 	}
 
