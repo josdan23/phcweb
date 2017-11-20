@@ -1,3 +1,16 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
+
+<?php
+	$pagina = "DepartamentoView";
+	if(isset($_GET['page'])) {
+		$pagina = $_GET['page'];
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="">
 	<head>
@@ -14,28 +27,32 @@
 
 		<!--HEADER-->
 		<div class="container-fluid">
-			
+
 			<div class="row">
-				<div class="col-md-4 col-md-offset-4">
-					<div class="panel panel-default panel-body">
+				
+				
+			<?php
+				include_once("navbar.php");
+			?>				
+			</div>
 
-						<form action="/phcweb/views/principalView.php" method="POST" role="form">
-							<legend>Iniciar sesión</legend>
-						
-							<div class="form-group">
-								<label for="">Usuario</label>
-								<input type="text" class="form-control" id="usuario" placeholder="">
-							</div>
 
-							<div class="form-group">
-								<label for="">Contraseña</label>
-								<input type="password" class="form-control" id="password" placeholder="">
-							</div>
-						
-							<button type="submit" class="btn btn-primary pull-right">Inciar</button>
-						</form>
-					</div>
+
+			<div class="row">
+
+				<!--para el panel -->
+				<div class="col-md-2">
+					<?php include("panelIzquierda.php"); ?>
 				</div>
+
+
+				<!--para el cuerpo-->
+				<div class="col-md-10">
+						<div class="panel panel-default panel-body">
+							<?php include("".$pagina.".php"); ?>
+						</div>
+				</div>
+
 			</div>
 
 		</div>

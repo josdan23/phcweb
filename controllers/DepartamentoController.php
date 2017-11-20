@@ -19,8 +19,6 @@ class DepartamentoController {
 			$entidad->guardarDepartamento($departamento);
 			echo "salio de guardarDepartamento";
 
-
-
 		//$baseDatos = Persistencia::obtenerInstancia()->guardarDepartamento($departamento);
 
 	}
@@ -31,9 +29,6 @@ class DepartamentoController {
 		$resultado = $entidad->obtenerTodos();
 
 		return $resultado;
-
-
-
 	}
 
 	public static function eliminarDepartamento($id) {
@@ -52,7 +47,6 @@ class DepartamentoController {
 		$departamento->setIdDepartamento( $resultado['idDepartamento']);
 		$departamento->setNombre( $resultado['nombre']);
 		$departamento->setIdNivelDepartamento( $resultado['idNivelDepartamento']);
-
 
 		return $departamento;
 	}
