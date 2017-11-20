@@ -6,7 +6,7 @@
   		<li id="Puestos" class="estado"><a href="index.php?page=PuestoView">Puestos</a></li>
   		<li id="Requerimientos" class="estado"><a href="panelAdministrador.php?page=cambios&estado=cerrado">Requerimientos</a></li>
   		<li id="Niveles" class="estado"><a href="./panelAdministrador.php?page=historial">Niveles</a></li>
-  		<li id="Tareas" class="estado"><a href="./panelAdministrador.php?page=informe">Tareas</a></li>
+  		<li id="Tareas" class="estado"><a href="index.php?page=TareaView">Tareas</a></li>
 	</ul>
 
 </div>

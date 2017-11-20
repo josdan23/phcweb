@@ -1,5 +1,8 @@
 <?php
 
+require __DIR__.'/../domain/Tarea.php';
+require __DIR__.'/../persistencia/EntidadBase.php';
+
 class TareaController {
 
 
