@@ -1,6 +1,6 @@
 <?php
 
-class Departamento {
+class NivelDepartamento {
 
 	private $idNivelDepartamento;
 	private $nombre;

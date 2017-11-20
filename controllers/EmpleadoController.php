@@ -11,14 +11,9 @@ require __DIR__.'/../persistencia/EntidadBase.php';
 class EmpleadoController {
 
 	public static function agregarEmpleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo) {
-
 		$empleado = new Empleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo);
-
 		$entidad = new EntidadBase("t_empleado");
-
 		$entidad->guardarEmpleado($empleado);
-		//echo "salio de guardarDepartamento";
-
 	}
 
 

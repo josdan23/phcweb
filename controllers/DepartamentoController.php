@@ -15,14 +15,7 @@ class DepartamentoController {
 	public static function agregarDepartamento($nombre,$idNivelDepartamento) {
 			$departamento = new Departamento($nombre,$idNivelDepartamento);
 			$entidad = new EntidadBase("t_departamento");
-
 			$entidad->guardarDepartamento($departamento);
-			//echo "salio de guardarDepartamento";
-
-
-
-		//$baseDatos = Persistencia::obtenerInstancia()->guardarDepartamento($departamento);
-
 	}
 
 

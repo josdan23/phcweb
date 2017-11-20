@@ -11,16 +11,13 @@ class EntidadBase {
 	public function __construct($tabla) {
 		$this->tabla = $tabla;
 		$this->conexion = ConectarMysql::getInstance();
-
 		$this->db = $this->conexion->conectar();
 	}
 
 
 	public function obtenerTodos() {
-
 		$resultSet = array();
-
-		$registros = mysqli_query($this->db,"select * from $this->tabla") or die("Problemas en el select:".mysqli_error($this->db));
+        $registros = mysqli_query($this->db,"select * from $this->tabla") or die("Problemas en el select:".mysqli_error($this->db));
 
 		while ($row=mysqli_fetch_array($registros)) {
 				$resultSet[] = $row;
@@ -64,7 +61,7 @@ class EntidadBase {
 		$this->conexion->cerrarConexion($this->db);
 	}
 
-	public function guardarDepartamento($departamento){
+	public function guardarDepartamento(Departamento $departamento){
 		$nombreDepartamento = $departamento->getNombre();
 		$idNivelDepartamento = $departamento->getIdNivelDepartamento();
 		$query="insert into $this->tabla (nombre,idNivelDepartamento) values('$nombreDepartamento',$idNivelDepartamento)";
@@ -83,9 +80,22 @@ class EntidadBase {
 		}
 	}
 
-		public function guardarEmpleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo){
+		public function guardarEmpleado(Empleado $empleado){
+	        $apellido = $empleado->getApellido();
+	        $nombre = $empleado->GetNombre();
+	        $legajo = $empleado->GetLegajo();
+	        $fechaIngreso = $empleado->GetFechaIngreso();
+	        $dni = $empleado->GetDni();
+	        $cuil = $empleado->GetCuil();
+	        $fechaNacimiento = $empleado->GetFechaNacimiento();
+	        $esActivo = $empleado->getEsActivo();
+	        $telefono = $empleado->getTelefono();
+	        $email = $empleado->getEmail();
+	        $domicilio = $empleado->getDomicilio();
+	        $sexo = $empleado->getSexo();
+
 			$query = "insert into $this->tabla (apellido,nombre,legajo,fechaIngreso,dni,cuil,fechaNacimiento,esActivo,telefono,email,domicilio,sexo)
-			values ('$apellido','$nombre',$legajo,'$fechaIngreso',$dni,'$cuil','$fechaNacimiento',$esActivo,$telefono,'$email','$domicilio','$sexo')";
+			          values ('$apellido','$nombre',$legajo,'$fechaIngreso',$dni,'$cuil','$fechaNacimiento',$esActivo,$telefono,'$email','$domicilio','$sexo')";
 
 			//echo "$query";
 			try {
@@ -100,7 +110,8 @@ class EntidadBase {
 
 		}
 
-		public function guardarNivelDepartamento($nombre){
+		public function guardarNivelDepartamento(NivelDepartamento $nivelDepartamento){
+		    $nombre = $nivelDepartamento->getNombre();
 			$query = "insert into $this->tabla (nombre) values ('$nombre')";
 
 			try {
