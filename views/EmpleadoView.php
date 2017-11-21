@@ -1,3 +1,9 @@
+<?php 
+	
+	require_once("../controllers/EmpleadoController.php");
+	
+ ?>
+
 <div class="container-fluid">
 	
 	<div class="row">
@@ -19,17 +25,44 @@
 		
 		<div class="panel panel-default">
 		
-			<table class="table">
+			<table class="table table-striped">
 				<thead>
+
 					<tr>
-						<th>Heading 1</th>
+						<th>id</th>
+						<th>Apellido</th>
+						<th>Nombre</th>
+						<th>Legajo</th>
+						<th>F. ingreso</th>
+						<th>Activo</th>
+						<th>Tel</th>
+						<th>Email</th>
+
 					</tr>
 				</thead>
 				<tbody>
+
+					<?php 
+						$arrayEmpleados = EmpleadoController::obtenerEmpleado(); 
+						foreach ($arrayEmpleados as $empleado) {
+							
+					?>
 					<tr>
-						<td>Content 1</td>
+
+						<td><?php echo $empleado['idEmpleado']; ?></td>
+						<td><?php echo $empleado['apellido']; ?></td>
+						<td><?php echo $empleado['nombre']; ?></td>
+						<td><?php echo $empleado['legajo']; ?></td>
+						<td><?php echo $empleado['fechaIngreso']; ?></td>
+						<td><?php echo $empleado['esActivo']; ?></td>
+						<td><?php echo $empleado['telefono']; ?></td>
+						<td><?php echo $empleado['email']; ?></td>
+						<td><?php echo "<a href=EmpleadoDetalleView.php?id=".$empleado['idEmpleado'].">más</a>" ?></td>
 					</tr>
+
+					<?php } ?>
 				</tbody>
+				
 			</table>
 		</div>
 

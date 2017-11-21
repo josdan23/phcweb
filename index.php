@@ -17,23 +17,29 @@
 			
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
-					<div class="panel panel-default panel-body">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
 
-						<form action="/phcweb/views/principalView.php" method="POST" role="form">
-							<legend>Iniciar sesión</legend>
-						
-							<div class="form-group">
-								<label for="">Usuario</label>
-								<input type="text" class="form-control" id="usuario" placeholder="">
-							</div>
+							<h4>Iniciar Sesión</h4>
+							
+							<div class="panel panel-default panel-body">
 
-							<div class="form-group">
-								<label for="">Contraseña</label>
-								<input type="password" class="form-control" id="password" placeholder="">
+								<form action="/phcweb/views/principalView.php" method="POST" role="form">
+								
+									<div class="form-group">
+										<label for="">Usuario</label>
+										<input type="text" class="form-control" id="usuario" placeholder="">
+									</div>
+
+									<div class="form-group">
+										<label for="">Contraseña</label>
+										<input type="password" class="form-control" id="password" placeholder="">
+									</div>
+								
+									<button type="submit" class="btn btn-primary btn-block">Inciar</button>
+								</form>
 							</div>
-						
-							<button type="submit" class="btn btn-primary pull-right">Inciar</button>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>

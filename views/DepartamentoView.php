@@ -8,7 +8,7 @@
 	<div class="row">
 
 		<div class="col-md-6">
-			<h5>DEPARTAMENTOS</h5>
+			<h4>DEPARTAMENTOS</h4>
 		</div>
 
 		<div class="col-md-6">
@@ -26,6 +26,7 @@
 
 
 	<div class="row">
+
 		<div class="panel panel-default">
 			
 			<table class="table table-striped">

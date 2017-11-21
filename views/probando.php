@@ -23,19 +23,19 @@ $idNivelDepartamento = 2;
 //echo "se creo el departamento";
 
 //Nuevo Empleado
-EmpleadoController::agregarEmpleado("Avellaneda","Evelin",1199217,"2015-12-17",56600276,"20-56600276-3","1998-12-17",1,4544644,"evelin@gmail.com","Ruta 327 Km 12","F");
+//EmpleadoController::agregarEmpleado("Avellaneda","Evelin",1199217,"2015-12-17",56600276,"20-56600276-3","1998-12-17",1,4544644,"evelin@gmail.com","Ruta 327 Km 12","F");
 
 //Nuevo HistorialEmpleado, esta entidad no se manipula desde la aplicacion
 //HistorialEmpleadoController::agregarHistorialEmpleado($fechaIngreso,$fechaEgreso,$idEmpleado,$idPuesto);
 
 //Nuevo NivelDepartamento
-NivelDepartamentoController::agregarNivelDepartamento("Operativo");
+//NivelDepartamentoController::agregarNivelDepartamento("Operativo");
 
 //Nuevo NivelPuestoController
-NivelPuestoController::agregarNivelPuesto("Responsable del puesto");
+//NivelPuestoController::agregarNivelPuesto("Responsable del puesto");
 
 //Nuevo puesto
-PuestoController::agregarPuesto("Limpieza", "Encargado de realizar la limpieza de todos los espacios fisicos", 5,3);
+//PuestoController::agregarPuesto("Limpieza", "Encargado de realizar la limpieza de todos los espacios fisicos", 5,3);
 
 //Nuevo Requerimiento (No esta funcionando)
 //RequerimientoController::agregarRequerimiento("Ingeniero En Sistemas");
@@ -43,4 +43,6 @@ PuestoController::agregarPuesto("Limpieza", "Encargado de realizar la limpieza d
 //Nueva TareaController (no funciona)
 //TareaController::agregarTarea("Se encarga de realizar todos los tramites administrativos");
 
+$array = EmpleadoController::obtenerEmpleado();
+var_dump($array);
 ?>

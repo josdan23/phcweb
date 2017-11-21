@@ -1,8 +1,10 @@
 <?php
 
 require __DIR__.'/../domain/Requerimiento.php';
+require_once("../persistencia/EntidadBase.php");
 
-class TareaController {
+
+class RequerimientoController {
 
 	public static function agregarRequerimiento($descripcion) {
 		$entidad = new EntidadBase("t_requerimiento");
@@ -15,8 +17,6 @@ class TareaController {
 		$resultado = $entidad->obtenerTodos();
 
 		return $resultado;
-
-
 
 	}
 

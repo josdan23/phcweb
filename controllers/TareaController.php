@@ -1,5 +1,7 @@
 <?php
 
+require_once("../persistencia/EntidadBase.php");
+
 class TareaController {
 
 

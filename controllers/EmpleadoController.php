@@ -4,6 +4,7 @@
 
 //require_once("domain/Empleado.php");
 require __DIR__.'/../domain/Empleado.php';
+require __DIR__.'/../persistencia/EntidadBase.php';
 //require_once("persistencia/EntidadBase.php");
 
 class EmpleadoController {
@@ -19,7 +20,7 @@ class EmpleadoController {
 
 
 	public static function obtenerEmpleado() {
-		$entidad = new EntidadBase("Empleado");
+		$entidad = new EntidadBase("t_empleado");
 
 		$resultado = $entidad->obtenerTodos();
 
@@ -37,7 +38,7 @@ class EmpleadoController {
 
 	public static function obtenerUnEmpleado($id) {
 		$empleado = new Empleado();
-		$entidad = new EntidadBase("v_empleado");
+		$entidad = new EntidadBase("t_empleado");
 
 		$resultado = $entidad->obtenerPorId($id);
 
@@ -58,4 +59,6 @@ class EmpleadoController {
 
 		return $empleado;
 	}
+
+	
 }

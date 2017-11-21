@@ -1,3 +1,7 @@
+<?php 
+	require_once("../controllers/PuestoController.php");
+ ?>
+
 <div class="container-fluid">
 	
 	<div class="row">
@@ -16,7 +20,40 @@
 		<hr>
 	</div>
 	<div class="row">
-		<p>RESULTADOS</p>
+		<div class="panel panel-default">
+		
+			<table class="table">
+				<thead>
+
+					<tr>
+						<th>id</th>
+						<th>Nombre</th>
+						<th>Descripción</th>
+						<th>Departamento</th>
+						<th>Nivel del Puesto</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<?php 
+						$arrayEmpleados = PuestoController::obtenerPuestos(); 
+						foreach ($arrayEmpleados as $empleado) {
+							
+					?>
+					<tr>
+
+						<td><?php echo "<a href= EmpleadoDetalleView.php?id=".$empleado['idPuesto'].">".$empleado['idPuesto']."</a>"; ?></td>
+						<td><?php echo $empleado['nombre']; ?></td>
+						<td><?php echo $empleado['descripcion']; ?></td>
+						<td><?php echo $empleado['idDepartamento']; ?></td>
+						<td><?php echo $empleado['idNivelPuesto']; ?></td>
+					</tr>
+
+					<?php } ?>
+				</tbody>
+				
+			</table>
+		</div>
 	</div>
 
 </div>

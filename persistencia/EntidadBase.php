@@ -34,7 +34,7 @@ class EntidadBase {
 		$resultSet = array();
 
 
-		$query = "select * from $this->tabla where id$this->tabla = ?";
+		$query = "select * from $this->tabla where idEmpleado = ?";
 		$sentencia = $this->db->prepare($query);
 		$sentencia->bind_param('s', $id);
 		$sentencia->execute();

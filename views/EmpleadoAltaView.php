@@ -103,8 +103,8 @@
 
    				<div class="col-lg-5">
 			    	<select class="form-control">
-						<option>Mujer</option>
-						<option>Varon</option>
+						<option value="F">Femenino</option>
+						<option value="M">Masculino</option>
 					</select>
 			    </div>
 			   
