@@ -14,7 +14,7 @@
 		<div class="col-md-6">
 			<div class="pull-right">
 				<ul class="list-inline ">
-					<li><a href="principalView.php?page=AltaDepartamentoView">NUEVO</a></li>
+					<li><a href="principalView.php?page=DepartamentoAltaView">NUEVO</a></li>
 				</ul>
 			</div>
 		</div>	
