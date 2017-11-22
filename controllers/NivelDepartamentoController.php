@@ -1,16 +1,15 @@
 <?php
 
-//require __DIR__.'/../domain/NivelDepartamento.php';
-
-require_once("../persistencia/EntidadBase.php");
+require __DIR__.'/../domain/NivelDepartamento.php';
+require __DIR__.'/../persistencia/EntidadBase.php';
 
 
 class NivelDepartamentoController {
 
 	public static function agregarNivelDepartamento($nombre) {
+	    $nivelDepartamento = new NivelDepartamento($nombre);
 		$entidad = new EntidadBase("t_nivel_departamento");
-
-		$entidad->guardarNivelDepartamento($nombre);
+		$entidad->guardarNivelDepartamento($nivelDepartamento);
 
 	}
 

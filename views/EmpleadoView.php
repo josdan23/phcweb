@@ -43,7 +43,7 @@
 				<tbody>
 
 					<?php 
-						$arrayEmpleados = EmpleadoController::obtenerEmpleado(); 
+						$arrayEmpleados = EmpleadoController::obtenerEmpleados(); 
 						foreach ($arrayEmpleados as $empleado) {
 							
 					?>

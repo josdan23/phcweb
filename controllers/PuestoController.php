@@ -1,6 +1,9 @@
 <?php
 
-require_once("../persistencia/EntidadBase.php");
+
+require __DIR__.'/../domain/Puesto.php';
+require __DIR__.'/../persistencia/EntidadBase.php';
+
 
 class PuestoController {
 

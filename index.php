@@ -36,7 +36,7 @@
 										<input type="password" class="form-control" id="password" placeholder="">
 									</div>
 								
-									<button type="submit" class="btn btn-primary btn-block">Inciar</button>
+									<button type="submit" class="btn btn-primary btn-block">INICIAR</button>
 								</form>
 							</div>
 						</div>

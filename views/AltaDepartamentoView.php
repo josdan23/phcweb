@@ -1,11 +1,19 @@
 <?php
+	
+	if(isset($_POST['nombre'])) {
+		echo "<div class="."well".">Se creo el departamento exitosamente</div>";
 
-	require_once("../controllers/DepartamentoController.php");
+		require_once("../controllers/DepartamentoController.php");
 
-	if(isset($_REQUEST['nombre'])) {
-		DepartamentoController::agregarDepartamento($_REQUEST['nombre'],$_REQUEST['idNivelDepartamento']);
+		DepartamentoController::agregarDepartamento($_POST['nombre'], $_POST['nivelDepartamento']);	
 	}
- ?>
+
+
+	require_once("../controllers/NivelDepartamentoController.php");
+
+
+	$array = NivelDepartamentoController::obtenerNivelDepartamentos();
+	 ?>
 
 <div class="container-fluid">
 
@@ -26,9 +34,9 @@
 
 
 			<div class="form-group">
-   				<label for="ejemplo_email_3" class="col-lg-2 control-label">Nombre</label>
+   				<label for="nombre" class="col-lg-2 control-label">Nombre</label>
 			    <div class="col-lg-5">
-			    	<input type="email" class="form-control" id="ejemplo_email_3"
+			    	<input type="text" class="form-control" id="nombre" name="nombre"
 			             placeholder="Nombre del departamento">
 			    </div>
   			</div>
@@ -38,12 +46,13 @@
    				<label for="ejemplo_email_3" class="col-lg-2 control-label">Nivel de Departamento</label>
 
    				<div class="col-lg-5">
-			    	<select class="form-control">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
+			    	<select class="form-control" name="nivelDepartamento"> 
+						
+						<?php 
+						foreach ($array as $valor) {
+						 	echo "<option value=".$valor[0].">$valor[1]</option>";
+						 } ?>
+
 					</select>
 			    </div>
 			   

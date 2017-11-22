@@ -1,13 +1,8 @@
 <?php
 
-
-//require_once("../persistencia/Persistencia.php");
-//require_once("phcweb/domain/Departamento.php");
-//require_once('phcweb/persistencia/EntidadBase.php');
-
 require __DIR__.'/../domain/Departamento.php';
 require __DIR__.'/../persistencia/EntidadBase.php';
-//use scratchers\nstest\domain\Departamento;
+
 
 
 class DepartamentoController {
@@ -15,11 +10,7 @@ class DepartamentoController {
 	public static function agregarDepartamento($nombre,$idNivelDepartamento) {
 			$departamento = new Departamento($nombre,$idNivelDepartamento);
 			$entidad = new EntidadBase("t_departamento");
-
 			$entidad->guardarDepartamento($departamento);
-			//echo "salio de guardarDepartamento";
-
-		//$baseDatos = Persistencia::obtenerInstancia()->guardarDepartamento($departamento);
 
 	}
 
@@ -27,8 +18,8 @@ class DepartamentoController {
 	public static function obtenerDepartamentos() {
 		$entidad = new EntidadBase("t_departamento");
 		$resultado = $entidad->obtenerTodos();
-
 		return $resultado;
+
 	}
 
 	public static function eliminarDepartamento($id) {
