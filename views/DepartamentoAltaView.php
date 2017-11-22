@@ -1,8 +1,6 @@
 <?php
 	
 	if(isset($_POST['nombre'])) {
-		echo "<div class="."well".">Se creo el departamento exitosamente</div>";
-
 		require_once("../controllers/DepartamentoController.php");
 
 		DepartamentoController::agregarDepartamento($_POST['nombre'], $_POST['nivelDepartamento']);	

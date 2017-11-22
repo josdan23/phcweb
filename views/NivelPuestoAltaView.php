@@ -1,3 +1,12 @@
+<?php 
+
+	if(isset($_POST['descripcion'])) {
+		require_once("../controllers/NivelPuestoController.php");
+
+		NivelPuestoController::agregarNivelPuesto($_POST['descripcion']);
+	}
+ ?>
+
 <div class="container-fluid">
 
 	<div class="row">
@@ -19,8 +28,8 @@
 			<div class="form-group">
    				<label for="descripcion" class="col-lg-2 control-label">Descripción</label>
 			    <div class="col-lg-5">
-			    	<input type="text" class="form-control" id="descripcion"
-			             placeholder="Descripcion de la tarea">
+			    	<input type="text" class="form-control" id="descripcion" name="descripcion"
+			             placeholder="Descripcion del nuevo nivel del puesto">
 			    </div>
   			</div>
 

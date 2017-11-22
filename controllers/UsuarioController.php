@@ -2,7 +2,7 @@
 
 require_once("persistencia/Persistencia.php");
 require_once("domain/Usuario.php");
-require_once("persistencia/EntidadBase.php");
+include_once ("../persistencia/EntidadBase.php");
 
 class UsuarioController {
 

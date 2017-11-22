@@ -51,7 +51,17 @@
 
 							<div class="row">
 								<div class="pull-right">
-									<button class="btn btn-default">ELIMINAR</button>
+
+									<form action="" method="POST" role="form">
+										<input type="submit" name="eliminar" class="btn btn-default" value="Eliminar">
+									</form>
+								</div>
+
+								<div class="pull-right">
+									<form action="" method="POST" role="form">
+										<button type="submit" class="btn btn-default">Modificar</button>
+									</form>
+
 								</div>
 							</div>
 

@@ -1,3 +1,18 @@
+<?php 
+	
+	require_once("../controllers/DepartamentoController.php");
+	require_once("../controllers/NivelPuestoController.php");
+
+	$arrayDepartamentos = DepartamentoController::obtenerDepartamentos();
+	$arrayNivelPuestos = NivelPuestoController::obtenerNivelPuestos();
+
+
+	if (isset($_POST['nombre']) and isset($_POST['descripcion'])) {
+		require_once("../controllers/PuestoController.php");
+		PuestoController::agregarPuesto($_POST['nombre'], $_POST['descripcion'], $_POST['idDepartamento'], $_POST['idNivelPuesto']);
+	}
+?>
+
 <div class="container-fluid">
 
 	<div class="row">
@@ -19,7 +34,7 @@
 			<div class="form-group">
    				<label for="nombre" class="col-lg-2 control-label">Nombre</label>
 			    <div class="col-lg-5">
-			    	<input type="text" class="form-control" id="nombre"
+			    	<input type="text" class="form-control" id="nombre" name="nombre"
 			             placeholder="Nombre del Puesto">
 			    </div>
   			</div>
@@ -27,7 +42,7 @@
 			<div class="form-group">
    				<label for="descripcion" class="col-lg-2 control-label">Descripción</label>
 			    <div class="col-lg-5">
-			    	<input type="text" class="form-control" id="descripcion"
+			    	<input type="text" class="form-control" id="descripcion" name="descripcion"
 			             placeholder="Descripción del Puesto">
 			    </div>
   			</div>
@@ -37,8 +52,13 @@
    				<label for="idDepartamento" class="col-lg-2 control-label">Departamento</label>
 
    				<div class="col-lg-5">
-			    	<select class="form-control">
-						<option>1</option>
+			    	<select class="form-control" name="idDepartamento">
+						<?php 
+
+							foreach ($arrayDepartamentos as $departamento) {
+								echo "<option value=".$departamento['idDepartamento'].">".$departamento['nombre']."</option>";
+							}
+						?>
 					</select>
 			    </div>
   			</div>
@@ -47,9 +67,13 @@
    				<label for="nivelPuesto" class="col-lg-2 control-label">Nivel de Puesto</label>
 
    				<div class="col-lg-5">
-			    	<select class="form-control">
-						<<option value="">1</option>}
-						option
+			    	<select class="form-control" name="idNivelPuesto">
+						<?php 
+
+							foreach ($arrayNivelPuestos as $nivelPuesto) {
+								echo "<option value=".$nivelPuesto['idNivelPuesto'].">".$nivelPuesto['descripcion']."</option>";
+							}
+						?>
 					</select>
 			    </div>
   			</div>

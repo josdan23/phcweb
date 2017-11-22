@@ -1,8 +1,7 @@
 <?php
 
 require __DIR__.'/../domain/NivelDepartamento.php';
-require __DIR__.'/../persistencia/EntidadBase.php';
-
+include_once ("../persistencia/EntidadBase.php");
 
 class NivelDepartamentoController {
 

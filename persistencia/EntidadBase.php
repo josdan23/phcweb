@@ -69,9 +69,9 @@ class EntidadBase {
 		try {
 			//echo "Entro al try <br>";
 			if($this->db->query($query)==true)
-			echo "Se registro el departamento con exito <br>";
+				echo "<div class=".'"alert alert-success"'.">Se registro el departamento con exito </div>";
 			else {
-				echo "No se Registro el Departamento";
+				echo "<div class="."well-sm>"."No se Registro el Departamento</div>";
 			}
 
 		} catch (Exception $e) {
@@ -99,9 +99,9 @@ class EntidadBase {
 			//echo "$query";
 			try {
 				if($this->db->query($query)==true)
-					echo "<div class="."well".">Se registro el empleado con exito </div>";
+					echo "<div class=".'"alert alert-success"'.">Se registro el empleado con exito </div>";
 				else {
-					echo "No se registro el Empleado";
+					echo "<div class=".'"alert alert-warning"'.">No se registro el empleado</div>";
 				}
 			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 				echo "$e";
@@ -115,9 +115,9 @@ class EntidadBase {
 
 			try {
 				if($this->db->query($query)==true)
-					echo "<div class="."well".">Se registro el nivelDepartamento con exito </div>";
+					echo "<div class=".'"alert alert-success"'.">Se registro el nivel departamento con exito </div>";
 				else {
-					echo "No se registro el NivelDepartamento";
+					echo "<div class=".'"alert alert-warning"'.">No se registro el nivel departamento</div>";
 				}
 			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 				echo "$e";
@@ -131,9 +131,9 @@ class EntidadBase {
 
 			try {
 				if($this->db->query($query)==true)
-				echo "Se registro el NivelPuesto con exito <br>";
+					echo "<div class=".'"alert alert-success"'.">Se registro el nivel puesto con exito </div>";
 				else {
-					echo "No se registro el NivelPuesto";
+					echo "<div class=".'"alert alert-warning"'.">No se registro el nivel puesto</div>";
 				}
 			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 				echo "$e";
@@ -147,9 +147,9 @@ class EntidadBase {
 
 			try {
 				if($this->db->query($query)==true)
-				echo "Se registro el Puesto con exito <br>";
+					echo "<div class=".'"alert alert-success"'.">Se registro el puesto con exito </div>";
 				else {
-					echo "No se registro el Puesto";
+					echo "<div class=".'"alert alert-warning"'.">No se registro el puesto</div>";
 				}
 			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 				echo "$e";
@@ -161,9 +161,9 @@ class EntidadBase {
 
 			try {
 				if($this->db->query($query)==true)
-				echo "Se registro el Requerimiento con exito <br>";
+					echo "<div class=".'"alert alert-success"'.">Se registro el requerimiento con exito </div>";
 				else {
-					echo "No se registro el Requerimiento";
+					echo "<div class=".'"alert alert-warning"'.">No se registro el requerimiento</div>";
 				}
 			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 				echo "$e";
@@ -172,13 +172,13 @@ class EntidadBase {
 		}
 
 		public function guardarTarea($descripcion){
-			$query = "insert into this->tabla (descripcion) values('$descripcion')";
+			$query = "insert into $this->tabla (descripcion) values('$descripcion')";
 
 			try {
 				if($this->db->query($query)==true)
-				echo "Se registro la tarea con exito <br>";
+					echo "<div class=".'"alert alert-success"'.">Se registro la tarea con exito </div>";
 				else {
-					echo "No se registro la tarea";
+					echo "<div class=".'"alert alert-warning"'.">No se registro la tarea</div>";
 				}
 			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 				echo "$e";

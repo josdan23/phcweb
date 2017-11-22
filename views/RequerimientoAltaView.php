@@ -1,9 +1,18 @@
+<?php 
+
+	if(isset($_POST['descripcion'])) {
+		require_once ("../controllers/RequerimientoController.php");
+		RequerimientoController::agregarRequerimiento($_POST['descripcion']);
+	}
+ ?>
+
+
 <div class="container-fluid">
 
 	<div class="row">
 
 		<div class="col-md-6">
-			<h4>NUEVO PUESTO</h4>
+			<h4>NUEVO REQUERIMIENTO</h4>
 		</div>
 	</div>
 
@@ -19,8 +28,8 @@
 			<div class="form-group">
    				<label for="descripcion" class="col-lg-2 control-label">Descripción</label>
 			    <div class="col-lg-5">
-			    	<input type="text" class="form-control" id="descripcion"
-			             placeholder="Descripcion de la tarea">
+			    	<input type="text" class="form-control" id="descripcion" name="descripcion"
+			             placeholder="Descripcion del requerimiento">
 			    </div>
   			</div>
 
