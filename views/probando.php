@@ -25,11 +25,7 @@ DepartamentoController::agregarDepartamento("Servicio Tecnico 5",2);
 //HistorialEmpleadoController::agregarHistorialEmpleado($fechaIngreso,$fechaEgreso,$idEmpleado,$idPuesto);
 
 //Nuevo NivelDepartamento
-<<<<<<< HEAD
-//NivelDepartamentoController::agregarNivelDepartamento("Operativo");
-=======
 //NivelDepartamentoController::agregarNivelDepartamento("Nivel 4");
->>>>>>> 11e6173ae36dd400478fdf7152e298c702a954f0
 
 //Nuevo NivelPuestoController
 //NivelPuestoController::agregarNivelPuesto("Responsable del puesto");
