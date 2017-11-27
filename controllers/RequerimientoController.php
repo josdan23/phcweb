@@ -7,23 +7,21 @@ include_once ("../persistencia/EntidadBase.php");
 class RequerimientoController {
 
 	public static function agregarRequerimiento($descripcion) {
+	    $requerimiento = new Requerimiento($descripcion);
 		$entidad = new EntidadBase("t_requerimiento");
-		$entidad->guardarRequerimiento($descripcion);
+		$entidad->guardarRequerimiento($requerimiento);
 	}
-
 
 	public static function obtenerRequerimientos() {
 		$entidad = new EntidadBase("t_requerimiento");
 		$resultado = $entidad->obtenerTodos();
 
 		return $resultado;
-
 	}
 
 	public static function eliminarRequerimiento($id) {
 		$entidad = new EntidadBase("t_requerimiento");
 		$entidad->borrarPorId();
-
 	}
 
 	public static function obtenerUnRequerimiento($id) {

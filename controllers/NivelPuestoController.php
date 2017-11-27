@@ -5,9 +5,9 @@ include_once ("../persistencia/EntidadBase.php");
 class NivelPuestoController {
 
 	public static function agregarNivelPuesto($descripcion) {
+	    $nivelPuesto = new NivelPuesto($descripcion);
 		$entidad = new EntidadBase("t_nivel_puesto");
-
-		$entidad->guardarNivelPuesto($descripcion);
+		$entidad->guardarNivelPuesto($nivelPuesto);
 	}
 
 

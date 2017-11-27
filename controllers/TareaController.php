@@ -9,9 +9,9 @@ class TareaController {
 
 
 	public static function agregarTarea($descripcion) {
-
+        $tarea = new Tarea($descripcion);
 		$entidad = new EntidadBase("t_tarea");
-		$entidad->guardarTarea($descripcion);
+		$entidad->guardarTarea($tarea);
 	}
 
 

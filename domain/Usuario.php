@@ -37,6 +37,10 @@ class Usuario {
     }
 
     public function getHabilitado() {
+        return $this->habilitado;
+    }
+
+    public function getContraseniaRestaurada() {
         return $this->contraseniaRestaurada;
     }
 

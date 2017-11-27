@@ -14,9 +14,11 @@ require __DIR__.'/../controllers/DepartamentoController.php';
 //require __DIR__.'/../controllers/TareaController.php'; //Da error si la agrego
 
 
+///////PRUEBAS DE AGREGAR ENTIDADES
+echo 'PRUEBAS DE AGREGAR ENTIDADES /n';
 
 //Nuevo Departamento
-DepartamentoController::agregarDepartamento("Servicio Tecnico 5",2);
+DepartamentoController::agregarDepartamento("Servicio Tecnico 6",2);
 
 //Nuevo Empleado
 //EmpleadoController::agregarEmpleado("Avellaneda","Evelin",1199217,"2015-12-17",56600276,"20-56600276-3","1998-12-17",1,4544644,"evelin@gmail.com","Ruta 327 Km 12","F");
@@ -39,6 +41,11 @@ DepartamentoController::agregarDepartamento("Servicio Tecnico 5",2);
 //Nueva TareaController (no funciona)
 //TareaController::agregarTarea("Se encarga de realizar todos los tramites administrativos");
 
-$array = EmpleadoController::obtenerEmpleado();
-var_dump($array);
+
+///////PRUEBAS DE OBTENER ENTIDADES
+
+//Obtener Empleados
+//$array = EmpleadoController::obtenerEmpleados();
+//var_dump($array);
+
 ?>

@@ -8,9 +8,9 @@ include_once ("../persistencia/EntidadBase.php");
 class PuestoController {
 
 	public static function agregarPuesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto) {
+	    $puesto = new Puesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto);
 		$entidad = new EntidadBase("t_puesto");
-		$entidad->guardarPuesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto);
-
+		$entidad->guardarPuesto($puesto);
 	}
 
 
@@ -19,9 +19,6 @@ class PuestoController {
 		$resultado = $entidad->obtenerTodos();
 
 		return $resultado;
-
-
-
 	}
 
 	public static function eliminarPuesto($id) {

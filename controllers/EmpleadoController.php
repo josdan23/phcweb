@@ -11,13 +11,11 @@ class EmpleadoController {
 		$entidad->guardarEmpleado($empleado);
 	}
 
-
 	public static function obtenerEmpleados() {
 		$entidad = new EntidadBase("t_empleado");
 		$resultado = $entidad->obtenerTodos();
 		return $resultado;
 	}
-
 
 	public static function eliminarEmpleado($id) {
 		$entidad = new EntidadBase("t_empleado");
@@ -46,8 +44,6 @@ class EmpleadoController {
 			$resultado[0]['domicilio'],
 			$resultado[0]['sexo']
 		);
-		
-
 
 		$empleado->setIdEmpleado( $resultado[0]['idEmpleado']);
 

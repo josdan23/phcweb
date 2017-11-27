@@ -14,7 +14,6 @@ class EntidadBase {
 		$this->db = $this->conexion->conectar();
 	}
 
-
 	public function obtenerTodos() {
 		$resultSet = array();
         $registros = mysqli_query($this->db,"select * from $this->tabla") or die("Problemas en el select:".mysqli_error($this->db));
@@ -43,7 +42,6 @@ class EntidadBase {
 		$this->conexion->cerrarConexion($this->db);
 		return $resultSet;
 	}
-
 
 	public function borrarPorId($atributo, $id) {
 
@@ -77,114 +75,138 @@ class EntidadBase {
 		}
 	}
 
-		public function guardarEmpleado(Empleado $empleado){
-	        $apellido = $empleado->getApellido();
-	        $nombre = $empleado->GetNombre();
-	        $legajo = $empleado->GetLegajo();
-	        $fechaIngreso = $empleado->GetFechaIngreso();
-	        $dni = $empleado->GetDni();
-	        $cuil = $empleado->GetCuil();
-	        $fechaNacimiento = $empleado->GetFechaNacimiento();
-	        $esActivo = $empleado->getEsActivo();
-	        $telefono = $empleado->getTelefono();
-	        $email = $empleado->getEmail();
-	        $domicilio = $empleado->getDomicilio();
-	        $sexo = $empleado->getSexo();
+    public function guardarEmpleado(Empleado $empleado){
+        $apellido = $empleado->getApellido();
+        $nombre = $empleado->GetNombre();
+        $legajo = $empleado->GetLegajo();
+        $fechaIngreso = $empleado->GetFechaIngreso();
+        $dni = $empleado->GetDni();
+        $cuil = $empleado->GetCuil();
+        $fechaNacimiento = $empleado->GetFechaNacimiento();
+        $esActivo = $empleado->getEsActivo();
+        $telefono = $empleado->getTelefono();
+        $email = $empleado->getEmail();
+        $domicilio = $empleado->getDomicilio();
+        $sexo = $empleado->getSexo();
 
-			$query = "insert into $this->tabla (apellido,nombre,legajo,fechaIngreso,dni,cuil,fechaNacimiento,esActivo,telefono,email,domicilio,sexo)
-			          values ('$apellido','$nombre',$legajo,'$fechaIngreso',$dni,'$cuil','$fechaNacimiento',$esActivo,$telefono,'$email','$domicilio','$sexo')";
+        $query = "insert into $this->tabla (apellido,nombre,legajo,fechaIngreso,dni,cuil,fechaNacimiento,esActivo,telefono,email,domicilio,sexo)
+                  values ('$apellido','$nombre',$legajo,'$fechaIngreso',$dni,'$cuil','$fechaNacimiento',$esActivo,$telefono,'$email','$domicilio','$sexo')";
 
-			//echo "$query";
-			try {
-				if($this->db->query($query)==true)
-					echo "<div class=".'"alert alert-success"'.">Se registro el empleado con exito </div>";
-				else {
-					echo "<div class=".'"alert alert-warning"'.">No se registro el empleado</div>";
-				}
-			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
-				echo "$e";
-			}
+        //echo "$query";
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro el empleado con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro el empleado</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
 
-		}
+    }
 
-		public function guardarNivelDepartamento(NivelDepartamento $nivelDepartamento){
-		    $nombre = $nivelDepartamento->getNombre();
-			$query = "insert into $this->tabla (nombre) values ('$nombre')";
+    public function guardarNivelDepartamento(NivelDepartamento $nivelDepartamento){
+        $nombre = $nivelDepartamento->getNombre();
+        $query = "insert into $this->tabla (nombre) values ('$nombre')";
 
-			try {
-				if($this->db->query($query)==true)
-					echo "<div class=".'"alert alert-success"'.">Se registro el nivel departamento con exito </div>";
-				else {
-					echo "<div class=".'"alert alert-warning"'.">No se registro el nivel departamento</div>";
-				}
-			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
-				echo "$e";
-			}
-		}
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro el nivel departamento con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro el nivel departamento</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
 
-		public function guardarNivelPuesto($descripcion){
-			$query = "insert into $this->tabla (descripcion) values ('$descripcion')";
+    public function guardarNivelPuesto(NivelPuesto $nivelPuesto){
+        $descripcion = $nivelPuesto->getDescripcion();
+        $query = "insert into $this->tabla (descripcion) values ('$descripcion')";
 
-			//echo "$query";
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro el nivel puesto con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro el nivel puesto</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
 
-			try {
-				if($this->db->query($query)==true)
-					echo "<div class=".'"alert alert-success"'.">Se registro el nivel puesto con exito </div>";
-				else {
-					echo "<div class=".'"alert alert-warning"'.">No se registro el nivel puesto</div>";
-				}
-			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
-				echo "$e";
-			}
+    }
 
-		}
+    public function guardarPuesto(Puesto $puesto){
+        $nombre = $puesto->getNombre();
+        $descripcion = $puesto->getDescripcion();
+        $idDepartamento = $puesto->getIdDepartamento();
+        $idNivelPuesto = $puesto->getIdNivelPuesto();
 
-		public function guardarPuesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto){
-			$query = "insert into $this->tabla (nombre, descripcion, idDepartamento, idNivelPuesto)
-			values ('$nombre', '$descripcion', $idDepartamento, $idNivelPuesto)";
+        $query = "insert into $this->tabla (nombre, descripcion, idDepartamento, idNivelPuesto)
+        values ('$nombre', '$descripcion', $idDepartamento, $idNivelPuesto)";
 
-			try {
-				if($this->db->query($query)==true)
-					echo "<div class=".'"alert alert-success"'.">Se registro el puesto con exito </div>";
-				else {
-					echo "<div class=".'"alert alert-warning"'.">No se registro el puesto</div>";
-				}
-			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
-				echo "$e";
-			}
-		}
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro el puesto con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro el puesto</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
 
-		public function guardarRequerimiento($descripcion){
-			$query = "insert into $this->tabla (descripcion) values('$descripcion')";
+    public function guardarRequerimiento(Requerimiento $requerimiento){
+        $descripcion = $requerimiento->getDescripcion();
+        $query = "insert into $this->tabla (descripcion) values('$descripcion')";
 
-			try {
-				if($this->db->query($query)==true)
-					echo "<div class=".'"alert alert-success"'.">Se registro el requerimiento con exito </div>";
-				else {
-					echo "<div class=".'"alert alert-warning"'.">No se registro el requerimiento</div>";
-				}
-			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
-				echo "$e";
-			}
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro el requerimiento con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro el requerimiento</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
 
-		}
+    public function guardarTarea(Tarea $tarea){
+        $descripcion = $tarea->getDescripcion();
+        $query = "insert into $this->tabla (descripcion) values('$descripcion')";
 
-		public function guardarTarea($descripcion){
-			$query = "insert into $this->tabla (descripcion) values('$descripcion')";
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro la tarea con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro la tarea</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
 
-			try {
-				if($this->db->query($query)==true)
-					echo "<div class=".'"alert alert-success"'.">Se registro la tarea con exito </div>";
-				else {
-					echo "<div class=".'"alert alert-warning"'.">No se registro la tarea</div>";
-				}
-			} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
-				echo "$e";
-			}
+    public function guardarUsuario(Usuario $usuario){
+        $idEmpleado = $usuario->getIdEmpleado();
+        $nombreUsuario = $usuario->getNombreUsuario();
+        $contrasenia = $usuario->getContrasenia();
+        $esAdministrador = $usuario->getEsAdministrador();
+        $habilitado = $usuario->getHabilitado();
+        $contraseniaRestaurada = $usuario->getContraseniaRestaurada();
 
-		}
+        $query = "insert into $this->tabla (idEmpleado, nombreUsuario, contrasenia, esAdministrador, habilitado, contraseniaRestaurada) 
+                    values($idEmpleado, $nombreUsuario, $contrasenia, $esAdministrador, $habilitado, $contraseniaRestaurada)";
 
-
-
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro la tarea con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro la tarea</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
 
 }
+?>

@@ -9,7 +9,6 @@ class HistorialEmpleadoController {
 	public static function agregarHistorialEmpleado($fechaIngreso,$fechaEgreso,$idEmpleado,$idPuesto) {
 		$historialempleado = new HistorialEmpleado($fechaIngreso,$fechaEgreso,$idEmpleado,$idPuesto);
 		$baseDatos = Persistencia::obtenerInstancia()->guardarHistorialEmpleado($historialempleado);
-
 	}
 
 
@@ -18,9 +17,6 @@ class HistorialEmpleadoController {
 		$resultado = $entidad->obtenerTodos();
 
 		return $resultado;
-
-
-		 
 	}
 
 	public static function eliminarHistorialEmpleado($id) {
