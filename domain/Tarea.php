@@ -6,8 +6,7 @@
 		private $descripcion;
 
 
-		public function __construct($idTarea, $descripcion) {
-			$this->idTarea = $idTarea;
+		public function __construct($descripcion) {
 			$this->descripcion = $descripcion;
 		}
 

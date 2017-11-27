@@ -4,8 +4,7 @@
 		private $idRequerimiento;
 		private $descripcion;
 
-		public function __construct($idRequerimiento, $descripcion) {
-			$this->idRequerimiento = $idRequerimiento;
+		public function __construct($descripcion) {
 			$this->descripcion = $descripcion;
 		}
 

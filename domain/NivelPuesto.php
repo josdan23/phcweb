@@ -4,10 +4,10 @@ class NivelPuesto {
 	private $idNivelPuesto;
 	private $descripcion;
 
-	public function __construct($idNivelPuesto, $descripcion) {
-		$this->idNivelPuesto = $idNivelPuesto;
+	public function __construct($descripcion) {
 		$this->descripcion = $descripcion;
 	}
+
 
     /**
      * @return mixed

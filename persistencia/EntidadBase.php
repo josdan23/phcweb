@@ -45,15 +45,13 @@ class EntidadBase {
 	}
 
 
-	public function borrarPorId($id) {
-		$resultSet = array();
+	public function borrarPorId($atributo, $id) {
 
-
-		$query = "delete from $this->tabla where id$this->tabla = ?";
+		$query = "delete from $this->tabla where $atributo = ?";
 		$sentencia = $this->db->prepare($query);
 		$sentencia->bind_param('s', $id);
 		$sentencia->execute();
-		$registros = $sentencia->get_result();
+		//$registros = $sentencia->get_result();
 
 		echo "borrado";
 

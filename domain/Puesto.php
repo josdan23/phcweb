@@ -7,8 +7,7 @@
 		private $idDepartamento;
 		private $idNivelPuesto;
 
-		public function __construct($idPuesto, $nombre, $descripcion, $idDepartamento, $idNivelPuesto){
-			$this->idPuesto = $idPuesto;
+		public function __construct($nombre, $descripcion, $idDepartamento, $idNivelPuesto){
 			$this->nombre = $nombre;
 			$this->descripcion = $descripcion;
 			$this->idDepartamento = $idDepartamento;
