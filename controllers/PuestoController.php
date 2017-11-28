@@ -1,8 +1,7 @@
 <?php
 
-
-require __DIR__.'/../domain/Puesto.php';
-include_once ("../persistencia/EntidadBase.php");
+include_once '../domain/Puesto.php';
+include_once '../persistencia/EntidadBase.php';
 
 
 class PuestoController {

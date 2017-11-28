@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__.'/../domain/Requerimiento.php';
-include_once ("../persistencia/EntidadBase.php");
+include_once '../domain/Requerimiento.php';
+include_once '../persistencia/EntidadBase.php';
 
 
 class RequerimientoController {

@@ -1,8 +1,7 @@
 <?php
 
-
-require __DIR__.'/../domain/Tarea.php';
-include_once ("../persistencia/EntidadBase.php");
+include_once '../domain/Tarea.php';
+include_once '../persistencia/EntidadBase.php';
 
 
 class TareaController {

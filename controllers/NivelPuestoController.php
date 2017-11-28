@@ -1,6 +1,7 @@
 <?php
 
-include_once ("../persistencia/EntidadBase.php");
+include_once '../domain/NivelPuesto.php';
+include_once '../persistencia/EntidadBase.php';
 
 class NivelPuestoController {
 

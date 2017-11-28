@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__.'/../domain/Departamento.php';
-include_once ("../persistencia/EntidadBase.php");
+include_once '../domain/Departamento.php';
+include_once '../persistencia/EntidadBase.php';
 
 
 

@@ -1,7 +1,7 @@
 <?php 
 
-require_once("../domain/Usuario.php");
-include_once ("../persistencia/EntidadBase.php");
+include_once '../domain/Usuario.php';
+include_once '../persistencia/EntidadBase.php';
 
 class UsuarioController {
 

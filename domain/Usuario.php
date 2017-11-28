@@ -48,10 +48,12 @@ class Usuario {
 
     public function setIdEmpleado($idEmpleado) {
         $this->idEmpleado = $idEmpleado;
+        return $this;
     }
 
     public function setNombreUsuario($nombreUsuario) {
         $this->nombreUsuario = $nombreUsuario;
+        return $this;
     }
 
     public function setContrasenia($contrasenia) {
