@@ -8,16 +8,10 @@ class HistorialEmpleado {
 	private $idEmpleado;
 	private $idPuesto;
 
-	public function __construct($fechaIngreso,$fechaEgreso,$idEmpleado,$idPuesto){
-		$this->fechaIngreso = $fechaIngreso;
-		$this->fechaEgreso = $fechaEgreso;
+	public function __construct($idEmpleado,$idPuesto){
 		$this->idEmpleado = $idEmpleado;
 		$this->idPuesto = $idPuesto;
 	}
-
-	
-	
-
 
     /**
      * @return mixed

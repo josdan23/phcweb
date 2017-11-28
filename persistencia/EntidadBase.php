@@ -37,7 +37,7 @@ class EntidadBase {
 
 		while ($row=mysqli_fetch_array($registros)) {
 				$resultSet[] = $row;
-			}
+        }
 
 		$this->conexion->cerrarConexion($this->db);
 		return $resultSet;
@@ -202,6 +202,24 @@ class EntidadBase {
                 echo "<div class=".'"alert alert-success"'.">Se registro el usuario con exito </div>";
             else {
                 echo "<div class=".'"alert alert-warning"'.">No se registro el usuario</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
+
+    public function asignarPuestoAEmpleado(HistorialEmpleado $historialEmpleado){
+        $idPuesto = $historialEmpleado->getIdPuesto();
+        $idEmpleado = $historialEmpleado->getIdEmpleado();
+
+        $query = "insert into $this->tabla (idPuesto, idEmpleado, fechaIngreso)
+                    values($idPuesto, $idEmpleado, NOW())";
+
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se asignó el puesto al empleado </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se asignó el puesto al empleado</div>";
             }
         } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
             echo "$e";

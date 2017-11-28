@@ -1,14 +1,20 @@
-<?php 
+<?php
 
-require_once("persistencia/Persistencia.php");
-require_once("domain/HistorialEmpleado.php");
-include_once ("../persistencia/EntidadBase.php");
+//include_once '../domain/Puesto.php';
+//include_once '../domain/Empleado.php';
+include_once '../domain/HistorialEmpleado.php';
+include_once '../persistencia/EntidadBase.php';
 
 class HistorialEmpleadoController {
 
-	public static function agregarHistorialEmpleado($fechaIngreso,$fechaEgreso,$idEmpleado,$idPuesto) {
+	public static function asignarPuestoAEmpleado($idPuesto, $idEmpleado){
+        $historialEmpleado = new HistorialEmpleado($idEmpleado, $idPuesto);
+        $entidad = new EntidadBase('t_historial_empleado');
+        $entidad->asignarPuestoAEmpleado($historialEmpleado);
+    }
+
+    public static function agregarHistorialEmpleado($fechaIngreso,$fechaEgreso,$idEmpleado,$idPuesto) {
 		$historialempleado = new HistorialEmpleado($fechaIngreso,$fechaEgreso,$idEmpleado,$idPuesto);
-		$baseDatos = Persistencia::obtenerInstancia()->guardarHistorialEmpleado($historialempleado);
 	}
 
 
