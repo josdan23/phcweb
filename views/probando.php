@@ -11,6 +11,7 @@ include_once '../controllers/NivelPuestoController.php';
 include_once '../controllers/PuestoController.php';
 include_once '../controllers/RequerimientoController.php';
 include_once '../controllers/TareaController.php';
+include_once '../controllers/UsuarioController.php';
 
 
 ///////PRUEBAS DE AGREGAR ENTIDADES
@@ -36,8 +37,11 @@ PuestoController::agregarPuesto("Limpieza", "Encargado de realizar la limpieza d
 //Nuevo Requerimiento
 RequerimientoController::agregarRequerimiento("Ingeniero En Sistemas");
 
-//Nueva TareaController
+//Nueva Tarea
 TareaController::agregarTarea("Se encarga de realizar todos los tramites administrativos");
+
+//Nuevo Usuario (para que esta prueba tenga éxito, el usuario no debe existir en la bd)
+UsuarioController::agregarUsuario(6, 'mariano', 'mariano', 0, 1, 0);
 
 
 ///////PRUEBAS DE OBTENER ENTIDADES

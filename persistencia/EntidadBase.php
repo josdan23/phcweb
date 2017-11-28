@@ -195,13 +195,13 @@ class EntidadBase {
         $contraseniaRestaurada = $usuario->getContraseniaRestaurada();
 
         $query = "insert into $this->tabla (idEmpleado, nombreUsuario, contrasenia, esAdministrador, habilitado, contraseniaRestaurada) 
-                    values($idEmpleado, $nombreUsuario, $contrasenia, $esAdministrador, $habilitado, $contraseniaRestaurada)";
+                    values($idEmpleado, '$nombreUsuario', MD5('$contrasenia'), $esAdministrador, $habilitado, $contraseniaRestaurada)";
 
         try {
             if($this->db->query($query)==true)
-                echo "<div class=".'"alert alert-success"'.">Se registro la tarea con exito </div>";
+                echo "<div class=".'"alert alert-success"'.">Se registro el usuario con exito </div>";
             else {
-                echo "<div class=".'"alert alert-warning"'.">No se registro la tarea</div>";
+                echo "<div class=".'"alert alert-warning"'.">No se registro el usuario</div>";
             }
         } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
             echo "$e";
