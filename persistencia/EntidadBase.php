@@ -211,6 +211,7 @@ class EntidadBase {
     public function asignarPuestoAEmpleado(HistorialEmpleado $historialEmpleado){
         $idPuesto = $historialEmpleado->getIdPuesto();
         $idEmpleado = $historialEmpleado->getIdEmpleado();
+        /*Aquí habría que hacer una verificación y asignar el puesto al empleado solo si no está ya ocupando el puesto*/
 
         $query = "insert into $this->tabla (idPuesto, idEmpleado, fechaIngreso)
                     values($idPuesto, $idEmpleado, NOW())";
