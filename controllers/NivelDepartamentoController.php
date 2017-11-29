@@ -11,26 +11,17 @@ class NivelDepartamentoController {
 
 	public static function obtenerNivelDepartamentos() {
 		$entidad = new EntidadBase("t_nivel_departamento");
-		$resultado = $entidad->obtenerTodos();
-
-		return $resultado;
+        return $entidad->obtenerTodos();
 	}
 
 	public static function eliminarNivelDepartamento($id) {
 		$entidad = new EntidadBase("t_nivel_departamento");
-		$entidad->borrarPorId();
+		$entidad->borrarPorId('idNivelDepartamento', $id);
 	}
 
 	public static function obtenerUnNivelDepartamento($id) {
-	    $niveldepartamento = new NivelDepartamento();
-		$entidad = new EntidadBase("v_nivel_departamento");
-
-		$resultado = $entidad->obtenerPorId($id);
-
-		$niveldepartamento->setIdNivelDepartamento( $resultado['idNivelDepartamento']);
-		$niveldepartamento->setNombre( $resultado['nombre']);
-
-		return $niveldepartamento;
+        $entidad = new EntidadBase("t_nivel_departamento");
+        return $entidad->obtenerPorId('idNivelDepartamento', $id);
 	}
 
 }

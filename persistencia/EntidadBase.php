@@ -19,37 +19,29 @@ class EntidadBase {
         $registros = mysqli_query($this->db,"select * from $this->tabla") or die("Problemas en el select:".mysqli_error($this->db));
 
 		while ($row=mysqli_fetch_array($registros)) {
-				$resultSet[] = $row;
-			}
-
-		$this->conexion->cerrarConexion($this->db);
-		return $resultSet;
-	}
-
-	public function obtenerPorId($atributo, $id) {
-		$resultSet = array();
-
-		$query = "select * from $this->tabla where $atributo = ?";
-		$sentencia = $this->db->prepare($query);
-		$sentencia->bind_param('s', $id);
-		$sentencia->execute();
-		$registros = $sentencia->get_result();
-
-		while ($row=mysqli_fetch_array($registros)) {
-				$resultSet[] = $row;
+            $resultSet[] = $row;
         }
 
 		$this->conexion->cerrarConexion($this->db);
 		return $resultSet;
 	}
 
-	public function borrarPorId($atributo, $id) {
+	public function obtenerPorId($atributo, $id) {
+		$query = "select * from $this->tabla where $atributo = ?";
+		$sentencia = $this->db->prepare($query);
+		$sentencia->bind_param('s', $id);
+		$sentencia->execute();
+		$registros = $sentencia->get_result();
+        $row=mysqli_fetch_array($registros);
+		$this->conexion->cerrarConexion($this->db);
+        return $row;
+	}
 
+	public function borrarPorId($atributo, $id) {
 		$query = "delete from $this->tabla where $atributo = ?";
 		$sentencia = $this->db->prepare($query);
 		$sentencia->bind_param('s', $id);
 		$sentencia->execute();
-		//$registros = $sentencia->get_result();
 
 		echo "borrado";
 
@@ -169,7 +161,7 @@ class EntidadBase {
             if($this->db->query($query)==true)
                 echo "<div class=".'"alert alert-success"'.">Se registro el usuario con exito </div>";
             else {
-                echo "<div class=".'"alert alert-warning"'.">No se registro el usuario</div>";
+                echo "<div class=".'"alert alert-warning"'.">No se registro el usuario. Importante: Para que se registre un nuevo Usuario este no debe existir ya en la base de datos</div>";
             }
         } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
             echo "$e";

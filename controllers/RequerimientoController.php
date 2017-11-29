@@ -12,26 +12,17 @@ class RequerimientoController {
 
 	public static function obtenerRequerimientos() {
 		$entidad = new EntidadBase("t_requerimiento");
-		$resultado = $entidad->obtenerTodos();
-
-		return $resultado;
+        return $entidad->obtenerTodos();
 	}
 
 	public static function eliminarRequerimiento($id) {
 		$entidad = new EntidadBase("t_requerimiento");
-		$entidad->borrarPorId();
+		$entidad->borrarPorId('idRequerimiento', $id);
 	}
 
 	public static function obtenerUnRequerimiento($id) {
-		$requerimiento = new Requerimiento();
-		$entidad = new EntidadBase("v_requerimiento");
-
-		$resultado = $entidad->obtenerPorId($id);
-
-		$requerimiento->setIdRequerimiento( $resultado['idRequerimiento']);
-		$requerimiento->setDescripcion($resultado['descripcion']);
-
-		return $requerimiento;
+        $entidad = new EntidadBase("t_requerimiento");
+        return $entidad->obtenerPorId('idRequerimiento', $id);
 	}
 
 }

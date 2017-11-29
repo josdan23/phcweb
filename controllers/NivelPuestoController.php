@@ -12,30 +12,17 @@ class NivelPuestoController {
 
 	public static function obtenerNivelPuestos() {
 		$entidad = new EntidadBase("t_nivel_puesto");
-		$resultado = $entidad->obtenerTodos();
-
-		return $resultado;
-
-
-
+        return $entidad->obtenerTodos();
 	}
 
 	public static function eliminarNivelPuesto($id) {
 		$entidad = new EntidadBase("t_nivel_puesto");
-		$entidad->borrarPorId();
-
+		$entidad->borrarPorId('idNivelPuesto', $id);
 	}
 
 	public static function obtenerUnNivelPuesto($id) {
-		$nivelpuesto = new NivelPuesto();
-		$entidad = new EntidadBase("v_nivel_puesto");
-
-		$resultado = $entidad->obtenerPorId($id);
-
-		$nivelpuesto->setIdNivelPuesto( $resultado['idNivelPuesto']);
-		$nivelpuesto->setDescripcion( $resultado['descripcion']);
-
-		return $nivelpuesto;
+        $entidad = new EntidadBase("t_nivel_puesto");
+        return $entidad->obtenerPorId('idNivelPuesto', $id);
 	}
 
 }

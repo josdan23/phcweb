@@ -11,31 +11,17 @@ class UsuarioController {
 
 	public static function obtenerUsuarios() {
 		$entidad = new EntidadBase("t_usuario");
-		$resultado = $entidad->obtenerTodos();
-
-		return $resultado;
+        return $entidad->obtenerTodos();
 	}
 
 	public static function eliminarUsuario($id) {
 		$entidad = new EntidadBase("t_usuario");
-		$entidad->borrarPorId();
+		$entidad->borrarPorId('idEmpleado', $id);
 	}
 
-	/*
-	public static function obtenerUsuario($id) {
-		$usuario = new Usuario();
-		$entidad = new EntidadBase("v_usuario");
-		
-		$resultado = $entidad->obtenerPorId($id);
-		
-		$usuario->setIdEmpleado( $resultado['idEmpleado']);
-		$usuario->setNombreUsuario( $resultado['nombreUsuario']);
-		$usuario->setContrasenia( $resultado['contrasenia']);
-		$usuario->setEsAdministrador( $resultado['esAdministrador']);
-		$usuario->setHabilitado( $resultado['habilitado']);
-		$usuario->setContraseniaRestaurada( $resultado['contraseniaRestaurada']);
+    public static function obtenerUnUsuario($id) {
+        $entidad = new EntidadBase("t_usuario");
+        return $entidad->obtenerPorId('idEmpleado', $id);
+    }
 
-		return $usuario;
-	}
-    */
 }

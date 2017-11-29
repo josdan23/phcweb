@@ -13,27 +13,17 @@ class DepartamentoController {
 
 	public static function obtenerDepartamentos() {
 		$entidad = new EntidadBase("t_departamento");
-		$resultado = $entidad->obtenerTodos();
-		return $resultado;
+        return $entidad->obtenerTodos();
 	}
 
 	public static function eliminarDepartamento($id) {
 		$entidad = new EntidadBase("t_departamento");
-		$entidad->borrarPorId();
+		$entidad->borrarPorId('idDepartamento', $id);
 	}
 
 	public static function obtenerUnDepartamento($id) {
-
-		$departamento = new Departamento();
 		$entidad = new EntidadBase("t_departamento");
-
-		$resultado = $entidad->obtenerPorId($id);
-
-		$departamento->setIdDepartamento( $resultado['idDepartamento']);
-		$departamento->setNombre( $resultado['nombre']);
-		$departamento->setIdNivelDepartamento( $resultado['idNivelDepartamento']);
-
-		return $departamento;
+		return $entidad->obtenerPorId('idDepartamento', $id);
 	}
 
 }

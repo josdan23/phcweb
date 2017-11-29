@@ -8,7 +8,7 @@ class ConectarMysql {
 
 	private $nombreHost;
 	private $usuario;
-	private $constrasenia;
+	private $contrasenia;
 	private $baseDatos;
 
 	function __construct(){

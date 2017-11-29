@@ -11,33 +11,19 @@ class TareaController {
 		$entidad->guardarTarea($descripcion);
 	}
 
-
 	public static function obtenerTareas() {
 		$entidad = new EntidadBase("t_tarea");
-		$resultado = $entidad->obtenerTodos();
-
-		return $resultado;
-
-
-
+		return $entidad->obtenerTodos();
 	}
 
 	public static function eliminarTarea($id) {
 		$entidad = new EntidadBase("t_tarea");
-		$entidad->borrarPorId();
-
+		$entidad->borrarPorId('idTarea', $id);
 	}
 
 	public static function obtenerUnaTarea($id) {
-		$tarea = new Tarea();
-		$entidad = new EntidadBase("v_tarea");
-
-		$resultado = $entidad->obtenerPorId($id);
-
-		$tarea->setIdTarea( $resultado['idTarea']);
-		$tarea->setDescripcion($resultado['descripcion']);
-
-		return $tarea;
+        $entidad = new EntidadBase("t_tarea");
+        return $entidad->obtenerPorId('idTarea', $id);
 	}
 
 }

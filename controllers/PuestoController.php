@@ -13,30 +13,17 @@ class PuestoController {
 
 	public static function obtenerPuestos() {
 		$entidad = new EntidadBase("t_puesto");
-		$resultado = $entidad->obtenerTodos();
-
-		return $resultado;
+        return $entidad->obtenerTodos();
 	}
 
 	public static function eliminarPuesto($id) {
 		$entidad = new EntidadBase("t_puesto");
-		$entidad->borrarPorId();
-
+		$entidad->borrarPorId('idPuesto', $id);
 	}
 
 	public static function obtenerUnPuesto($id) {
-		$puesto = new NivelPuesto();
-		$entidad = new EntidadBase("v_puesto");
-
-		$resultado = $entidad->obtenerPorId($id);
-
-		$puesto->setIdPuesto( $resultado['idPuesto']);
-		$puesto->setNombre( $resultado['nombre']);
-		$puesto->setDescripcion( $resultado['descripcion']);
-		$puesto->setIdDepartamento( $resultado['idDepartamento']);
-		$puesto->setIdNivelPuesto( $resultado['idNivelPuesto']);
-
-		return $puesto;
+        $entidad = new EntidadBase("t_puesto");
+        return $entidad->obtenerPorId('idPuesto', $id);
 	}
 
 }
