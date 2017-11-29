@@ -78,6 +78,24 @@ class EntidadBase {
 		}
 	}
 
+    public function modificarDepartamento($idDepartamento,$nombreDepartamento,$idNivelDepartamento){
+        $query="UPDATE $this->tabla 
+                SET nombre = '$nombreDepartamento', idNivelDepartamento = $idNivelDepartamento 
+                WHERE idDepartamento = $idDepartamento";
+
+        try {
+            //echo "Entro al try <br>";
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se modificó el Departamento con exito </div>";
+            else {
+                echo "<div class="."well-sm>"."No se modificó el Departamento</div>";
+            }
+
+        } catch (Exception $e) {
+            echo "$e";
+        }
+    }
+
     public function guardarEmpleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo){
         $query = "insert into $this->tabla (apellido,nombre,legajo,fechaIngreso,dni,cuil,fechaNacimiento,esActivo,telefono,email,domicilio,sexo)
                   values ('$apellido','$nombre',$legajo,'$fechaIngreso',$dni,'$cuil','$fechaNacimiento',$esActivo,$telefono,'$email','$domicilio','$sexo')";

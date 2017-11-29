@@ -26,4 +26,8 @@ class DepartamentoController {
 		return $entidad->obtenerPorId('idDepartamento', $id);
 	}
 
+    public static function modificarDepartamento($idDepartamento,$nombreDepartamento,$idNivelDepartamento) {
+        $entidad = new EntidadBase("t_departamento");
+        $entidad->modificarDepartamento($idDepartamento,$nombreDepartamento,$idNivelDepartamento);
+    }
 }

@@ -139,6 +139,8 @@ echo ' el Usuario<br>';
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE MODIFICAR UNA ENTIDAD<br><br>';
 
+DepartamentoController::modificarDepartamento(16,'nombreDptoModificado',2);
+
 //probar aquí HistorialEmpleadoController::sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
 
 ?>
