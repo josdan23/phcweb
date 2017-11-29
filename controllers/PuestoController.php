@@ -1,15 +1,13 @@
 <?php
 
-include_once '../domain/Puesto.php';
 include_once '../persistencia/EntidadBase.php';
 
 
 class PuestoController {
 
 	public static function agregarPuesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto) {
-	    $puesto = new Puesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto);
 		$entidad = new EntidadBase("t_puesto");
-		$entidad->guardarPuesto($puesto);
+		$entidad->guardarPuesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto);
 	}
 
 

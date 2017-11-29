@@ -1,14 +1,12 @@
 <?php
 
-include_once '../domain/NivelDepartamento.php';
 include_once '../persistencia/EntidadBase.php';
 
 class NivelDepartamentoController {
 
 	public static function agregarNivelDepartamento($nombre) {
-	    $nivelDepartamento = new NivelDepartamento($nombre);
 		$entidad = new EntidadBase("t_nivel_departamento");
-		$entidad->guardarNivelDepartamento($nivelDepartamento);
+		$entidad->guardarNivelDepartamento($nombre);
 	}
 
 	public static function obtenerNivelDepartamentos() {

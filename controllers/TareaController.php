@@ -1,6 +1,5 @@
 <?php
 
-include_once '../domain/Tarea.php';
 include_once '../persistencia/EntidadBase.php';
 
 
@@ -8,9 +7,8 @@ class TareaController {
 
 
 	public static function agregarTarea($descripcion) {
-        $tarea = new Tarea($descripcion);
 		$entidad = new EntidadBase("t_tarea");
-		$entidad->guardarTarea($tarea);
+		$entidad->guardarTarea($descripcion);
 	}
 
 

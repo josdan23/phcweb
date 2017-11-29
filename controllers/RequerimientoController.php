@@ -1,15 +1,13 @@
 <?php
 
-include_once '../domain/Requerimiento.php';
 include_once '../persistencia/EntidadBase.php';
 
 
 class RequerimientoController {
 
 	public static function agregarRequerimiento($descripcion) {
-	    $requerimiento = new Requerimiento($descripcion);
 		$entidad = new EntidadBase("t_requerimiento");
-		$entidad->guardarRequerimiento($requerimiento);
+		$entidad->guardarRequerimiento($descripcion);
 	}
 
 	public static function obtenerRequerimientos() {

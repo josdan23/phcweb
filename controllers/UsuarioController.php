@@ -1,14 +1,12 @@
 <?php 
 
-include_once '../domain/Usuario.php';
 include_once '../persistencia/EntidadBase.php';
 
 class UsuarioController {
 
 	public static function agregarUsuario($idEmpleado, $nombreUsuario, $contrasenia, $esAdministrador, $habilitado, $contraseniaRestaurada) {
-	    $usuario = new Usuario($idEmpleado, $nombreUsuario, $contrasenia, $esAdministrador, $habilitado, $contraseniaRestaurada);
 	    $entidad = new EntidadBase('t_usuario');
-	    $entidad->guardarUsuario($usuario);
+	    $entidad->guardarUsuario($idEmpleado, $nombreUsuario, $contrasenia, $esAdministrador, $habilitado, $contraseniaRestaurada);
 	}
 
 	public static function obtenerUsuarios() {

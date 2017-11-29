@@ -1,16 +1,14 @@
 <?php
 
-include_once '../domain/Departamento.php';
 include_once '../persistencia/EntidadBase.php';
 
 
 
 class DepartamentoController {
 
-	public static function agregarDepartamento($nombre,$idNivelDepartamento) {
-			$departamento = new Departamento($nombre,$idNivelDepartamento);
+	public static function agregarDepartamento($nombreDepartamento,$idNivelDepartamento) {
 			$entidad = new EntidadBase("t_departamento");
-			$entidad->guardarDepartamento($departamento);
+			$entidad->guardarDepartamento($nombreDepartamento,$idNivelDepartamento);
 	}
 
 	public static function obtenerDepartamentos() {

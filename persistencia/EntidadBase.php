@@ -56,12 +56,9 @@ class EntidadBase {
 		$this->conexion->cerrarConexion($this->db);
 	}
 
-	public function guardarDepartamento(Departamento $departamento){
-		$nombreDepartamento = $departamento->getNombre();
-		$idNivelDepartamento = $departamento->getIdNivelDepartamento();
+	public function guardarDepartamento($nombreDepartamento,$idNivelDepartamento){
 		$query="insert into $this->tabla (nombre,idNivelDepartamento) values('$nombreDepartamento',$idNivelDepartamento)";
 
-		//echo "$query <br>";
 		try {
 			//echo "Entro al try <br>";
 			if($this->db->query($query)==true)
@@ -75,20 +72,7 @@ class EntidadBase {
 		}
 	}
 
-    public function guardarEmpleado(Empleado $empleado){
-        $apellido = $empleado->getApellido();
-        $nombre = $empleado->GetNombre();
-        $legajo = $empleado->GetLegajo();
-        $fechaIngreso = $empleado->GetFechaIngreso();
-        $dni = $empleado->GetDni();
-        $cuil = $empleado->GetCuil();
-        $fechaNacimiento = $empleado->GetFechaNacimiento();
-        $esActivo = $empleado->getEsActivo();
-        $telefono = $empleado->getTelefono();
-        $email = $empleado->getEmail();
-        $domicilio = $empleado->getDomicilio();
-        $sexo = $empleado->getSexo();
-
+    public function guardarEmpleado($apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo){
         $query = "insert into $this->tabla (apellido,nombre,legajo,fechaIngreso,dni,cuil,fechaNacimiento,esActivo,telefono,email,domicilio,sexo)
                   values ('$apellido','$nombre',$legajo,'$fechaIngreso',$dni,'$cuil','$fechaNacimiento',$esActivo,$telefono,'$email','$domicilio','$sexo')";
 
@@ -105,8 +89,7 @@ class EntidadBase {
 
     }
 
-    public function guardarNivelDepartamento(NivelDepartamento $nivelDepartamento){
-        $nombre = $nivelDepartamento->getNombre();
+    public function guardarNivelDepartamento($nombre){
         $query = "insert into $this->tabla (nombre) values ('$nombre')";
 
         try {
@@ -120,8 +103,7 @@ class EntidadBase {
         }
     }
 
-    public function guardarNivelPuesto(NivelPuesto $nivelPuesto){
-        $descripcion = $nivelPuesto->getDescripcion();
+    public function guardarNivelPuesto($descripcion){
         $query = "insert into $this->tabla (descripcion) values ('$descripcion')";
 
         try {
@@ -136,12 +118,7 @@ class EntidadBase {
 
     }
 
-    public function guardarPuesto(Puesto $puesto){
-        $nombre = $puesto->getNombre();
-        $descripcion = $puesto->getDescripcion();
-        $idDepartamento = $puesto->getIdDepartamento();
-        $idNivelPuesto = $puesto->getIdNivelPuesto();
-
+    public function guardarPuesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto){
         $query = "insert into $this->tabla (nombre, descripcion, idDepartamento, idNivelPuesto)
         values ('$nombre', '$descripcion', $idDepartamento, $idNivelPuesto)";
 
@@ -156,8 +133,7 @@ class EntidadBase {
         }
     }
 
-    public function guardarRequerimiento(Requerimiento $requerimiento){
-        $descripcion = $requerimiento->getDescripcion();
+    public function guardarRequerimiento($descripcion){
         $query = "insert into $this->tabla (descripcion) values('$descripcion')";
 
         try {
@@ -171,8 +147,7 @@ class EntidadBase {
         }
     }
 
-    public function guardarTarea(Tarea $tarea){
-        $descripcion = $tarea->getDescripcion();
+    public function guardarTarea($descripcion){
         $query = "insert into $this->tabla (descripcion) values('$descripcion')";
 
         try {
@@ -186,14 +161,7 @@ class EntidadBase {
         }
     }
 
-    public function guardarUsuario(Usuario $usuario){
-        $idEmpleado = $usuario->getIdEmpleado();
-        $nombreUsuario = $usuario->getNombreUsuario();
-        $contrasenia = $usuario->getContrasenia();
-        $esAdministrador = $usuario->getEsAdministrador();
-        $habilitado = $usuario->getHabilitado();
-        $contraseniaRestaurada = $usuario->getContraseniaRestaurada();
-
+    public function guardarUsuario($idEmpleado, $nombreUsuario, $contrasenia, $esAdministrador, $habilitado, $contraseniaRestaurada){
         $query = "insert into $this->tabla (idEmpleado, nombreUsuario, contrasenia, esAdministrador, habilitado, contraseniaRestaurada) 
                     values($idEmpleado, '$nombreUsuario', MD5('$contrasenia'), $esAdministrador, $habilitado, $contraseniaRestaurada)";
 
@@ -208,11 +176,8 @@ class EntidadBase {
         }
     }
 
-    public function asignarPuestoAEmpleado(HistorialEmpleado $historialEmpleado){
-        $idPuesto = $historialEmpleado->getIdPuesto();
-        $idEmpleado = $historialEmpleado->getIdEmpleado();
+    public function asignarPuestoAEmpleado($idPuesto, $idEmpleado){
         /*Aquí habría que hacer una verificación y asignar el puesto al empleado solo si no está ya ocupando el puesto*/
-
         $query = "insert into $this->tabla (idPuesto, idEmpleado, fechaIngreso)
                     values($idPuesto, $idEmpleado, NOW())";
 

@@ -1,16 +1,12 @@
 <?php
 
-//include_once '../domain/Puesto.php';
-//include_once '../domain/Empleado.php';
-include_once '../domain/HistorialEmpleado.php';
 include_once '../persistencia/EntidadBase.php';
 
 class HistorialEmpleadoController {
 
 	public static function asignarPuestoAEmpleado($idPuesto, $idEmpleado){
-        $historialEmpleado = new HistorialEmpleado($idEmpleado, $idPuesto);
         $entidad = new EntidadBase('t_historial_empleado');
-        $entidad->asignarPuestoAEmpleado($historialEmpleado);
+        $entidad->asignarPuestoAEmpleado($idPuesto, $idEmpleado);
     }
 
     public static function agregarHistorialEmpleado($fechaIngreso,$fechaEgreso,$idEmpleado,$idPuesto) {

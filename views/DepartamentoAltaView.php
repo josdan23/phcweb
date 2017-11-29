@@ -41,7 +41,7 @@
 	
 			
 			<div class="form-group">
-   				<label for="ejemplo_email_3" class="col-lg-2 control-label">Nivel de Departamento</label>
+   				<label for="ejemplo_email_3" class="col-lg-2 control-label">Nivel del Departamento</label>
 
    				<div class="col-lg-5">
 			    	<select class="form-control" name="nivelDepartamento"> 
