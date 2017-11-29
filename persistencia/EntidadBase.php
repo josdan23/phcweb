@@ -26,6 +26,20 @@ class EntidadBase {
 		return $resultSet;
 	}
 
+    public function filtrar($columna, $valor) {
+        $resultSet = array();
+        $query = "select * from $this->tabla where $columna = ?";
+        $sentencia = $this->db->prepare($query);
+        $sentencia->bind_param('s', $valor);
+        $sentencia->execute();
+        $registros = $sentencia->get_result();
+        while ($row=mysqli_fetch_array($registros)) {
+            $resultSet[] = $row;
+        }
+        $this->conexion->cerrarConexion($this->db);
+        return $resultSet;
+    }
+
 	public function obtenerPorId($atributo, $id) {
 		$query = "select * from $this->tabla where $atributo = ?";
 		$sentencia = $this->db->prepare($query);
