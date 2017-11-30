@@ -55,10 +55,8 @@ class EntidadBase {
 		$query = "delete from $this->tabla where $atributo = ?";
 		$sentencia = $this->db->prepare($query);
 		$sentencia->bind_param('s', $id);
-		$sentencia->execute();
-
-		echo "borrado";
-
+        $sentencia->execute();
+        
 		$this->conexion->cerrarConexion($this->db);
 	}
 

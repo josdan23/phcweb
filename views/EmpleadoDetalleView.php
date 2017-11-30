@@ -4,6 +4,20 @@
 
 	$empleado = EmpleadoController::obtenerUnEmpleado($_GET['id']);
 
+	$disabled = "disabled";
+	if(isset($_POST['modificar']))
+		$disabled = "null";
+
+
+	if(isset($_POST['aceptar'])) {
+		//actualizarEmpleados
+	}
+
+	if(isset($_POST['eliminar'])) {
+		EmpleadoController::eliminarEmpleado($_GET['id']);
+		header('Location: http://localhost/phcweb/views/principalView.php?page=EmpleadoView');
+	}
+
  ?>
 
 <!DOCTYPE html>
@@ -59,7 +73,7 @@
 
 								<div class="pull-right">
 									<form action="" method="POST" role="form">
-										<button type="submit" class="btn btn-default">Modificar</button>
+										<button type="submit" name="modificar" class="btn btn-default" value="modificar">Modificar</button>
 									</form>
 
 								</div>
@@ -72,7 +86,7 @@
 						   				<label for="id" class="col-lg-2 control-label">id</label>
 									    <div class="col-lg-5">
 
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['idEmpleado'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="apellido" id="apellido" value="'.$empleado['idEmpleado']."\" disabled>"; ?>
 									    	
 									    </div>
 						  			</div>
@@ -81,7 +95,7 @@
 						   				<label for="apellido" class="col-lg-2 control-label">Apellido</label>
 									    <div class="col-lg-5">
 									    	
-											<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['apellido'].'" disabled="true">'; ?>
+											<?php echo '<input type="text" class="form-control" name="apellido" id="apellido" value="'.$empleado['apellido']."\" $disabled>"; ?>
 
 									    </div>
 						  			</div>
@@ -89,56 +103,56 @@
 									<div class="form-group">
 						   				<label for="nombre" class="col-lg-2 control-label">Nombre</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['nombre'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="nombre" id="nombre" value="'.$empleado['nombre']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="legajo" class="col-lg-2 control-label">Legajo</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['legajo'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="legajo" id="legajo" value="'.$empleado['legajo']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="fechaIngreso" class="col-lg-2 control-label">Fecha de Ingreso</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['fechaIngreso'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="fechaIngreso" id="fechaIngreso" value="'.$empleado['fechaIngreso']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="dni" class="col-lg-2 control-label">DNI</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['dni'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="dni" id="dni" value="'.$empleado['dni']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="cuil" class="col-lg-2 control-label">CUIL</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['cuil'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="cuil" id="cuil" value="'.$empleado['cuil']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="fechaNacimiento" class="col-lg-2 control-label">Fecha de Nacimiento</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['fechaNacimiento'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="fechaNacimiento" id="fechaNacimiento" value="'.$empleado['fechaNacimiento']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="telefono" class="col-lg-2 control-label">Telefono</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['telefono'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="telefono" id="telefono" value="'.$empleado['telefono']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="mail" class="col-lg-2 control-label">Email</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['email'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="mail" id="mail" value="'.$empleado['email']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 									
@@ -146,7 +160,7 @@
 									<div class="form-group">
 						   				<label for="domicilio" class="col-lg-2 control-label">Domicilio</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['domicilio'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="domicilio" id="domicilio" value="'.$empleado['domicilio']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 
@@ -155,15 +169,25 @@
 						   				<label for="sexo" class="col-lg-2 control-label">Sexo</label>
 
 						   				<div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['sexo'].'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" name="sexo" id="sexo" value="'.$empleado['sexo']."\" $disabled>"; ?>
 									    </div>
-									   
 						  			</div>
+
+									<div class="form-group">
+									<label for="aceptar" class="col-lg-2 control-label"></label>
+										<div class="col-lg-5">
+											<?php
+												if(isset($_POST['modificar'])) {
+													echo "<input type=\"submit\" name=\"aceptar\" class=\"btn btn-primary pull-right\" value=\"Aceptar\">";
+												}
+											?>
+									    </div>
+									</div>
 
 								</form>
 							</div>
-							</div>
 						</div>
+					</div>
 				</div>
 
 			</div>
