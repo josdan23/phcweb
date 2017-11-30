@@ -31,4 +31,14 @@ class TareaController {
         return $entidad->obtenerPorId('idTarea', $id);
 	}
 
+    public static function asignarTareaAPuesto($idTarea, $idPuesto){
+        $entidad = new EntidadBase('t_puesto_tarea');
+        $entidad->asignarTareaAPuesto($idTarea,$idPuesto);
+    }
+
+    public static function sacarTareaDelPuesto($idTarea, $idPuesto){
+        $entidad = new EntidadBase('t_puesto_tarea');
+        $entidad->borrarPorIdDoble('idTarea', $idTarea, 'idPuesto',$idPuesto);
+    }
+
 }

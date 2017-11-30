@@ -160,6 +160,9 @@ PuestoController::asignarPuestoAEmpleado(2, 1);
 PuestoController::asignarRequerimientoAPuesto(3,9);
 RequerimientoController::asignarRequerimientoAPuesto(2,9);
 
+PuestoController::asignarTareaAPuesto(1,3);
+TareaController::asignarTareaAPuesto(1,4);
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE DESVINCULACIONES<br><br>';
 
@@ -169,10 +172,21 @@ PuestoController::sacarEmpleadoDelPuesto(8,7);
 PuestoController::sacarRequerimientoDelPuesto(3,9);
 RequerimientoController::sacarRequerimientoDelPuesto(2,9);
 
+PuestoController::sacarTareaDelPuesto(1,3);
+TareaController::sacarTareaDelPuesto(1,4);
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE FILTROS<br><br>';
 
-//PuestoController::obtenerEmpleadosQueOcupanElPuesto(14);
+//EmpleadoController::obtenerLosPuestosDelEmpleado($idEmpleado); //Devuelve una array de Puestos
+//PuestoController::obtenerEmpleadosQueOcupanElPuesto($idPuesto); //Devuelve un array de Empleados
+//PuestoController::ObtenerRequerimientosDelPuesto($idPuesto); //Devuelve un array de Requerimientos
+//PuestoController::ObtenerTareasDelPuesto($idPuesto); //Devuelve un array de Tareas
+//RequerimientoController::obtenerPuestosConElRequerimiento($idRequerimiento); //Devuelve un array de Puestos
+//NivelPuestoController::obtenerPuestosDelNivel($idNivelPuesto); //Devuelve un array de Puestos
+//TareaController::obtenerPuestosConLaTarea($idTarea); //Devuelve un array de Puestos
+//DepartamentoController::obtenerPuestosEnElDepartamento($idDepartamento); //Devuelve un array de Puestos
+//NivelDepartamentoController::obtenerDepartamentosEnElNivel($idNivelDepartamento); //Devuelve un array de Departamentos
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE CONSULTAS QUE PIDIÓ CORDERO<br><br>';

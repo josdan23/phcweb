@@ -367,5 +367,18 @@ class EntidadBase {
         }
     }
 
+    public function asignarTareaAPuesto($idTarea, $idPuesto){
+        $query = "insert into $this->tabla (idTarea, idPuesto) values($idTarea,$idPuesto)";
+
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se asignó la tarea al puesto </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se asignó la tarea al puesto</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
 }
 ?>

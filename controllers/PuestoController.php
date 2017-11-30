@@ -35,11 +35,6 @@ class PuestoController {
         $entidad->asignarPuestoAEmpleado($idPuesto, $idEmpleado);
     }
 
-    Public static function obtenerEmpleadosQueOcupanElPuesto($idPuesto){
-        $entidad = new EntidadBase('t_empleado');
-        return $entidad->filtrar(idPuesto, $idPuesto);
-    }
-
     public static function sacarEmpleadoDelPuesto($idEmpleado, $idPuesto){
         $entidad = new EntidadBase('t_historial_empleado');
         $entidad->sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
@@ -53,5 +48,20 @@ class PuestoController {
     public static function sacarRequerimientoDelPuesto($idRequerimiento, $idPuesto){
         $entidad = new EntidadBase('t_requerimiento_puesto');
         $entidad->borrarPorIdDoble('idRequerimiento', $idRequerimiento, 'idPuesto',$idPuesto);
+    }
+
+    public static function asignarTareaAPuesto($idTarea, $idPuesto){
+        $entidad = new EntidadBase('t_puesto_tarea');
+        $entidad->asignarTareaAPuesto($idTarea,$idPuesto);
+    }
+
+    public static function sacarTareaDelPuesto($idTarea, $idPuesto){
+        $entidad = new EntidadBase('t_puesto_tarea');
+        $entidad->borrarPorIdDoble('idTarea', $idTarea, 'idPuesto',$idPuesto);
+    }
+
+    Public static function obtenerEmpleadosQueOcupanElPuesto($idPuesto){
+        $entidad = new EntidadBase('t_empleado');
+        return $entidad->filtrar('idPuesto', $idPuesto);
     }
 }
