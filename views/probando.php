@@ -108,28 +108,28 @@ $array = UsuarioController::obtenerUnUsuario(4);// var_dump($array);
 echo'<br>PRUEBAS DE ELIMINAR UNA ENTIDAD<br><br>';
 
 DepartamentoController::eliminarDepartamento(15);
-echo ' el Departamento<br>';
+echo 'Eliminado el Departamento<br>';
 
 EmpleadoController::eliminarEmpleado(12);
-echo ' el Empleado<br>';
+echo 'Eliminado el Empleado<br>';
 
 NivelDepartamentoController::eliminarNivelDepartamento(4);
-echo ' el Nivel de Departamento<br>';
+echo 'Eliminado el Nivel de Departamento<br>';
 
 NivelPuestoController::eliminarNivelPuesto(18);
-echo ' el Nivel de Puesto<br>';
+echo 'Eliminado el Nivel de Puesto<br>';
 
 PuestoController::eliminarPuesto(15);
-echo ' el Puesto<br>';
+echo 'Eliminado el Puesto<br>';
 
 RequerimientoController::eliminarRequerimiento(5);
-echo ' el Requerimiento<br>';
+echo 'Eliminado el Requerimiento<br>';
 
 TareaController::eliminarTarea(4);
-echo ' la Tarea<br>';
+echo 'Eliminado la Tarea<br>';
 
 UsuarioController::eliminarUsuario(6);
-echo ' el Usuario<br>';
+echo 'Eliminado el Usuario<br>';
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -166,6 +166,8 @@ echo'<br>PRUEBAS DE DESVINCULACIONES<br><br>';
 EmpleadoController::sacarEmpleadoDelPuesto(6, 6);
 PuestoController::sacarEmpleadoDelPuesto(8,7);
 
+PuestoController::sacarRequerimientoDelPuesto(3,9);
+RequerimientoController::sacarRequerimientoDelPuesto(2,9);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE FILTROS<br><br>';

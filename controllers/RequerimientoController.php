@@ -35,4 +35,9 @@ class RequerimientoController {
         $entidad->asignarRequerimientoAPuesto($idRequerimiento,$idPuesto);
     }
 
+    public static function sacarRequerimientoDelPuesto($idRequerimiento, $idPuesto){
+        $entidad = new EntidadBase('t_requerimiento_puesto');
+        $entidad->borrarPorIdDoble('idRequerimiento', $idRequerimiento, 'idPuesto',$idPuesto);
+    }
+
 }

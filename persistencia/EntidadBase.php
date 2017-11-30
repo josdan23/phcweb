@@ -335,14 +335,21 @@ class EntidadBase {
         } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
             echo "$e";
         }
+        $this->conexion->cerrarConexion($this->db);
     }
 
     public function borrarPorIdDoble($columna1, $id1, $columna2, $id2) {
-        $query = "delete from $this->tabla where ? = ? AND ? = ?";
-        $sentencia = $this->db->prepare($query);
-        $sentencia->bind_param('sisi', $columna1, $id1, $columna2, $id2);
-        $sentencia->execute();
+        $query = "DELETE FROM $this->tabla WHERE $columna1 = $id1 AND $columna2 = $id2";
 
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Desvinculación exitosa </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">Error al desvincular</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
         $this->conexion->cerrarConexion($this->db);
     }
 
