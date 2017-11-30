@@ -22,9 +22,6 @@ DepartamentoController::agregarDepartamento("Servicio Tecnico 6",2);
 //Nuevo Empleado
 EmpleadoController::agregarEmpleado("Avellaneda","Evelin",1199217,"2015-12-17",56600276,"20-56600276-3","1998-12-17",1,4544644,"evelin@gmail.com","Ruta 327 Km 12","F");
 
-//Asignar Puesto a Empleado
-HistorialEmpleadoController::asignarPuestoAEmpleado(4, 9);
-
 //Nuevo NivelDepartamento
 NivelDepartamentoController::agregarNivelDepartamento("Nivel 4");
 
@@ -141,6 +138,27 @@ echo'<br>PRUEBAS DE MODIFICAR UNA ENTIDAD<br><br>';
 
 DepartamentoController::modificarDepartamento(16,'nombreDptoModificado',2);
 
-//probar aquí HistorialEmpleadoController::sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+echo'<br>PRUEBAS DE VINCULACIONES<br><br>';
+
+EmpleadoController::asignarPuestoAEmpleado(4, 9);
+PuestoController::asignarPuestoAEmpleado(5, 1);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+echo'<br>PRUEBAS DE DESVINCULACIONES<br><br>';
+
+HistorialEmpleadoController::sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+echo'<br>PRUEBAS DE FILTROS<br><br>';
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+echo'<br>PRUEBAS DE CONSULTAS<br><br>';
+
 
 ?>

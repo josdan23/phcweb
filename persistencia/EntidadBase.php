@@ -216,5 +216,21 @@ class EntidadBase {
         }
     }
 
+    public function sacarEmpleadoDelPuesto($idEmpleado, $idPuesto){
+        /*Aquí habría que hacer una verificación y asignar el puesto al empleado solo si no está ya ocupando el puesto*/
+        $query = "insert into $this->tabla (idPuesto, idEmpleado, fechaEgreso)
+                    values($idPuesto, $idEmpleado, NOW())";
+
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se asignó el puesto al empleado </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se asignó el puesto al empleado</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
+
 }
 ?>

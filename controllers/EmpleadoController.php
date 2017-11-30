@@ -24,5 +24,8 @@ class EmpleadoController {
         return $entidad->obtenerPorId('idEmpleado', $id);
 	}
 
-	
+    public static function asignarPuestoAEmpleado($idPuesto, $idEmpleado){
+        $entidad = new EntidadBase('t_historial_empleado');
+        $entidad->asignarPuestoAEmpleado($idPuesto, $idEmpleado);
+    }
 }

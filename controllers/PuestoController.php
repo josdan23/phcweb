@@ -10,7 +10,6 @@ class PuestoController {
 		$entidad->guardarPuesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto);
 	}
 
-
 	public static function obtenerPuestos() {
 		$entidad = new EntidadBase("t_puesto");
         return $entidad->obtenerTodos();
@@ -26,4 +25,13 @@ class PuestoController {
         return $entidad->obtenerPorId('idPuesto', $id);
 	}
 
+    public static function asignarPuestoAEmpleado($idPuesto, $idEmpleado){
+        $entidad = new EntidadBase('t_historial_empleado');
+        $entidad->asignarPuestoAEmpleado($idPuesto, $idEmpleado);
+    }
+
+    Public static function obtenerEmpleadosQueOcupanElPuesto($idPuesto){
+        $entidad = new EntidadBase('t_empleado');
+        return $entidad->filtrar(idPuesto, $idPuesto);
+    }
 }
