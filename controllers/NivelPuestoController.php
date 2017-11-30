@@ -9,6 +9,10 @@ class NivelPuestoController {
 		$entidad->guardarNivelPuesto($descripcion);
 	}
 
+	public static function modificarNivelPuesto ($idNivelPuesto, $nombre){
+		$entidad = new EntidadBase("t_nivel_puesto");
+		$entidad->modificarNivelPuesto($idNivelPuesto,$nombre);
+	}
 
 	public static function obtenerNivelPuestos() {
 		$entidad = new EntidadBase("t_nivel_puesto");

@@ -9,6 +9,11 @@ class NivelDepartamentoController {
 		$entidad->guardarNivelDepartamento($nombre);
 	}
 
+	public static function modificarNivelDepartamento ($idNivelDepartamento, $nombre){
+		$entidad = new EntidadBase("t_nivel_departamento");
+		$entidad->modificarNivelDepartamento($idNivelDepartamento,$nombre);
+	}
+
 	public static function obtenerNivelDepartamentos() {
 		$entidad = new EntidadBase("t_nivel_departamento");
         return $entidad->obtenerTodos();

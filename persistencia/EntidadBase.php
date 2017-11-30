@@ -56,7 +56,7 @@ class EntidadBase {
 		$sentencia = $this->db->prepare($query);
 		$sentencia->bind_param('s', $id);
         $sentencia->execute();
-        
+
 		$this->conexion->cerrarConexion($this->db);
 	}
 
@@ -77,8 +77,8 @@ class EntidadBase {
 	}
 
     public function modificarDepartamento($idDepartamento,$nombreDepartamento,$idNivelDepartamento){
-        $query="UPDATE $this->tabla 
-                SET nombre = '$nombreDepartamento', idNivelDepartamento = $idNivelDepartamento 
+        $query="UPDATE $this->tabla
+                SET nombre = '$nombreDepartamento', idNivelDepartamento = $idNivelDepartamento
                 WHERE idDepartamento = $idDepartamento";
 
         try {
@@ -111,6 +111,27 @@ class EntidadBase {
 
     }
 
+		public function modificarEmpleado($idEmpleado,$apellido,$nombre,$legajo,$fechaIngreso,$dni,$cuil,$fechaNacimiento,$esActivo,$telefono,$email,$domicilio,$sexo){
+        $query = "UPDATE $this->tabla
+                  SET apellido = '$apellido',nombre = '$nombre', legajo = $legajo,
+									fechaIngreso = '$fechaIngreso', dni = $dni, cuil = '$cuil',
+									fechaNacimiento = '$fechaNacimiento',esActivo = $esActivo,
+									telefono = $telefono,email = '$email',domicilio = '$domicilio', sexo = '$sexo'
+									WHERE idEmpleado = $idEmpleado";
+
+        //echo "$query";
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se modifico el empleado con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se modifico el empleado</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+
+    }
+
     public function guardarNivelDepartamento($nombre){
         $query = "insert into $this->tabla (nombre) values ('$nombre')";
 
@@ -125,8 +146,37 @@ class EntidadBase {
         }
     }
 
+		public function modificarNivelDepartamento($idNivelDepartamento,$nombre){
+        $query = "UPDATE $this->tabla SET nombre = '$nombre' WHERE idNivelDepartamento = $idNivelDepartamento";
+
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro el nivel departamento con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro el nivel departamento</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
+
     public function guardarNivelPuesto($descripcion){
         $query = "insert into $this->tabla (descripcion) values ('$descripcion')";
+
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro el nivel puesto con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro el nivel puesto</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+
+    }
+
+		public function modificarNivelPuesto($idNivelPuesto,$descripcion){
+        $query = "UPDATE $this->tabla SET descripcion = '$descripcion' WHERE idNivelPuesto = $idNivelPuesto";
 
         try {
             if($this->db->query($query)==true)
@@ -184,7 +234,7 @@ class EntidadBase {
     }
 
     public function guardarUsuario($idEmpleado, $nombreUsuario, $contrasenia, $esAdministrador, $habilitado, $contraseniaRestaurada){
-        $query = "insert into $this->tabla (idEmpleado, nombreUsuario, contrasenia, esAdministrador, habilitado, contraseniaRestaurada) 
+        $query = "insert into $this->tabla (idEmpleado, nombreUsuario, contrasenia, esAdministrador, habilitado, contraseniaRestaurada)
                     values($idEmpleado, '$nombreUsuario', MD5('$contrasenia'), $esAdministrador, $habilitado, $contraseniaRestaurada)";
 
         try {

@@ -137,8 +137,11 @@ echo'<br>PRUEBAS DE MODIFICAR UNA ENTIDAD<br><br>';
 
 DepartamentoController::modificarDepartamento(16,'nombreDptoModificado',2);
 
+EmpleadoController::modificarEmpleado(11,"espeche","nora",3435,"2012-11-17",12607355,"20-12607366","1956-11-05",1,8585839,"noraespeche@gmail.com","B° Oeste 2","F");
 
+NivelDepartamentoController::modificarNivelDepartamento(3,"soporte");
 
+NivelPuestoController::modificarNivelPuesto(4,"Responsable de Martin para que no haga cagadas");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE VINCULACIONES<br><br>';
