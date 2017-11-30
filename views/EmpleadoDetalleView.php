@@ -10,7 +10,22 @@
 
 
 	if(isset($_POST['aceptar'])) {
-		//actualizarEmpleados
+		
+		EmpleadoController::modificarEmpleado(
+			$_POST['idEmpleado'],
+			$_POST['apellido'],
+			$_POST['nombre'],
+			$_POST['legajo'],
+			$_POST['fechaIngreso'],
+			$_POST['dni'],
+			$_POST['cuil'],
+			$_POST['fechaNacimiento'],
+			$_POST['esActivo'],
+			$_POST['telefono'],
+			$_POST['mail'],
+			$_POST['domicilio'],
+			$_POST['sexo']
+		);
 	}
 
 	if(isset($_POST['eliminar'])) {
@@ -83,10 +98,10 @@
 								<form action="" method="POST" role="form" class="form-horizontal"> 
 									
 									<div class="form-group">
-						   				<label for="id" class="col-lg-2 control-label">id</label>
+						   				<label for="idEmpleado" class="col-lg-2 control-label">id</label>
 									    <div class="col-lg-5">
 
-									    	<?php echo '<input type="text" class="form-control" name="apellido" id="apellido" value="'.$empleado['idEmpleado']."\" disabled>"; ?>
+									    	<?php echo '<input type="text" class="form-control" name="idEmpleado" id="idEmpleado" value="'.$empleado['idEmpleado']."\" $disabled>"; ?>
 									    	
 									    </div>
 						  			</div>
@@ -139,6 +154,13 @@
 						   				<label for="fechaNacimiento" class="col-lg-2 control-label">Fecha de Nacimiento</label>
 									    <div class="col-lg-5">
 									    	<?php echo '<input type="text" class="form-control" name="fechaNacimiento" id="fechaNacimiento" value="'.$empleado['fechaNacimiento']."\" $disabled>"; ?>
+									    </div>
+						  			</div>
+
+									<div class="form-group">
+						   				<label for="esActivo" class="col-lg-2 control-label">Activo</label>
+									    <div class="col-lg-5">
+									    	<?php echo '<input type="text" class="form-control" name="esActivo" id="esActivo" value="'.$empleado['esActivo']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
 
