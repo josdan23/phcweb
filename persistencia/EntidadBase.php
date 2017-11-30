@@ -201,9 +201,8 @@ class EntidadBase {
     }
 
     public function asignarPuestoAEmpleado($idPuesto, $idEmpleado){
-        /*Aquí habría que hacer una verificación y asignar el puesto al empleado solo si no está ya ocupando el puesto*/
-        $query = "insert into $this->tabla (idPuesto, idEmpleado, fechaIngreso)
-                    values($idPuesto, $idEmpleado, NOW())";
+        /*el sp asigna el puesto al empleado solo si no está ya ocupando el puesto*/
+        $query = "CALL sp_asignar_puesto_a_empleado($idPuesto, $idEmpleado)";
 
         try {
             if($this->db->query($query)==true)

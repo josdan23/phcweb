@@ -5,7 +5,6 @@ ini_set('display_errors', '1');
 
 include_once '../controllers/DepartamentoController.php';
 include_once '../controllers/EmpleadoController.php';
-include_once '../controllers/HistorialEmpleadoController.php';
 include_once '../controllers/NivelDepartamentoController.php';
 include_once '../controllers/NivelPuestoController.php';
 include_once '../controllers/PuestoController.php';
@@ -144,18 +143,19 @@ DepartamentoController::modificarDepartamento(16,'nombreDptoModificado',2);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE VINCULACIONES<br><br>';
 
-EmpleadoController::asignarPuestoAEmpleado(4, 9);
-PuestoController::asignarPuestoAEmpleado(5, 1);
+EmpleadoController::asignarPuestoAEmpleado(6, 1);
+PuestoController::asignarPuestoAEmpleado(2, 1);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE DESVINCULACIONES<br><br>';
 
-HistorialEmpleadoController::sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
+//HistorialEmpleadoController::sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE FILTROS<br><br>';
 
+//PuestoController::obtenerEmpleadosQueOcupanElPuesto(14);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE CONSULTAS<br><br>';
