@@ -72,7 +72,7 @@
 						   				<label for="id" class="col-lg-2 control-label">id</label>
 									    <div class="col-lg-5">
 
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getIdEmpleado().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['idEmpleado'].'" disabled="true">'; ?>
 									    	
 									    </div>
 						  			</div>
@@ -81,7 +81,7 @@
 						   				<label for="apellido" class="col-lg-2 control-label">Apellido</label>
 									    <div class="col-lg-5">
 									    	
-											<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getApellido().'" disabled="true">'; ?>
+											<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['apellido'].'" disabled="true">'; ?>
 
 									    </div>
 						  			</div>
@@ -89,56 +89,56 @@
 									<div class="form-group">
 						   				<label for="nombre" class="col-lg-2 control-label">Nombre</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getNombre().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['nombre'].'" disabled="true">'; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="legajo" class="col-lg-2 control-label">Legajo</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getLegajo().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['legajo'].'" disabled="true">'; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="fechaIngreso" class="col-lg-2 control-label">Fecha de Ingreso</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getFechaIngreso().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['fechaIngreso'].'" disabled="true">'; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="dni" class="col-lg-2 control-label">DNI</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getDni().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['dni'].'" disabled="true">'; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="cuil" class="col-lg-2 control-label">CUIL</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getCuil().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['cuil'].'" disabled="true">'; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="fechaNacimiento" class="col-lg-2 control-label">Fecha de Nacimiento</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getFechaNacimiento().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['fechaNacimiento'].'" disabled="true">'; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="telefono" class="col-lg-2 control-label">Telefono</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getTelefono().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['telefono'].'" disabled="true">'; ?>
 									    </div>
 						  			</div>
 
 						  			<div class="form-group">
 						   				<label for="mail" class="col-lg-2 control-label">Email</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getEmail().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['email'].'" disabled="true">'; ?>
 									    </div>
 						  			</div>
 									
@@ -146,7 +146,7 @@
 									<div class="form-group">
 						   				<label for="domicilio" class="col-lg-2 control-label">Domicilio</label>
 									    <div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getDomicilio().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['domicilio'].'" disabled="true">'; ?>
 									    </div>
 						  			</div>
 
@@ -155,7 +155,7 @@
 						   				<label for="sexo" class="col-lg-2 control-label">Sexo</label>
 
 						   				<div class="col-lg-5">
-									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado->getSexo().'" disabled="true">'; ?>
+									    	<?php echo '<input type="text" class="form-control" id="apellido" value="'.$empleado['sexo'].'" disabled="true">'; ?>
 									    </div>
 									   
 						  			</div>
