@@ -30,4 +30,9 @@ class RequerimientoController {
         return $entidad->obtenerPorId('idRequerimiento', $id);
 	}
 
+    public static function asignarRequerimientoAPuesto($idRequerimiento, $idPuesto){
+        $entidad = new EntidadBase('t_requerimiento_puesto');
+        $entidad->asignarRequerimientoAPuesto($idRequerimiento,$idPuesto);
+    }
+
 }

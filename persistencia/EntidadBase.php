@@ -337,5 +337,28 @@ class EntidadBase {
         }
     }
 
+    public function borrarPorIdDoble($columna1, $id1, $columna2, $id2) {
+        $query = "delete from $this->tabla where ? = ? AND ? = ?";
+        $sentencia = $this->db->prepare($query);
+        $sentencia->bind_param('sisi', $columna1, $id1, $columna2, $id2);
+        $sentencia->execute();
+
+        $this->conexion->cerrarConexion($this->db);
+    }
+
+    public function asignarRequerimientoAPuesto($idRequerimiento, $idPuesto){
+        $query = "insert into $this->tabla (idRequerimiento, idPuesto) values($idRequerimiento,$idPuesto)";
+
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se asignó el requerimiento al puesto </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se asignó el requerimiento al puesto</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
+
 }
 ?>

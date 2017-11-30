@@ -44,4 +44,9 @@ class PuestoController {
         $entidad = new EntidadBase('t_historial_empleado');
         $entidad->sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
     }
+
+    public static function asignarRequerimientoAPuesto($idRequerimiento, $idPuesto){
+        $entidad = new EntidadBase('t_requerimiento_puesto');
+        $entidad->asignarRequerimientoAPuesto($idRequerimiento,$idPuesto);
+    }
 }

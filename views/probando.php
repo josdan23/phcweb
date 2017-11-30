@@ -157,6 +157,9 @@ echo'<br>PRUEBAS DE VINCULACIONES<br><br>';
 EmpleadoController::asignarPuestoAEmpleado(6, 1);
 PuestoController::asignarPuestoAEmpleado(2, 1);
 
+PuestoController::asignarRequerimientoAPuesto(3,9);
+RequerimientoController::asignarRequerimientoAPuesto(2,9);
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE DESVINCULACIONES<br><br>';
 
