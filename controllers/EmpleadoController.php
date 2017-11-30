@@ -28,4 +28,9 @@ class EmpleadoController {
         $entidad = new EntidadBase('t_historial_empleado');
         $entidad->asignarPuestoAEmpleado($idPuesto, $idEmpleado);
     }
+
+    public static function sacarEmpleadoDelPuesto($idEmpleado, $idPuesto){
+        $entidad = new EntidadBase('t_historial_empleado');
+        $entidad->sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
+    }
 }

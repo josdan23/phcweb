@@ -34,4 +34,9 @@ class PuestoController {
         $entidad = new EntidadBase('t_empleado');
         return $entidad->filtrar(idPuesto, $idPuesto);
     }
+
+    public static function sacarEmpleadoDelPuesto($idEmpleado, $idPuesto){
+        $entidad = new EntidadBase('t_historial_empleado');
+        $entidad->sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
+    }
 }
