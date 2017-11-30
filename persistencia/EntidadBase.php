@@ -205,6 +205,21 @@ class EntidadBase {
         }
     }
 
+		public function modificarPuesto($idPuesto,$nombre, $descripcion, $idDepartamento, $idNivelPuesto){
+				$query = "UPDATE $this->tabla SET nombre = '$nombre',descripcion = '$descripcion',
+				idDepartamento = $idDepartamento, idNivelPuesto = $idNivelPuesto
+				WHERE idPuesto = $idPuesto";
+
+				try {
+						if($this->db->query($query)==true)
+								echo "<div class=".'"alert alert-success"'.">Se registro el puesto con exito </div>";
+						else {
+								echo "<div class=".'"alert alert-warning"'.">No se registro el puesto</div>";
+						}
+				} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+						echo "$e";
+				}
+		}
     public function guardarRequerimiento($descripcion){
         $query = "insert into $this->tabla (descripcion) values('$descripcion')";
 
@@ -219,8 +234,36 @@ class EntidadBase {
         }
     }
 
+		public function modificarRequerimiento($idRequerimiento, $descripcion){
+				$query = "UPDATE $this->tabla SET descripcion = '$descripcion' WHERE idRequerimiento = $idRequerimiento";
+
+				try {
+						if($this->db->query($query)==true)
+								echo "<div class=".'"alert alert-success"'.">Se registro el requerimiento con exito </div>";
+						else {
+								echo "<div class=".'"alert alert-warning"'.">No se registro el requerimiento</div>";
+						}
+				} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+						echo "$e";
+				}
+		}
+
     public function guardarTarea($descripcion){
         $query = "insert into $this->tabla (descripcion) values('$descripcion')";
+
+        try {
+            if($this->db->query($query)==true)
+                echo "<div class=".'"alert alert-success"'.">Se registro la tarea con exito </div>";
+            else {
+                echo "<div class=".'"alert alert-warning"'.">No se registro la tarea</div>";
+            }
+        } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+            echo "$e";
+        }
+    }
+
+		public function modificarTarea($idTarea, $descripcion){
+        $query = "UPDATE $this->tabla SET descripcion = '$descripcion' WHERE idTarea = $idTarea";
 
         try {
             if($this->db->query($query)==true)
@@ -247,6 +290,22 @@ class EntidadBase {
             echo "$e";
         }
     }
+
+		public function modificarUsuario($idEmpleado, $nombreUsuario, $contrasenia, $esAdministrador, $habilitado, $contraseniaRestaurada){
+				$query = "UPDATE $this->tabla SET nombreUsuario = '$nombreUsuario',
+				contrasenia = MD5('$contrasenia'), esAdministrador = $esAdministrador, habilitado = $habilitado,
+				contraseniaRestaurada = $contraseniaRestaurada WHERE idEmpleado = $idEmpleado";
+
+				try {
+						if($this->db->query($query)==true)
+								echo "<div class=".'"alert alert-success"'.">Se registro el usuario con exito </div>";
+						else {
+								echo "<div class=".'"alert alert-warning"'.">No se registro el usuario. Importante: Para que se registre un nuevo Usuario este no debe existir ya en la base de datos</div>";
+						}
+				} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
+						echo "$e";
+				}
+		}
 
     public function asignarPuestoAEmpleado($idPuesto, $idEmpleado){
         /*el precedimiento almacenado asigna el puesto al empleado solo si no está ya ocupando el puesto*/

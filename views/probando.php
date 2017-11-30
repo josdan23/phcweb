@@ -143,6 +143,14 @@ NivelDepartamentoController::modificarNivelDepartamento(3,"soporte");
 
 NivelPuestoController::modificarNivelPuesto(4,"Responsable de Martin para que no haga cagadas");
 
+PuestoController:: modificarPuesto(17,"lavadero", "lugar donde se lava la ropa", 5, 3);
+
+RequerimientoController::modificarRequerimiento(6,"Ingeniero electrico");
+
+TareaController::modificarTarea(5,"Se encarga de oler las oyas");
+
+UsuarioController::modificarUsuario(4, 'alexis', 'Soria', 0, 1, 0);
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE VINCULACIONES<br><br>';
 

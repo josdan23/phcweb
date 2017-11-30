@@ -10,6 +10,11 @@ class RequerimientoController {
 		$entidad->guardarRequerimiento($descripcion);
 	}
 
+	public static function modificarRequerimiento($idRequerimiento, $descripcion) {
+		$entidad = new EntidadBase("t_requerimiento");
+		$entidad->modificarRequerimiento($idRequerimiento, $descripcion);
+	}
+
 	public static function obtenerRequerimientos() {
 		$entidad = new EntidadBase("t_requerimiento");
         return $entidad->obtenerTodos();

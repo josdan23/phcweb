@@ -10,6 +10,11 @@ class PuestoController {
 		$entidad->guardarPuesto($nombre, $descripcion, $idDepartamento, $idNivelPuesto);
 	}
 
+	public static function modificarPuesto($idPuesto, $nombre, $descripcion, $idDepartamento, $idNivelPuesto) {
+		$entidad = new EntidadBase("t_puesto");
+		$entidad->modificarPuesto($idPuesto, $nombre, $descripcion, $idDepartamento, $idNivelPuesto);
+	}
+
 	public static function obtenerPuestos() {
 		$entidad = new EntidadBase("t_puesto");
         return $entidad->obtenerTodos();

@@ -11,6 +11,11 @@ class TareaController {
 		$entidad->guardarTarea($descripcion);
 	}
 
+	public static function modificarTarea($idTarea, $descripcion) {
+		$entidad = new EntidadBase("t_tarea");
+		$entidad->modificarTarea($idTarea, $descripcion);
+	}
+
 	public static function obtenerTareas() {
 		$entidad = new EntidadBase("t_tarea");
 		return $entidad->obtenerTodos();
