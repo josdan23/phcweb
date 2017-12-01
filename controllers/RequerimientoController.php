@@ -40,4 +40,9 @@ class RequerimientoController {
         $entidad->borrarPorIdDoble('idRequerimiento', $idRequerimiento, 'idPuesto',$idPuesto);
     }
 
+    Public static function obtenerPuestosConElRequerimiento($idRequerimiento){
+        $entidad = new EntidadBase('v_requerimiento_puesto');
+        return $entidad->filtrar('idRequerimiento', $idRequerimiento);
+    }
+
 }

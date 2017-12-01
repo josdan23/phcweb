@@ -11,6 +11,7 @@ include_once '../controllers/PuestoController.php';
 include_once '../controllers/RequerimientoController.php';
 include_once '../controllers/TareaController.php';
 include_once '../controllers/UsuarioController.php';
+include_once '../controllers/ReporteController.php';
 
 
 echo'PRUEBAS DE AGREGAR ENTIDADES<br><br>';
@@ -178,18 +179,50 @@ TareaController::sacarTareaDelPuesto(1,4);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE FILTROS<br><br>';
 
-//EmpleadoController::obtenerLosPuestosDelEmpleado($idEmpleado); //Devuelve una array de Puestos
-//PuestoController::obtenerEmpleadosQueOcupanElPuesto($idPuesto); //Devuelve un array de Empleados
-//PuestoController::ObtenerRequerimientosDelPuesto($idPuesto); //Devuelve un array de Requerimientos
-//PuestoController::ObtenerTareasDelPuesto($idPuesto); //Devuelve un array de Tareas
-//RequerimientoController::obtenerPuestosConElRequerimiento($idRequerimiento); //Devuelve un array de Puestos
-//NivelPuestoController::obtenerPuestosDelNivel($idNivelPuesto); //Devuelve un array de Puestos
-//TareaController::obtenerPuestosConLaTarea($idTarea); //Devuelve un array de Puestos
-//DepartamentoController::obtenerPuestosEnElDepartamento($idDepartamento); //Devuelve un array de Puestos
-//NivelDepartamentoController::obtenerDepartamentosEnElNivel($idNivelDepartamento); //Devuelve un array de Departamentos
+$array = EmpleadoController::obtenerLosPuestosDelEmpleado(5);//var_dump($array);//Devuelve una array de Puestos
+($array) ? print 'Se obtuvo los Puestos del Empleado<br>' : print 'Error al obtener los Puestos del Empleado<br>';
+
+$array = PuestoController::obtenerEmpleadosQueOcupanElPuesto(14);//var_dump($array);//Devuelve un array de Empleados
+($array) ? print 'Se obtuvo los Empleados que ocupan el Puesto<br>' : print 'Error al obtener los Empleados que ocupan el Puesto<br>';
+
+$array = PuestoController::ObtenerRequerimientosDelPuesto(14);//var_dump($array);//Devuelve un array de Requerimientos
+($array) ? print 'Se obtuvo los Requerimientos del Puesto<br>' : print 'Error al obtener los Requerimientos del Puesto<br>';
+
+$array = PuestoController::ObtenerTareasDelPuesto(1);//var_dump($array);//Devuelve un array de Tareas
+($array) ? print 'Se obtuvo las Tareas del Puesto<br>' : print 'Error al obtener las Tareas del Puesto<br>';
+
+$array = RequerimientoController::obtenerPuestosConElRequerimiento(3);//var_dump($array);//Devuelve un array de Puestos
+($array) ? print 'Se obtuvo los Puestos con el Requerimiento<br>' : print 'Error al obtener los Puestos con el Requerimiento<br>';
+
+$array = NivelPuestoController::obtenerPuestosDelNivel(2);//var_dump($array);//Devuelve un array de Puestos
+($array) ? print 'Se obtuvo los Puestos del Nivel<br>' : print 'Error al obtener los Puestos del Nivel<br>';
+
+$array = TareaController::obtenerPuestosConLaTarea(1);//var_dump($array);//Devuelve un array de Puestos
+($array) ? print 'Se obtuvo los Puestos con la Tarea<br>' : print 'Error al obtener los Puestos con la Tarea<br>';
+
+$array = DepartamentoController::obtenerPuestosEnElDepartamento(1);//var_dump($array);//Devuelve un array de Puestos
+($array) ? print 'Se obtuvo los Puestos en el Departamento<br>' : print 'Error al obtener los Puestos en el Departamento<br>';
+
+$array = NivelDepartamentoController::obtenerDepartamentosEnElNivel(1);//var_dump($array);//Devuelve un array de Departamentos
+($array) ? print 'Se obtuvo los Departamentos en el Nivel<br>' : print 'Error al obtener los Departamentos en el Nivel<br>';
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 echo'<br>PRUEBAS DE CONSULTAS QUE PIDIÓ CORDERO<br><br>';
 
+$array = ReporteController::obtenerConsulta1();//var_dump($array);//Devuelve un array con el resultado de la consulta
+($array) ? print 'Consulta1 exitosa<br>' : print 'Error al obtener la Consulta1<br>';
+
+$array = ReporteController::obtenerConsulta2();//var_dump($array);//Devuelve un array con el resultado de la consulta
+($array) ? print 'Consulta2 exitosa<br>' : print 'Error al obtener la Consulta2<br>';
+
+$array = ReporteController::obtenerConsulta3();//var_dump($array);//Devuelve un array con el resultado de la consulta
+($array) ? print 'Consulta3 exitosa<br>' : print 'Error al obtener la Consulta3<br>';
+
+$array = ReporteController::obtenerConsulta4();//var_dump($array);//Devuelve un array con el resultado de la consulta
+($array) ? print 'Consulta4 exitosa<br>' : print 'Error al obtener la Consulta4<br>';
+
+$array = ReporteController::obtenerConsulta5();//var_dump($array);//Devuelve un array con el resultado de la consulta
+($array) ? print 'Consulta5 exitosa<br>' : print 'Error al obtener la Consulta5<br>';
 
 ?>

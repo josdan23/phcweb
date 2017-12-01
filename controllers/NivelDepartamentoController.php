@@ -29,5 +29,9 @@ class NivelDepartamentoController {
         return $entidad->obtenerPorId('idNivelDepartamento', $id);
 	}
 
+    Public static function obtenerDepartamentosEnElNivel($idNivelDepartamento){
+        $entidad = new EntidadBase('t_departamento');
+        return $entidad->filtrar('idNivelDepartamento', $idNivelDepartamento);
+    }
 }
 ?>
