@@ -151,9 +151,9 @@ class EntidadBase {
 
         try {
             if($this->db->query($query)==true)
-                echo "<div class=".'"alert alert-success"'.">Se registro el nivel departamento con exito </div>";
+                echo "<div class=".'"alert alert-success"'.">Se modificó el nivel departamento con exito </div>";
             else {
-                echo "<div class=".'"alert alert-warning"'.">No se registro el nivel departamento</div>";
+                echo "<div class=".'"alert alert-warning"'.">No se modificó el nivel departamento</div>";
             }
         } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
             echo "$e";
@@ -180,9 +180,9 @@ class EntidadBase {
 
         try {
             if($this->db->query($query)==true)
-                echo "<div class=".'"alert alert-success"'.">Se registro el nivel puesto con exito </div>";
+                echo "<div class=".'"alert alert-success"'.">Se modificó el nivel puesto con exito </div>";
             else {
-                echo "<div class=".'"alert alert-warning"'.">No se registro el nivel puesto</div>";
+                echo "<div class=".'"alert alert-warning"'.">No se modificó el nivel puesto</div>";
             }
         } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
             echo "$e";
@@ -212,9 +212,9 @@ class EntidadBase {
 
 				try {
 						if($this->db->query($query)==true)
-								echo "<div class=".'"alert alert-success"'.">Se registro el puesto con exito </div>";
+								echo "<div class=".'"alert alert-success"'.">Se modificó el puesto con exito </div>";
 						else {
-								echo "<div class=".'"alert alert-warning"'.">No se registro el puesto</div>";
+								echo "<div class=".'"alert alert-warning"'.">No se modificó el puesto</div>";
 						}
 				} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 						echo "$e";
@@ -239,9 +239,9 @@ class EntidadBase {
 
 				try {
 						if($this->db->query($query)==true)
-								echo "<div class=".'"alert alert-success"'.">Se registro el requerimiento con exito </div>";
+								echo "<div class=".'"alert alert-success"'.">Se modificó el requerimiento con exito </div>";
 						else {
-								echo "<div class=".'"alert alert-warning"'.">No se registro el requerimiento</div>";
+								echo "<div class=".'"alert alert-warning"'.">No se modificó el requerimiento</div>";
 						}
 				} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 						echo "$e";
@@ -267,9 +267,9 @@ class EntidadBase {
 
         try {
             if($this->db->query($query)==true)
-                echo "<div class=".'"alert alert-success"'.">Se registro la tarea con exito </div>";
+                echo "<div class=".'"alert alert-success"'.">Se modificó la tarea con exito </div>";
             else {
-                echo "<div class=".'"alert alert-warning"'.">No se registro la tarea</div>";
+                echo "<div class=".'"alert alert-warning"'.">No se modificó la tarea</div>";
             }
         } catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
             echo "$e";
@@ -298,9 +298,9 @@ class EntidadBase {
 
 				try {
 						if($this->db->query($query)==true)
-								echo "<div class=".'"alert alert-success"'.">Se registro el usuario con exito </div>";
+								echo "<div class=".'"alert alert-success"'.">Se modificó el usuario con exito </div>";
 						else {
-								echo "<div class=".'"alert alert-warning"'.">No se registro el usuario. Importante: Para que se registre un nuevo Usuario este no debe existir ya en la base de datos</div>";
+								echo "<div class=".'"alert alert-warning"'.">No se modificó el usuario. Importante: Para que se registre un nuevo Usuario este no debe existir ya en la base de datos</div>";
 						}
 				} catch (Exception $e) { //Esto no muestra el tipo de error SQL asi que si alguno sabe como hacer eso pongalo en todos los try
 						echo "$e";

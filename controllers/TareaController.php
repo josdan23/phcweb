@@ -41,4 +41,8 @@ class TareaController {
         $entidad->borrarPorIdDoble('idTarea', $idTarea, 'idPuesto',$idPuesto);
     }
 
+    Public static function obtenerPuestosConLaTarea($idTarea){
+        $entidad = new EntidadBase('v_puesto_tarea');
+        return $entidad->filtrar('idTarea', $idTarea);
+    }
 }

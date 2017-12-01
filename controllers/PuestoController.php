@@ -61,7 +61,17 @@ class PuestoController {
     }
 
     Public static function obtenerEmpleadosQueOcupanElPuesto($idPuesto){
-        $entidad = new EntidadBase('t_empleado');
+        $entidad = new EntidadBase('v_empleado_puesto');
+        return $entidad->filtrar('idPuesto', $idPuesto);
+    }
+
+    Public static function ObtenerRequerimientosDelPuesto($idPuesto){
+        $entidad = new EntidadBase('v_requerimiento_puesto');
+        return $entidad->filtrar('idPuesto', $idPuesto);
+    }
+
+    Public static function ObtenerTareasDelPuesto($idPuesto){
+        $entidad = new EntidadBase('v_puesto_tarea');
         return $entidad->filtrar('idPuesto', $idPuesto);
     }
 }

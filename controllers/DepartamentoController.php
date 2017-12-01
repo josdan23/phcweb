@@ -30,4 +30,9 @@ class DepartamentoController {
         $entidad = new EntidadBase("t_departamento");
         $entidad->modificarDepartamento($idDepartamento,$nombreDepartamento,$idNivelDepartamento);
     }
+
+    Public static function obtenerPuestosEnElDepartamento($idDepartamento){
+        $entidad = new EntidadBase('t_puesto');
+        return $entidad->filtrar('idDepartamento', $idDepartamento);
+    }
 }

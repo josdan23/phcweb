@@ -29,4 +29,8 @@ class NivelPuestoController {
         return $entidad->obtenerPorId('idNivelPuesto', $id);
 	}
 
+    Public static function obtenerPuestosDelNivel($idNivelPuesto){
+        $entidad = new EntidadBase('t_puesto');
+        return $entidad->filtrar('idNivelPuesto', $idNivelPuesto);
+    }
 }

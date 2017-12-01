@@ -38,4 +38,9 @@ class EmpleadoController {
         $entidad = new EntidadBase('t_historial_empleado');
         $entidad->sacarEmpleadoDelPuesto($idEmpleado, $idPuesto);
     }
+
+    public static function obtenerLosPuestosDelEmpleado($idEmpleado){
+        $entidad = new EntidadBase('v_empleado_puesto');
+        return $entidad->filtrar('idEmpleado', $idEmpleado);
+    }
 }
