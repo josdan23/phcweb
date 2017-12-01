@@ -33,14 +33,15 @@
 				<tbody>
 
 					<?php 
-						$arrayEmpleados = NivelDepartamentoController::obtenerNivelDepartamentos();
-						foreach ($arrayEmpleados as $empleado) {
+						$arrayNivelDepartamento = NivelDepartamentoController::obtenerNivelDepartamentos();
+						foreach ($arrayNivelDepartamento as $nivelDepartamento) {
 							
 					?>
 					<tr>
 
-						<td><?php echo "<a href= EmpleadoDetalleView.php?id=".$empleado['idNivelDepartamento'].">".$empleado['idNivelDepartamento']."</a>"; ?></td>
-						<td><?php echo $empleado['nombre']; ?></td>
+						<td><?php echo $nivelDepartamento['idNivelDepartamento']; ?></td>
+						<td><?php echo $nivelDepartamento['nombre']; ?></td>
+						<td><?php echo "<a href= NivelDepartamentoDetalleView.php?id=".$nivelDepartamento['idNivelDepartamento'].">más</a>"; ?></td>
 					</tr>
 
 					<?php } ?>
