@@ -153,7 +153,7 @@ TareaController::modificarTarea(5,"Se encarga de oler las oyas");
 UsuarioController::modificarUsuario(4, 'alexis', 'Soria', 0, 1, 0);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-echo'<br>PRUEBAS DE VINCULACIONES<br><br>';
+echo'<br>PRUEBAS DE VINCULACIONES (ASIGNAR)<br><br>';
 
 EmpleadoController::asignarPuestoAEmpleado(6, 1);
 PuestoController::asignarPuestoAEmpleado(2, 1);
@@ -165,7 +165,7 @@ PuestoController::asignarTareaAPuesto(1,3);
 TareaController::asignarTareaAPuesto(1,4);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-echo'<br>PRUEBAS DE DESVINCULACIONES<br><br>';
+echo'<br>PRUEBAS DE DESVINCULACIONES (SACAR)<br><br>';
 
 EmpleadoController::sacarEmpleadoDelPuesto(6, 6);
 PuestoController::sacarEmpleadoDelPuesto(8,7);
