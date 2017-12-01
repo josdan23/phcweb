@@ -2,7 +2,7 @@
 	
 	require("../controllers/UsuarioController.php");
 	
- ?>
+?>
 
 <div class="container-fluid">
 	

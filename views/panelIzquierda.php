@@ -26,11 +26,11 @@
   <p id="title_cambios" class="text-muted small">REPORTES</p>
 
   <ul class="nav nav-pills nav-stacked">
-      <li><a href="principalView.php?page=EmpleadoView">consulta1</a></li>
-      <li><a href="principalView.php?page=EmpleadoView">consulta2</a></li>
-      <li><a href="principalView.php?page=EmpleadoView">consulta3</a></li>
-      <li><a href="principalView.php?page=EmpleadoView">consulta4</a></li>
-      <li><a href="principalView.php?page=EmpleadoView">consulta5</a></li>
+      <li><a href="principalView.php?page=Consulta1View">Consulta 1</a></li>
+      <li><a href="principalView.php?page=Consulta2View">Consulta 2</a></li>
+      <li><a href="principalView.php?page=Consulta3View">Consulta 3</a></li>
+      <li><a href="principalView.php?page=Consulta4View">Consulta 4</a></li>
+      <li><a href="principalView.php?page=Consulta5View">Consulta 5</a></li>
       
   </ul>
 
