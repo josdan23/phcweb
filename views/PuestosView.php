@@ -11,7 +11,7 @@
 		<div class="col-md-6">
 			<div class="pull-right">
 				<ul class="list-inline ">
-					<li><a href="principalView.php?page=PuestosAltaView">NUEVO</a></li>
+					<li><a href="principalView.php?page=PuestosAltaView" class=" btn btn-default glyphicon glyphicon-plus"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -31,22 +31,24 @@
 						<th>Descripción</th>
 						<th>Departamento</th>
 						<th>Nivel del Puesto</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 
 					<?php 
-						$arrayEmpleados = PuestoController::obtenerPuestos(); 
-						foreach ($arrayEmpleados as $empleado) {
+						$arrayPuestos = PuestoController::obtenerPuestos(); 
+						foreach ($arrayPuestos as $puesto) {
 							
 					?>
 					<tr>
 
-						<td><?php echo "<a href= EmpleadoDetalleView.php?id=".$empleado['idPuesto'].">".$empleado['idPuesto']."</a>"; ?></td>
-						<td><?php echo $empleado['nombre']; ?></td>
-						<td><?php echo $empleado['descripcion']; ?></td>
-						<td><?php echo $empleado['idDepartamento']; ?></td>
-						<td><?php echo $empleado['idNivelPuesto']; ?></td>
+						<td><?php echo $puesto['idPuesto'];?></td>
+						<td><?php echo $puesto['nombre']; ?></td>
+						<td><?php echo $puesto['descripcion']; ?></td>
+						<td><?php echo $puesto['idDepartamento']; ?></td>
+						<td><?php echo $puesto['idNivelPuesto']; ?></td>
+						<td><?php echo "<a href=PuestoDetalleView.php?id=".$puesto['idPuesto'].">más</a>" ?></td>
 					</tr>
 
 					<?php } ?>
