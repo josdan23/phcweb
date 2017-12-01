@@ -39,8 +39,9 @@
 					?>
 					<tr>
 
-						<td><?php echo "<a href= EmpleadoDetalleView.php?id=".$empleado['idTarea'].">".$empleado['idTarea']."</a>"; ?></td>
+						<td><?php echo $empleado['idTarea']; ?></td>
 						<td><?php echo $empleado['descripcion']; ?></td>
+						<td><?php echo "<a href= TareasDetalleView.php?id=".$empleado['idTarea'].">más</a>"; ?></td>
 					</tr>
 
 					<?php } ?>
