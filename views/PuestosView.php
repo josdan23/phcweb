@@ -47,9 +47,11 @@
 						<td><?php echo $puesto['idPuesto'];?></td>
 						<td><?php echo $puesto['nombre']; ?></td>
 						<td><?php echo $puesto['descripcion']; ?></td>
+
 						<td><?php echo $puesto['idDepartamento']; ?></td>
 						<td><?php echo $puesto['idNivelPuesto']; ?></td>
 						<td><?php echo "<a href=AsignarEmpleadoAPuestoView.php?id=".$puesto['idPuesto'].">Asignar Empleados</a>" ?></td>
+
 						<td><?php echo "<a href=PuestoDetalleView.php?id=".$puesto['idPuesto'].">más</a>" ?></td>
 					</tr>
 

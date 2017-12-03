@@ -15,6 +15,18 @@
     $disabled = "disabled";
     if (isset($_POST['modificar'])) {
         $disabled = "null";
+
+    }
+
+    if(isset($_POST['aceptar'])) {
+        PuestoController::modificarPuesto(
+            $_GET['id'],
+            $_POST['nombre'],
+            $_POST['descripcion'],
+            $_POST['idDepartamento'],
+            $_POST['idNivelPuesto']
+        );
+        echo "hola";
     }
 
 ?>
@@ -66,15 +78,9 @@
 								<div class="pull-right">
 
 									<form action="" method="POST" role="form">
-										<input type="submit" name="eliminar" class="btn btn-default" value="Eliminar">
+                                        <button type="submit" name="modificar" class="btn btn-default" value="modificar">Modificar</button>
+										<button type="submit" name="eliminar" class="btn btn-default" value="Eliminar">Eliminar</button>
 									</form>
-								</div>
-
-								<div class="pull-right">
-									<form action="" method="POST" role="form">
-										<button type="submit" name="modificar" class="btn btn-default" value="modificar">Modificar</button>
-									</form>
-
 								</div>
 							</div>
 
@@ -106,9 +112,9 @@
 
                                                 <?php
 
-                                                    echo "<select class=\"form-control\" name=\"idNivelPuesto\" $disabled>";
+                                                    echo "<select class=\"form-control\" name=\"idDepartamento\" $disabled>";
                                                     if($disabled != "null") {
-                                                        echo "<option>".$puesto['idDepartamento']."</option>";
+                                                        echo "<option>".$puesto['nombreDepartamento']."</option>";
                                                     }
                                                     else {
                                                         foreach ($arrayDepartamentos as $departamento) {
@@ -128,7 +134,7 @@
                                                 <?php
                                                     echo "<select class=\"form-control\" name=\"idNivelPuesto\" $disabled>";
                                                     if($disabled != "null") {
-                                                        echo "<option>".$puesto['idNivelPuesto']."</option>";
+                                                        echo "<option>".$puesto['descripcionNivelPuesto']."</option>";
                                                     }
                                                     else {
                                                         foreach ($arrayNivelPuestos as $nivelPuesto) {
@@ -143,8 +149,10 @@
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-5">
 
+
                                             <button type="submit" class="btn btn-primary">ACEPTAR</button>
                                         </div>
+
                                     </div>
 
 								</form>

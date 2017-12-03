@@ -14,7 +14,7 @@
 		<div class="col-md-6">
 			<div class="pull-right">
 				<ul class="list-inline ">
-					<li><a href="principalView.php?page=DepartamentoAltaView">NUEVO</a></li>
+					<li><a href="principalView.php?page=DepartamentoAltaView"  class=" btn btn-default glyphicon glyphicon-plus"></a></li>
 				</ul>
 			</div>
 		</div>	

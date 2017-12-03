@@ -79,15 +79,9 @@
 								<div class="pull-right">
 
 									<form action="" method="POST" role="form">
-										<input type="submit" name="eliminar" class="btn btn-default" value="Eliminar">
-									</form>
-								</div>
-
-								<div class="pull-right">
-									<form action="" method="POST" role="form">
 										<button type="submit" name="modificar" class="btn btn-default" value="modificar">Modificar</button>
+										<button type="submit" name="eliminar" class="btn btn-default" value="Eliminar">Eliminar</button>
 									</form>
-
 								</div>
 							</div>
 

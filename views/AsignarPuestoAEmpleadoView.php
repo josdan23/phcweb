@@ -1,36 +1,31 @@
 <?php
-
 	require_once("../controllers/EmpleadoController.php");
-  require_once("../controllers/PuestoController.php");
+  	require_once("../controllers/PuestoController.php");
+
+	$disabled = "disabled";
 
 	$empleado = EmpleadoController::obtenerUnEmpleado($_GET['id']);
 
-		if(isset($_POST['aceptar'])) {
-      $entidad = new EntidadBase();
-      $arrayPuestos = PuestoController::obtenerPuestos();
+	if(isset($_POST['aceptar'])) {
+    	$arrayPuestos = PuestoController::obtenerPuestos();
 
-      foreach ($arrayPuestos as $Puesto ) {
-        $id = $Puesto['idPuesto'];
-              if(IsChecked('checkbox',$id)){
-                $idEmpleado = $empleado['idEmpleado'];
-                $entidad->asignarPuestoAEmpleado($id,$idEmpleado);
-              }
+    	foreach ($arrayPuestos as $puesto ) {
+        	$id = $puesto['idPuesto'];
+            if(IsChecked('checkbox',$id)){
+            	$idEmpleado = $empleado['idEmpleado'];
+				EmpleadoController::asignarPuestoAEmpleado($id, $idEmpleado);
+            }
       }
-
-
   }
 
   function IsChecked($chkname,$value){
-    if(!empty($_POST[$chkname]))
-    {
-        foreach($_POST[$chkname] as $chkval)
-        {
-            if($chkval == $value)
-            {
-                return true;
-            }
-        }
-    }
+    	if(!empty($_POST[$chkname])) {
+        	foreach($_POST[$chkname] as $chkval) {
+            	if($chkval == $value) {
+                	return true;
+            	}
+        	}
+    	}
     return false;
 }
 

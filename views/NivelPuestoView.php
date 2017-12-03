@@ -13,7 +13,7 @@
 		<div class="col-md-6">
 			<div class="pull-right">
 				<ul class="list-inline ">
-					<li><a href="principalView.php?page=NivelPuestoAltaView">NUEVO</a></li>
+					<li><a href="principalView.php?page=NivelPuestoAltaView"  class=" btn btn-default glyphicon glyphicon-plus"></a></li>
 				</ul>
 			</div>
 		</div>
