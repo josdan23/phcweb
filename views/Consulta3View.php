@@ -14,7 +14,7 @@
     <div class="col-md-6">
         <div class="pull-right">
             <ul class="list-inline ">
-                <li><a href="../reportes/Consulta2.php" class="btn btn-default glyphicon glyphicon-print"></a></li>
+                <li><a href="../reportes/Consulta3.php" class="btn btn-default glyphicon glyphicon-print"></a></li>
             </ul>
         </div>
     </div>

@@ -1,7 +1,8 @@
 ﻿<?php
 
+
 require_once '../controllers/ReporteController.php';
-require_once('../persistencia/EntidadBase.php');
+require_once ('../persistencia/EntidadBase.php');
 
 //$prueba = new EntidadBase("t_departamento");
 
@@ -12,34 +13,38 @@ $resultset = ReporteController::obtenerConsulta2();
 
 require_once('../services/ezpdf.php');
 
-$pdf = new Cezpdf('a3', 'landscape'); //seleccionamos tipo de hoja
+$pdf = new Cezpdf('a4', 'landscape'); //seleccionamos tipo de hoja
 $pdf->selectFont('../fonts/Helvetica.afm'); //seleccionamos fuente a utilizar
 $pdf->line(20,40,815,40);
 $pdf->ezText("<u><b>Gestion de Capital Humano - PHC TEAM</b></u>",30,array("justification"=>"center")); // Titulo 1
 $pdf->ezText("\n", 15);  // Bajado de line de 15 de fuente
-$pdf->ezText("<b> Consulta 5 </b>",25); // Titulo 2
+$pdf->ezText("<b>Consulta 2 - Responsables por cada departamento</b>",25,array("justification"=>"center")); // Titulo 2
 $pdf->ezText("\n", 30); // Bajado de line de 30 de fuente
 
 $pdf->addText(50, 30, 10, "<b>Fecha: </b>\n" . date("d/m/Y")); // Fecha
 
 $cols = array(
-	"Departamento" => "bar0",
-    "Nivel del Departamento" => "bar",
-    "Nombre Responsable" => "bar1",
-    "Apellido Responsable" => "bar2",
-    "Puesto" => "bar3",
-    "Nivel del Puesto" => "bar4",
-
-    //"bar" => "foo",
+	"Departamento" => "<b>Departamento</b>",
+    "Nivel del Departamento" => "<b>Nivel Dpto</b>",
+    "Nombre Responsable" => "<b>Nombre Resp</b>",
+    "Apellido Responsable" => "<b>Apellido Resp</b>",
+    "Puesto" => "<b>Puesto</b>",
+    "Nivel del Puesto" => "<b>Nivel del Puesto</b>"
  );
 
-$options = array(
-	'innerLineThickness'=> 5 ,
+$colOptions = array(
+	"Departamento" => array('justification' => 'left', 'width' => 160),			 
+	"Cantidad de empleados" => array('justification'=> 'centre',  'width' => 120),		
+			 );
+
+$options = array( 'fontSize' => 8,
+	'innerLineThickness'=> 2 ,'cols' => $colOptions 
 
 );
 
 
-$pdf->ezTable( $resultset, $cols);//asigno la tabla
+
+$pdf->ezTable( $resultset , $cols, "", $options);//asigno la tabla
 
 
 $pdf->ezStream();//creo el pdf
