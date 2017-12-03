@@ -16,7 +16,7 @@ class PuestoController {
 	}
 
 	public static function obtenerPuestos() {
-		$entidad = new EntidadBase("t_puesto");
+		$entidad = new EntidadBase("v_puesto");
         return $entidad->obtenerTodos();
 	}
 
@@ -26,7 +26,7 @@ class PuestoController {
 	}
 
 	public static function obtenerUnPuesto($id) {
-        $entidad = new EntidadBase("t_puesto");
+        $entidad = new EntidadBase("v_puesto");
         return $entidad->obtenerPorId('idPuesto', $id);
 	}
 

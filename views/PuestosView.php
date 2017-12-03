@@ -39,15 +39,15 @@
 					<?php 
 						$arrayPuestos = PuestoController::obtenerPuestos(); 
 						foreach ($arrayPuestos as $puesto) {
-							
+
 					?>
 					<tr>
 
 						<td><?php echo $puesto['idPuesto'];?></td>
 						<td><?php echo $puesto['nombre']; ?></td>
 						<td><?php echo $puesto['descripcion']; ?></td>
-						<td><?php echo $puesto['idDepartamento']; ?></td>
-						<td><?php echo $puesto['idNivelPuesto']; ?></td>
+						<td><?php echo $puesto['nombreDepartamento']; ?></td>
+						<td><?php echo $puesto['descripcionNivelPuesto']; ?></td>
 						<td><?php echo "<a href=PuestoDetalleView.php?id=".$puesto['idPuesto'].">más</a>" ?></td>
 					</tr>
 
