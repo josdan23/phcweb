@@ -37,11 +37,11 @@
 		<div class="container-fluid">
 
 			<div class="row">
-				
-				
+
+
 			<?php
 				include_once("navbar.php");
-			?>				
+			?>
 			</div>
 
 
@@ -58,9 +58,9 @@
 				<div class="col-md-10">
 
 						<div class="panel panel-default panel-body">
-							
+
 							<div class="container-fluid">
-								
+
 
 							<div class="row">
 								<div class="pull-right">
@@ -79,8 +79,8 @@
 							</div>
 
 							<div class="row">
-								<form action="" method="POST" role="form" class="form-horizontal"> 
-									
+								<form action="" method="POST" role="form" class="form-horizontal">
+
 
                                     <div class="form-group">
                                         <label for="nombre" class="col-lg-2 control-label">Nombre</label>
@@ -103,8 +103,8 @@
                                         <label for="idDepartamento" class="col-lg-2 control-label">Departamento</label>
 
                                         <div class="col-lg-5">
-                                           
-                                                <?php 
+
+                                                <?php
 
                                                     echo "<select class=\"form-control\" name=\"idNivelPuesto\" $disabled>";
                                                     if($disabled != "null") {
@@ -124,8 +124,8 @@
                                         <label for="nivelPuesto" class="col-lg-2 control-label">Nivel de Puesto</label>
 
                                         <div class="col-lg-5">
-                                            
-                                                <?php 
+
+                                                <?php
                                                     echo "<select class=\"form-control\" name=\"idNivelPuesto\" $disabled>";
                                                     if($disabled != "null") {
                                                         echo "<option>".$puesto['idNivelPuesto']."</option>";
@@ -142,9 +142,9 @@
 
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-5">
-                                            
+
                                             <button type="submit" class="btn btn-primary">ACEPTAR</button>
-                                        </div>	
+                                        </div>
                                     </div>
 
 								</form>

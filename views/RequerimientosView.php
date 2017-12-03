@@ -3,7 +3,7 @@
  ?>
 
 <div class="container-fluid">
-	
+
 	<div class="row">
 		<div class="col-md-6">
 			<h4>REQUERIMIENTOS</h4>
@@ -21,7 +21,7 @@
 	</div>
 	<div class="row">
 		<div class="panel panel-default">
-		
+
 			<table class="table">
 				<thead>
 
@@ -33,10 +33,10 @@
 				</thead>
 				<tbody>
 
-					<?php 
+					<?php
 						$arrayRequerimientos = RequerimientoController::obtenerRequerimientos();
 						foreach ($arrayRequerimientos as $requerimiento) {
-							
+
 					?>
 					<tr>
 
@@ -48,7 +48,7 @@
 
 					<?php } ?>
 				</tbody>
-				
+
 			</table>
 		</div>
 	</div>

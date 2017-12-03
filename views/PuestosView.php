@@ -1,9 +1,9 @@
-<?php 
+<?php
 	require_once("../controllers/PuestoController.php");
  ?>
 
 <div class="container-fluid">
-	
+
 	<div class="row">
 		<div class="col-md-6">
 			<h4>PUESTOS</h4>
@@ -21,7 +21,7 @@
 	</div>
 	<div class="row">
 		<div class="panel panel-default">
-		
+
 			<table class="table">
 				<thead>
 
@@ -31,15 +31,16 @@
 						<th>Descripción</th>
 						<th>Departamento</th>
 						<th>Nivel del Puesto</th>
+						<th>Seleccione</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 
-					<?php 
-						$arrayPuestos = PuestoController::obtenerPuestos(); 
+					<?php
+						$arrayPuestos = PuestoController::obtenerPuestos();
 						foreach ($arrayPuestos as $puesto) {
-							
+
 					?>
 					<tr>
 
@@ -48,12 +49,13 @@
 						<td><?php echo $puesto['descripcion']; ?></td>
 						<td><?php echo $puesto['idDepartamento']; ?></td>
 						<td><?php echo $puesto['idNivelPuesto']; ?></td>
+						<td><?php echo "<a href=AsignarEmpleadoAPuestoView.php?id=".$puesto['idPuesto'].">Asignar Empleados</a>" ?></td>
 						<td><?php echo "<a href=PuestoDetalleView.php?id=".$puesto['idPuesto'].">más</a>" ?></td>
 					</tr>
 
 					<?php } ?>
 				</tbody>
-				
+
 			</table>
 		</div>
 	</div>
