@@ -8,7 +8,7 @@
 
 	<div class="row" id="encabezado">
 		<div class="col-md-6">
-			<h4>EMPLEADOS</h4>
+			<h4 id="empleados">EMPLEADOS</h4>
 		</div>
 		<div class="col-md-6">
 			<div class="pull-right">

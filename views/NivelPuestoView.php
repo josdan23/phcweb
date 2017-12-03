@@ -8,7 +8,7 @@
 	
 	<div class="row" id="encabezado">
 		<div class="col-md-6">
-			<h4>NIVELES DE PUESTO</h4>
+			<h4 id="nivelPuesto">NIVELES DE PUESTO</h4>
 		</div>
 		<div class="col-md-6">
 			<div class="pull-right">

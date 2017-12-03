@@ -6,7 +6,7 @@
 	
 	<div class="row" id="encabezado">
 		<div class="col-md-6">
-			<h4>NIVELES DE DEPARTAMENTOS</h4>
+			<h4 id="nivelDepartamento">NIVELES DE DEPARTAMENTOS</h4>
 		</div>
 		<div class="col-md-6">
 			<div class="pull-right">

@@ -6,7 +6,7 @@
 	
 	<div class="row" id="encabezado">
 		<div class="col-md-6">
-			<h4>REQUERIMIENTOS</h4>
+			<h4 id="requerimientos">REQUERIMIENTOS</h4>
 		</div>
 		<div class="col-md-6">
 			<div class="pull-right">
@@ -19,7 +19,7 @@
 
 	<div class="row">
 		<div class="panel panel-default">
-		
+
 			<table class="table">
 				<thead>
 
@@ -31,10 +31,10 @@
 				</thead>
 				<tbody>
 
-					<?php 
+					<?php
 						$arrayRequerimientos = RequerimientoController::obtenerRequerimientos();
 						foreach ($arrayRequerimientos as $requerimiento) {
-							
+
 					?>
 					<tr>
 
@@ -46,7 +46,7 @@
 
 					<?php } ?>
 				</tbody>
-				
+
 			</table>
 		</div>
 	</div>

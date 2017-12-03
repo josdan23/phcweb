@@ -8,7 +8,7 @@
 
     <div class="row" id="encabezado">
         <div class="col-md-6">
-            <h4>Consulta 5</h4>
+            <h4 id="consulta5">Consulta 5</h4>
             <h5>Listado de empleados que trabajen en más de un departamento: puesto actual y su antigüedad</h5>
         </div>
         <div class="col-md-6">

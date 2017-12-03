@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once("../controllers/PuestoController.php");
  ?>
 
@@ -6,7 +6,7 @@
 	
 	<div class="row" id="encabezado">
 		<div class="col-md-6">
-			<h4>PUESTOS</h4>
+			<h4 id="puestos">PUESTOS</h4>
 		</div>
 		<div class="col-md-6">
 			<div class="pull-right">
@@ -19,7 +19,7 @@
 
 	<div class="row">
 		<div class="panel panel-default">
-		
+
 			<table class="table">
 				<thead>
 
@@ -29,13 +29,14 @@
 						<th>Descripción</th>
 						<th>Departamento</th>
 						<th>Nivel del Puesto</th>
+						<th>Seleccione</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 
-					<?php 
-						$arrayPuestos = PuestoController::obtenerPuestos(); 
+					<?php
+						$arrayPuestos = PuestoController::obtenerPuestos();
 						foreach ($arrayPuestos as $puesto) {
 
 					?>
@@ -44,14 +45,17 @@
 						<td><?php echo $puesto['idPuesto'];?></td>
 						<td><?php echo $puesto['nombre']; ?></td>
 						<td><?php echo $puesto['descripcion']; ?></td>
+
 						<td><?php echo $puesto['nombreDepartamento']; ?></td>
-						<td><?php echo $puesto['descripcionNivelPuesto']; ?></td>
+						<td><?php echo $puesto['nombreNivelDepartamento']; ?></td>
+						<td><?php echo "<a href=AsignarEmpleadoAPuestoView.php?id=".$puesto['idPuesto'].">Asignar Empleados</a>" ?></td>
+
 						<td><?php echo "<a href=PuestoDetalleView.php?id=".$puesto['idPuesto'].">más</a>" ?></td>
 					</tr>
 
 					<?php } ?>
 				</tbody>
-				
+
 			</table>
 		</div>
 	</div>

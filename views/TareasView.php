@@ -6,7 +6,7 @@
 	
 	<div class="row" id="encabezado">
 		<div class="col-md-6">
-			<h4>TAREAS</h4>
+			<h4 id="tareas">TAREAS</h4>
 		</div>
 		<div class="col-md-6">
 			<div class="pull-right">
