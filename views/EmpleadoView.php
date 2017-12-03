@@ -1,11 +1,11 @@
-<?php 
-	
+<?php
+
 	require_once("../controllers/EmpleadoController.php");
-	
+
  ?>
 
 <div class="container-fluid">
-	
+
 	<div class="row">
 		<div class="col-md-6">
 			<h4>EMPLEADOS</h4>
@@ -22,9 +22,9 @@
 		<hr>
 	</div>
 	<div class="row">
-		
+
 		<div class="panel panel-default">
-		
+
 			<table class="table table-striped">
 				<thead>
 
@@ -42,10 +42,10 @@
 				</thead>
 				<tbody>
 
-					<?php 
-						$arrayEmpleados = EmpleadoController::obtenerEmpleados(); 
+					<?php
+						$arrayEmpleados = EmpleadoController::obtenerEmpleados();
 						foreach ($arrayEmpleados as $empleado) {
-							
+
 					?>
 					<tr>
 
@@ -57,12 +57,13 @@
 						<td><?php echo $empleado['esActivo']; ?></td>
 						<td><?php echo $empleado['telefono']; ?></td>
 						<td><?php echo $empleado['email']; ?></td>
+						<td><?php echo "<a href=AsignarPuestoAEmpleadoView.php?id=".$empleado['idEmpleado'].">Asignar Puesto</a>" ?></td>
 						<td><?php echo "<a href=EmpleadoDetalleView.php?id=".$empleado['idEmpleado'].">más</a>" ?></td>
 					</tr>
 
 					<?php } ?>
 				</tbody>
-				
+
 			</table>
 		</div>
 

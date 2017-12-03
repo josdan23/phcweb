@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	require_once("../controllers/EmpleadoController.php");
 
@@ -9,24 +9,24 @@
 		$disabled = "null";
 
 
-	if(isset($_POST['aceptar'])) {
-		
-		EmpleadoController::modificarEmpleado(
-			$_POST['idEmpleado'],
-			$_POST['apellido'],
-			$_POST['nombre'],
-			$_POST['legajo'],
-			$_POST['fechaIngreso'],
-			$_POST['dni'],
-			$_POST['cuil'],
-			$_POST['fechaNacimiento'],
-			$_POST['esActivo'],
-			$_POST['telefono'],
-			$_POST['mail'],
-			$_POST['domicilio'],
-			$_POST['sexo']
-		);
-	}
+		if(isset($_POST['aceptar'])) {
+
+			EmpleadoController::modificarEmpleado(
+				$_POST['idEmpleado'],
+				$_POST['apellido'],
+				$_POST['nombre'],
+				$_POST['legajo'],
+				$_POST['fechaIngreso'],
+				$_POST['dni'],
+				$_POST['cuil'],
+				$_POST['fechaNacimiento'],
+				$_POST['esActivo'],
+				$_POST['telefono'],
+				$_POST['mail'],
+				$_POST['domicilio'],
+				$_POST['sexo']
+			);
+		}
 
 	if(isset($_POST['eliminar'])) {
 		EmpleadoController::eliminarEmpleado($_GET['id']);
@@ -53,11 +53,11 @@
 		<div class="container-fluid">
 
 			<div class="row">
-				
-				
+
+
 			<?php
 				include_once("navbar.php");
-			?>				
+			?>
 			</div>
 
 
@@ -74,9 +74,9 @@
 				<div class="col-md-10">
 
 						<div class="panel panel-default panel-body">
-							
+
 							<div class="container-fluid">
-								
+
 
 							<div class="row">								
 								<div class="pull-right">
@@ -89,26 +89,26 @@
 							</div>
 
 							<div class="row">
-								<form action="" method="POST" role="form" class="form-horizontal"> 
-									
+								<form action="" method="POST" role="form" class="form-horizontal">
+
 									<div class="form-group">
 						   				<label for="idEmpleado" class="col-lg-2 control-label">id</label>
 									    <div class="col-lg-5">
 
 									    	<?php echo '<input type="text" class="form-control" name="idEmpleado" id="idEmpleado" value="'.$empleado['idEmpleado']."\" $disabled>"; ?>
-									    	
+
 									    </div>
 						  			</div>
 
 									<div class="form-group">
 						   				<label for="apellido" class="col-lg-2 control-label">Apellido</label>
 									    <div class="col-lg-5">
-									    	
+
 											<?php echo '<input type="text" class="form-control" name="apellido" id="apellido" value="'.$empleado['apellido']."\" $disabled>"; ?>
 
 									    </div>
 						  			</div>
-							
+
 									<div class="form-group">
 						   				<label for="nombre" class="col-lg-2 control-label">Nombre</label>
 									    <div class="col-lg-5">
@@ -171,7 +171,7 @@
 									    	<?php echo '<input type="text" class="form-control" name="mail" id="mail" value="'.$empleado['email']."\" $disabled>"; ?>
 									    </div>
 						  			</div>
-									
+
 
 									<div class="form-group">
 						   				<label for="domicilio" class="col-lg-2 control-label">Domicilio</label>
