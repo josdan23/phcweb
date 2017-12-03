@@ -3,6 +3,7 @@
 	require_once("../controllers/EmpleadoController.php");
   require_once("../controllers/PuestoController.php");
 
+	$disabled = "disabled";
 	$puesto = PuestoController::obtenerUnPuesto($_GET['id']);
 
 		if(isset($_POST['aceptar'])) {
@@ -46,7 +47,8 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+		<link rel="stylesheet" href="../views/assets/css/style.css">
+		
 	</head>
 	<body>
 
