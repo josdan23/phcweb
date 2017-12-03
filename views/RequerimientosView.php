@@ -28,20 +28,22 @@
 					<tr>
 						<th>id</th>
 						<th>Descripción</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 
 					<?php 
-						$arrayEmpleados = RequerimientoController::obtenerRequerimientos();
-						foreach ($arrayEmpleados as $empleado) {
+						$arrayRequerimientos = RequerimientoController::obtenerRequerimientos();
+						foreach ($arrayRequerimientos as $requerimiento) {
 							
 					?>
 					<tr>
 
-						<td><?php echo "<a href= EmpleadoDetalleView.php?id=".$empleado['idRequerimiento'].">".$empleado['idRequerimiento']."</a>"; ?></td>
-						<td><?php echo $empleado['descripcion']; ?></td>
-		
+						<td><?php echo $requerimiento['idRequerimiento']; ?></td>
+						<td><?php echo $requerimiento['descripcion']; ?></td>
+						<td><?php echo "<a href= RequerimientoDetalleView.php?id=".$requerimiento['idRequerimiento']."> más</a>"; ?></td>
+
 					</tr>
 
 					<?php } ?>

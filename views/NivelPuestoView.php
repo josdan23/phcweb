@@ -30,19 +30,19 @@
 					<tr>
 						<th>id</th>
 						<th>Descripción</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 
 					<?php 
-						$arrayEmpleados = NivelPuestoController::obtenerNivelPuestos();
-						foreach ($arrayEmpleados as $empleado) {
-							
+						$arrayNivelPuesto = NivelPuestoController::obtenerNivelPuestos();
+						foreach ($arrayNivelPuesto as $nivelPuesto) {
 					?>
 					<tr>
-
-						<td><?php echo "<a href= EmpleadoDetalleView.php?id=".$empleado['idNivelPuesto'].">".$empleado['idNivelPuesto']."</a>"; ?></td>
-						<td><?php echo $empleado['descripcion']; ?></td>
+						<td><?php echo $nivelPuesto['idNivelPuesto'];?></td>
+						<td><?php echo $nivelPuesto['descripcion']; ?></td>
+						<td><?php echo "<a href= NivelPuestoDetalleView.php?id=".$nivelPuesto['idNivelPuesto'].">más</a>"; ?></td>
 					</tr>
 
 					<?php } ?>
