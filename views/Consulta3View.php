@@ -6,7 +6,7 @@
 
 <div class="container-fluid">
 
-<div class="row">
+<div class="row" id="encabezado">
     <div class="col-md-6">
         <h4>Consulta 3</h4>
         <h5>Cantidad de puestos por cada departamento</h5>
@@ -19,11 +19,9 @@
         </div>
     </div>
 </div>
+
 <div class="row">
-    <hr>
-</div>
-<div class="row">
-    
+    <div class="panel panel-default">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -46,6 +44,7 @@
             ?>
         </tbody>
     </table>
+    </div>
 
 </div>
 </div>

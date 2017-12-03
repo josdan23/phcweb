@@ -6,7 +6,7 @@
 
 <div class="container-fluid">
 	
-	<div class="row">
+	<div class="row" id="encabezado">
 		<div class="col-md-6">
 			<h4>USUARIOS</h4>
 		</div>
@@ -18,9 +18,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<hr>
-	</div>
+
 	<div class="row">
 		
 		<div class="panel panel-default">
@@ -35,6 +33,7 @@
 						<th>Administrador</th>
 						<th>Habilitado</th>
 						<th>Contrasenia Restaurada</th>
+						<th></th>
 						
 					</tr>
 				</thead>

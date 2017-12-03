@@ -5,7 +5,7 @@
  ?>
 
 <div class="container-fluid">	 
-	<div class="row">
+	<div class="row" id="encabezado">
 
 		<div class="col-md-6">
 			<h4>DEPARTAMENTOS</h4>
@@ -21,11 +21,6 @@
 	</div>
 
 	<div class="row">
-		<hr>
-	</div>
-
-
-	<div class="row">
 
 		<div class="panel panel-default">
 			
@@ -33,8 +28,8 @@
 				<thead>
 					<tr>
 						<th>id</th>
-						<th>nombre</th>
-						<th></th>
+						<th>Nombre</th>
+						<th>Nivel de Departamento</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -48,8 +43,8 @@
 						<tr>
 							<td><?php echo $departamento['idDepartamento'] ?></td>
 							<td><?php echo $departamento['nombre'] ?></td>
-							<td><a href="index.php?page=DepartamentoView">modificar</span></a></td>
-							<td><a href="index.php?page=DepartamentoView">eliminar</span></a></td>
+							<td><?php echo $departamento['nombreNivel']?></td>
+							<td><?php echo "<a href= DepartamentoDetalleView.php?id=".$departamento['idNivelDepartamento'].">más</a>"; ?></td>
 						</tr>
 
 					<?php } ?>

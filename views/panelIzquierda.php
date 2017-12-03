@@ -6,10 +6,10 @@
 	<ul class="nav nav-pills nav-stacked">
   		<li><a href="principalView.php?page=EmpleadoView"><span class="glyphicon glyphicon-user"></span> Empleados</a></li>
       <li><a href="principalView.php?page=DepartamentoView"><span class="glyphicon glyphicon-th-list"></span> Departamento</a></li>
+      <li><a href="principalView.php?page=NivelDepartamentoView"><span class="glyphicon glyphicon-sort-by-attributes"></span> Niveles Departamento</a></li>
       <li><a href="principalView.php?page=PuestosView"><span class="glyphicon glyphicon-lock"></span> Puestos</a></li>
+      <li><a href="principalView.php?page=NivelPuestoView"><span class="glyphicon glyphicon-sort-by-order"></span> Niveles Puestos</a></li>
       <li class="active"><a href="principalView.php?page=RequerimientosView"><span class="glyphicon glyphicon-list-alt"></span> Requerimientos</a></li>
-  		<li><a href="principalView.php?page=NivelPuestoView"><span class="glyphicon glyphicon-sort-by-order"></span> Niveles Puestos</a></li>
-  		<li><a href="principalView.php?page=NivelDepartamentoView"><span class="glyphicon glyphicon-sort-by-attributes"></span> Niveles Departamento</a></li>
   		<li><a href="principalView.php?page=TareasView"><span class="glyphicon glyphicon-tasks"></span> Tareas</a></li>
 	</ul>
 

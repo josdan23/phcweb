@@ -1,8 +1,10 @@
 <?php 
 
-	require_once("../controllers/TareaController.php");
+	require_once("../controllers/DepartamentoController.php");
+	require_once("../controllers/NivelDepartamentoController.php");
 
-	$tarea = TareaController::obtenerUnaTarea($_GET['id']);
+	$arrayNivelDepartamento = NivelDepartamentoController::obtenerNivelDepartamentos();
+	$departamento = DepartamentoController::obtenerUnDepartamento($_GET['id']);
 
 	$disabled = "disabled";
 	if(isset($_POST['modificar']))
@@ -10,12 +12,12 @@
 
 
 	if(isset($_POST['aceptar'])) {
-        TareaController::modificarTarea($_GET['id'], $_POST['descripcion']);
+		DepartamentoController::modificarDepartamento($_GET['id'], $_POST['nombre'], $_POST['idNivelDepartamento']);
 	}
 
 	if(isset($_POST['eliminar'])) {
-        TareaController::eliminarTarea($_GET['id']);
-        header('Location: http://localhost/phcweb/views/principalView.php?page=TareasView');
+        DepartamentoController::eliminarDepartamento($_GET['id']);
+        header('Location: http://localhost/phcweb/views/principalView.php?page=DepartamentoView');
 	}
 
  ?>
@@ -82,20 +84,41 @@
 						   				<label for="idTarea" class="col-lg-2 control-label">id</label>
 									    <div class="col-lg-5">
 
-									    	<?php echo '<input type="text" class="form-control" name="idTarea" id="idTarea" value="'.$tarea['idTarea']."\" disabled>"; ?>
+									    	<?php echo '<input type="text" class="form-control" name="idTarea" id="idTarea" value="'.$departamento['idDepartamento']."\" disabled>"; ?>
 									    	
 									    </div>
 						  			</div>
 
 									<div class="form-group">
-						   				<label for="descripcion" class="col-lg-2 control-label">Descripcion</label>
+						   				<label for="nombre" class="col-lg-2 control-label">Nombre</label>
 									    <div class="col-lg-5">
 									    	
-											<?php echo '<input type="text" class="form-control" name="descripcion" id="descripcion" value="'.$tarea['descripcion']."\" $disabled>"; ?>
+											<?php echo '<input type="text" class="form-control" name="nombre" id="nombre" value="'.$departamento['nombre']."\" $disabled>"; ?>
 
 									    </div>
 						  			</div>
 							
+
+									<div class="form-group">
+                                        <label for="nivelDepartamento" class="col-lg-2 control-label">Nivel del Departamento</label>
+
+                                        <div class="col-lg-5">
+                                            
+                                                <?php 
+                                                    echo "<select class=\"form-control\" name=\"idNivelDepartamento\" $disabled>";
+                                                    if($disabled != "null") {
+                                                        echo "<option>".$departamento['nombreNivel']."</option>";
+                                                    }
+                                                    else {
+                                                        foreach ($arrayNivelDepartamento as $nivelDepartamento) {
+                                                            echo "<option value=".$nivelDepartamento['idNivelDepartamento'].">".$nivelDepartamento['nombre']."</option>";
+                                                        }
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
 									
 									<div class="form-group">
 									<label for="aceptar" class="col-lg-2 control-label"></label>

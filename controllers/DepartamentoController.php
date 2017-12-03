@@ -12,7 +12,7 @@ class DepartamentoController {
 	}
 
 	public static function obtenerDepartamentos() {
-		$entidad = new EntidadBase("t_departamento");
+		$entidad = new EntidadBase("v_departamento");
         return $entidad->obtenerTodos();
 	}
 
@@ -22,7 +22,7 @@ class DepartamentoController {
 	}
 
 	public static function obtenerUnDepartamento($id) {
-		$entidad = new EntidadBase("t_departamento");
+		$entidad = new EntidadBase("v_departamento");
 		return $entidad->obtenerPorId('idDepartamento', $id);
 	}
 
