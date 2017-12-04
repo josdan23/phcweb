@@ -1,20 +1,19 @@
 <?php
 
-require_once("../controllers/EmpleadoController.php");
+require_once("../controllers/TareaController.php");
 require_once("../controllers/PuestoController.php");
 
 $disabled = "disabled";
 $puesto = PuestoController::obtenerUnPuesto($_GET['id']);
 
 if(isset($_POST['aceptar'])) {
-    $arrayEmpleados = EmpleadoController::obtenerEmpleados();
+    $arrayTareas = TareaController::obtenerTareas();
 
-    foreach ($arrayEmpleados as $empleado ) {
-        $id = $empleado['idEmpleado'];
-        if(IsChecked('checkbox',$id)){
+    foreach ($arrayTareas as $tarea ) {
+        $idTarea = $tarea['idTarea'];
+        if(IsChecked('checkbox',$idTarea)){
             $idPuesto = $puesto['idPuesto'];
-
-            EmpleadoController::asignarPuestoAEmpleado($idPuesto, $id);
+            PuestoController::asignarTareaAPuesto($idTarea, $idPuesto);
         }
     }
 }
@@ -40,7 +39,7 @@ function IsChecked($chkname,$value){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Asignar Empleados a un Puesto</title>
+    <title>Asignar Tareas a un Puesto</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -104,29 +103,26 @@ function IsChecked($chkname,$value){
                         <div class="panel panel-default">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4>Seleccione los Empleados que trabajan en este Puesto</h4>
+                                    <h4>Seleccione las Tareas de este Puesto</h4>
                                 </div>
                             </div>
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Seleccionar</th>
+                                    <th>Descripción</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <form method="post">
                                     <?php
-                                    $arrayEmpleados = EmpleadoController::obtenerEmpleados();
-                                    foreach ($arrayEmpleados as $empleado) {?>
+                                    $arrayTareas = TareaController::obtenerTareas();
+                                    foreach ($arrayTareas as $tarea) {?>
                                         <tr>
-                                            <td><?php echo $empleado['idEmpleado']; ?></td>
-                                            <td><?php echo $empleado['nombre']; ?></td>
-                                            <td><?php echo $empleado['apellido']; ?></td>
-                                            <?php $id=$empleado['idEmpleado']; ?>
-                                            <td><?php echo "<input type=\"checkbox\" name=\"checkbox[]\" value=$id > " ?></td>
+                                            <td><?php echo $tarea['idTarea']; ?></td>
+                                            <td><?php echo $tarea['descripcion']; ?></td>
+                                            <?php $idTarea=$tarea['idTarea']; ?>
+                                            <td><?php echo "<input type=\"checkbox\" name=\"checkbox[]\" value=$idTarea > " ?></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
