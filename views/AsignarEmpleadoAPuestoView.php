@@ -7,14 +7,14 @@
 	$puesto = PuestoController::obtenerUnPuesto($_GET['id']);
 
 		if(isset($_POST['aceptar'])) {
-      $entidad = new EntidadBase();
       $arrayEmpleados = EmpleadoController::obtenerEmpleados();
 
       foreach ($arrayEmpleados as $empleado ) {
         $id = $empleado['idEmpleado'];
               if(IsChecked('checkbox',$id)){
-                $idPuesto = $puesto['idPuesto'];
-                $entidad->asignarPuestoAEmpleado($idPuesto,$id);
+								$idPuesto = $puesto['idPuesto'];
+								
+								EmpleadoController::asignarPuestoAEmpleado($idPuesto, $id);
               }
       }
 
