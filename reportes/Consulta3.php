@@ -1,7 +1,7 @@
 ﻿<?php
 
 require_once '../controllers/ReporteController.php';
-require_once('../persistencia/EntidadBase.php');
+
 
 //$prueba = new EntidadBase("t_departamento");
 
