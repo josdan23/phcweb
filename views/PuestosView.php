@@ -38,7 +38,6 @@
 					<?php
 						$arrayPuestos = PuestoController::obtenerPuestos();
 						foreach ($arrayPuestos as $puesto) {
-
 					?>
 					<tr>
 
@@ -56,8 +55,8 @@
 
 					<?php } ?>
 				</tbody>
-
 			</table>
+
 		</div>
 	</div>
 

@@ -32,15 +32,15 @@
 				<tbody>
 
 					<?php 
-						$arrayEmpleados = TareaController::obtenerTareas();
-						foreach ($arrayEmpleados as $empleado) {
-							
+						$arrayTareas = TareaController::obtenerTareas();
+						foreach ($arrayTareas as $tarea) {
 					?>
 					<tr>
 
-						<td><?php echo $empleado['idTarea']; ?></td>
-						<td><?php echo $empleado['descripcion']; ?></td>
-						<td><?php echo "<a href= TareasDetalleView.php?id=".$empleado['idTarea'].">más</a>"; ?></td>
+						<td><?php echo $tarea['idTarea']; ?></td>
+						<td><?php echo $tarea['descripcion']; ?></td>
+                        <td><?php echo "<a href=AsignarPuestoATareaView.php?id=".$tarea['idTarea'].">Asignar Puesto</a>" ?></td>
+						<td><?php echo "<a href= TareasDetalleView.php?id=".$tarea['idTarea'].">más</a>"; ?></td>
 					</tr>
 
 					<?php } ?>
