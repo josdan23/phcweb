@@ -9,3 +9,12 @@ body {
 #icono {
     margin-right: 5px;
 }
+
+div >#login {
+    background-image: url("../views/assets/resources/fondo.jpg");
+}
+
+#login-encabezado {
+    color: white;
+    text-align: center;
+}
