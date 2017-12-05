@@ -29,8 +29,10 @@
 						<th>Descripción</th>
 						<th>Departamento</th>
 						<th>Nivel del Puesto</th>
-						<th>Seleccione</th>
-						<th></th>
+						<th colspan="4">Seleccione</th>
+						
+						
+						
 					</tr>
 				</thead>
 				<tbody>

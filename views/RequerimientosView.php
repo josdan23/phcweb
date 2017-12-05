@@ -27,6 +27,7 @@
 						<th>id</th>
 						<th>Descripción</th>
 						<th></th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -40,6 +41,7 @@
 
 						<td><?php echo $requerimiento['idRequerimiento']; ?></td>
 						<td><?php echo $requerimiento['descripcion']; ?></td>
+						<td><?php echo "<a href=AsignarPuestoARequerimientoView.php?id=".$requerimiento['idRequerimiento'].">Asignar Puesto</a>" ?></td>
 						<td><?php echo "<a href= RequerimientoDetalleView.php?id=".$requerimiento['idRequerimiento']."> más</a>"; ?></td>
 
 					</tr>
