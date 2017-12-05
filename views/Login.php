@@ -2,7 +2,7 @@
 	include ("../controllers/UsuarioController.php");
 
 	
-	
+
 
 	function validar($user, $pass) {
 
@@ -79,8 +79,12 @@
 
 								<div class="row" id="info">
 									<?php
-										$user = $_POST['usuario'];
-										$pass = $_POST['password'];
+										$user = null;
+										if (isset($_POST['usuario'])) 
+											$user =  $_POST['usuario'];
+										$pass = null;
+										if (isset($_POST['password']))
+										$pass= $_POST['password'];
 
 										validar($user, $pass);
 									?>

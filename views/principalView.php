@@ -1,4 +1,8 @@
 <?php
+	if (isset($_COOKIE['user']))
+		echo "no esta";
+
+
 	$pagina = "DepartamentoView";
 	if(isset($_GET['page'])) {
 		$pagina = $_GET['page'];
