@@ -24,11 +24,11 @@ $pdf->addText(50, 30, 10, "<b>Fecha: </b>\n" . date("d/m/Y")); // Fecha
 
 $cols = array(
 
-    "Cantidad de departamentos en la organización" => "
+    "Cantidad de departamentos en la organizacion" => "
     <b>Cantidad de Dptos en la Org</b>",
 );
 
- $colOptions = array("Cantidad de departamentos en la organización" => array('justification' => 'center', 'width' => 200) );
+ $colOptions = array("Cantidad de departamentos en la organizacion" => array('justification' => 'center', 'width' => 200) );
 
 $options = array( 'fontSize' => 12, 'xPos' => 400,'xOrientation' => 'center', 'cols' => $colOptions );
 

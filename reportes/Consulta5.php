@@ -17,7 +17,7 @@ $pdf->selectFont('../fonts/Helvetica.afm'); //seleccionamos fuente a utilizar
 $pdf->line(20,40,815,40);
 $pdf->ezText("<u><b>Gestion de Capital Humano - PHC TEAM</b></u>",30,array("justification"=>"center")); // Titulo 1
 $pdf->ezText("\n", 15);  // Bajado de line de 15 de fuente
-$pdf->ezText("<b>Consulta 5 - Listado de empleados que trabajan en mas de un departamento</b>",15,array("justification"=>"center")); // Titulo 2
+$pdf->ezText("<b>Consulta 5 - Listado de empleados que trabajan en mas de un departamento</b>",20,array("justification"=>"center")); // Titulo 2
 $pdf->ezText("\n", 30); // Bajado de line de 30 de fuente
 
 $pdf->addText(50, 30, 10, "<b>Fecha: </b>\n" . date("d/m/Y")); // Fecha
@@ -28,9 +28,9 @@ $cols = array(
     "Apellido" => "<b>Apellido</b>",
     "Puesto" => "<b>Puesto</b>",
     "Departamento" => "<b>Departamento</b>",
-    "Años" => "<b>Anos</b>",
+    "Anos" => "<b>Anos</b>",
 	"Meses" => "<b>Meses</b>",
-	"Años-Meses" => "<b>Anos-Meses</b>",
+	"Anos-Meses" => "<b>Anos-Meses</b>",
 
  );
 
@@ -38,9 +38,9 @@ $colOptions = array("id" => array('justification' => 'center', 'width' => 30), 	
 				'Apellido' => array('justification'=> 'leftr',  'width' => 70),
 				'Puesto' => array('justification'=> 'left',  'width' => 120),
 			    'Departamento' => array('justification'=> 'left',  'width' => 150),
-				'Años' => array('justification'=> 'center',  'width' => 40),
+				'Anos' => array('justification'=> 'center',  'width' => 40),
 			 	'Meses' => array('justification'=> 'center',  'width' => 50),
-			 	'Años-Meses' => array('justification'=> 'center',  'width' => 60),
+			 	'Anos-Meses' => array('justification'=> 'center',  'width' => 60),
 			 );
 
 
