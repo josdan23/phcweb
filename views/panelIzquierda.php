@@ -5,6 +5,7 @@
 
 	<ul class="nav nav-pills nav-stacked">
   		<li id="empleados"><a href="principalView.php?page=EmpleadoView"><span class="glyphicon glyphicon-user">&nbsp;</span>Empleados</a></li>
+      <li id="historial"><a href="principalView.php?page=HistorialView"><span class="glyphicon glyphicon-dashboard">&nbsp;</span>Historial</a></li>
       <li id="departamento"><a href="principalView.php?page=DepartamentoView"><span class="glyphicon glyphicon-th-list">&nbsp;</span>Departamento</a></li>
       <li id="nivelDepartamento"><a href="principalView.php?page=NivelDepartamentoView"><span class="glyphicon glyphicon-sort-by-attributes">&nbsp;</span>Niveles Departamento</a></li>
       <li id="puestos"><a href="principalView.php?page=PuestosView"><span class="glyphicon glyphicon-lock">&nbsp;</span>Puestos</a></li>
@@ -19,6 +20,7 @@
 
   <ul class="nav nav-pills nav-stacked">
       <li id="usuarios"><a href="principalView.php?page=UsuarioView"><span class="glyphicon glyphicon-user">&nbsp;</span>Usuarios</a></li>
+      
   </ul>
 
   <br>

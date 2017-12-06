@@ -380,5 +380,27 @@ class EntidadBase {
             echo "$e";
         }
     }
+
+	public function obtenerHistorialXEmpleado($idEmpleado) {
+
+        $resultSet = array();
+		$query = "select t_puesto.nombre as 'nombrePuesto',
+        t_historial_empleado.fechaIngreso as 'fechaIngreso',
+        t_historial_empleado.fechaEgreso as 'fechaEgreso'
+        from t_historial_empleado, t_empleado, t_puesto 
+        where t_historial_empleado.idEmpleado = ?
+        and t_historial_empleado.idEmpleado = t_empleado.idEmpleado
+        and t_historial_empleado.idPuesto = t_puesto.idPuesto";
+		$sentencia = $this->db->prepare($query);
+		$sentencia->bind_param('s', $idEmpleado);
+		$sentencia->execute();
+        $registros = $sentencia->get_result();
+        while ($row=mysqli_fetch_array($registros)) {
+            $resultSet[] = $row;
+        }
+		$this->conexion->cerrarConexion($this->db);
+        return $resultSet;
+    }    
+    
 }
 ?>
