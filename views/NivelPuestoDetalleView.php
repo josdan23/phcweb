@@ -1,5 +1,5 @@
 <?php 
-
+	session_start();
 	require_once("../controllers/NivelPuestoController.php");
 
 	$nivelPuesto = NivelPuestoController::obtenerUnNivelPuesto($_GET['id']);

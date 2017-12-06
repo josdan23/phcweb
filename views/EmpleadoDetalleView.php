@@ -1,5 +1,5 @@
 <?php
-
+	session_start();
 	require_once("../controllers/EmpleadoController.php");
 
 	$empleado = EmpleadoController::obtenerUnEmpleado($_GET['id']);

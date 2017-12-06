@@ -1,7 +1,5 @@
 <?php
-	if (isset($_COOKIE['user']))
-		echo "no esta";
-
+	session_start();
 
 	$pagina = "DepartamentoView";
 	if(isset($_GET['page'])) {
@@ -23,6 +21,9 @@
 		<link rel="stylesheet" href="../views/assets/css/style.css">
 	</head>
 	<body>
+		<?php
+			if(isset($_SESSION['usuario'])) {
+		?>
 
 		<!--HEADER-->
 		<div class="container-fluid">
@@ -60,5 +61,11 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 		<script src="../views/assets/js/panel.js"></script>
+
+		<?php
+		} else {
+			echo "No puede acceder a esta página";
+		} 
+		?>
 	</body>
 </html>

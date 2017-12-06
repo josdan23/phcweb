@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include ("../controllers/PuestoController.php");
     include ("../controllers/NivelPuestoController.php");
     include ("../controllers/DepartamentoController.php");

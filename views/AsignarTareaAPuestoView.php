@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("../controllers/TareaController.php");
 require_once("../controllers/PuestoController.php");
 

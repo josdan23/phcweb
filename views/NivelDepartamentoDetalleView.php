@@ -1,5 +1,5 @@
 <?php 
-
+	session_start();
 	require_once("../controllers/NivelDepartamentoController.php");
 
 	$nivelDepartamento = NivelDepartamentoController::obtenerUnNivelDepartamento($_GET['id']);

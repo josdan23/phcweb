@@ -1,5 +1,5 @@
 <?php 
-
+	session_start();
 	require_once("../controllers/DepartamentoController.php");
 	require_once("../controllers/NivelDepartamentoController.php");
 

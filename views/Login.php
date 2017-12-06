@@ -1,8 +1,7 @@
 <?php
+	session_start();
+
 	include ("../controllers/UsuarioController.php");
-
-	
-
 
 	function validar($user, $pass) {
 
@@ -14,6 +13,7 @@
 					if ($usuario['esAdministrador'] == 1) {
 						if ($usuario['habilitado'] == 1) {
 							$flags = 1;
+							$_SESSION['usuario'] = $user;
 						}
 					}
 				}

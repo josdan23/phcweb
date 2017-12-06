@@ -1,5 +1,5 @@
 <?php 
-
+	session_start();
 	require_once("../controllers/RequerimientoController.php");
 
 	$requerimiento = RequerimientoController::obtenerUnRequerimiento($_GET['id']);
