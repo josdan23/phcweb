@@ -75,7 +75,12 @@
 							}
 						?>
 					</select>
+					
 			    </div>
+
+				<div>
+					<a href="../views/principalView.php?page=NivelPuestoAltaView">Crear Nivel de Puesto</a>
+				</div>
   			</div>
 
   			<div class="form-group">

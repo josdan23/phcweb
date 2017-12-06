@@ -32,7 +32,7 @@
 
 
 			<div class="form-group">
-   				<label for="nombre" class="col-lg-2 control-label">Nombre</label>
+   				<label for="nombre" class="col-lg-3 control-label">Nombre</label>
 			    <div class="col-lg-5">
 			    	<input type="text" class="form-control" id="nombre" name="nombre"
 			             placeholder="Nombre del departamento">
@@ -41,7 +41,7 @@
 	
 			
 			<div class="form-group">
-   				<label for="ejemplo_email_3" class="col-lg-2 control-label">Nivel del Departamento</label>
+   				<label for="ejemplo_email_3" class="col-lg-3 control-label">Nivel del Departamento</label>
 
    				<div class="col-lg-5">
 			    	<select class="form-control" name="nivelDepartamento"> 
@@ -53,11 +53,15 @@
 
 					</select>
 			    </div>
+
+				<div>
+					<a href="../views/principalView.php?page=NivelDepartamentoAltaView">Crear Nivel de Departamento</a>
+				</div>
 			   
   			</div>
 
   			<div class="form-group">
-  				<div class="col-lg-offset-2 col-lg-5">
+  				<div class="col-lg-offset-3 col-lg-5">
   					
 					<button type="submit" class="btn btn-primary">ACEPTAR</button>
   				</div>	
