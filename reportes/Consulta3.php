@@ -3,10 +3,6 @@
 require_once '../controllers/ReporteController.php';
 
 
-//$prueba = new EntidadBase("t_departamento");
-
-//$resultset = $prueba->obtenerTodos() ;
-
 $resultset = ReporteController::obtenerConsulta3();
 
 
